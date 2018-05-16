@@ -31,6 +31,11 @@ struct HeroModel: Decodable {
 
 class HeroManager {
     
+    class func getSortHeroesWithAttributes(heroes: [HeroModel]) -> [[HeroModel]]{
+      return Dictionary(grouping: heroes, by: { $0.primaryAttr }).map { $0.value }
+    }
+    
+    
     class func getHeroes(completion: @escaping (_ heroesArray: [HeroModel]) -> Void) {
         let urlString = "https://api.opendota.com/api/heroes"
         guard let url = URL(string: urlString) else { return }
@@ -48,5 +53,7 @@ class HeroManager {
             }
             }.resume()
     }
+    
+    
     
 }
