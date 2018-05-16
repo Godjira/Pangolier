@@ -49,6 +49,7 @@
 				D6AEE90E20AC11F30034A8A9 /* Pangolier */,
 				D6AEE90D20AC11F30034A8A9 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
 			tabWidth = 2;
 		};
