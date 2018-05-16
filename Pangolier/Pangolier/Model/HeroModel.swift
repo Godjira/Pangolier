@@ -31,8 +31,9 @@ struct HeroModel: Decodable {
 
 class HeroManager {
     
-    class func getSortHeroesWithAttributes(heroes: [HeroModel]) -> [[HeroModel]]{
-      return Dictionary(grouping: heroes, by: { $0.primaryAttr }).map { $0.value }
+    class func getSortHeroesWithAttributes(heroes: [HeroModel]) -> [[HeroModel]] {
+      let sortedHeroes = heroes.sorted(by: { $0.name < $1.name })
+      return Dictionary(grouping: sortedHeroes, by: { $0.primaryAttr }).map { $0.value }
     }
     
     
