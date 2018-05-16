@@ -56,18 +56,22 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
     if kind == UICollectionElementKindSectionHeader {
       let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as! HeaderCollectionReusableView
-      if indexPath.section == 0 {
+      switch indexPath.section {
+        
+      case 0:
         title = "Strange"
         textColor = UIColor.red
-      } else if indexPath.section == 1 {
+      case 1:
         title = "Agility"
         textColor = UIColor.green
-      } else if indexPath.section == 2 {
+      case 2:
         title = "Intelect"
         textColor = UIColor.blue
-      } else {
-
+      default:
+        title = "???????"
+        textColor = UIColor.white
       }
+      
       headerView.titleLabel.text = title
       headerView.titleLabel.textColor = textColor
       reusableView = headerView
