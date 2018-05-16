@@ -10,13 +10,12 @@ import Foundation
 import UIKit
 
 class HeroCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet weak var heroImageView: UIImageView!
-    
-    func setHeroImage(hero: HeroModel) -> Void {
-        
-        let imageHero = UIImage(named: hero.name)
-        heroImageView.image = imageHero
-    }
-    
+
+  @IBOutlet weak var heroImageView: UIImageView!
+  
+  func setHeroImage(hero: HeroModel) -> Void {
+    let imageHero = UIImage(named: hero.name)
+    heroImageView.image = imageHero
+  }
+
 }
