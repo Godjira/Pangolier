@@ -39,7 +39,6 @@ class HeroManager {
             guard let data = data, error  == nil else { return }
             do {
                 let heroes = try JSONDecoder().decode([HeroModel].self, from: data)
-                print(heroes.first!.name)
                 
                 DispatchQueue.main.async {
                     completion(heroes)

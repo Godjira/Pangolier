@@ -20,7 +20,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         HeroManager.getHeroes { (heroesArray) in
             self.heroes = heroesArray
-            
+            self.collectonView.reloadData()
                     }
         
     }
