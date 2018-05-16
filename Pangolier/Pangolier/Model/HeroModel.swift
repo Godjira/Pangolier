@@ -41,7 +41,7 @@ class HeroManager {
         var agiHeroes = [HeroModel]()
         var intHeroes = [HeroModel]()
         
-        var groupHeroWithSort: [[HeroModel]] = [[]]
+        let groupHeroWithSort: [[HeroModel]] = [[],[],[]]
         
         for hero in heroes {
             if hero.primaryAttr.elementsEqual(attrString){
@@ -53,9 +53,9 @@ class HeroManager {
                     intHeroes.append(hero)
             }
         }
-        groupHeroWithSort.append(strHeroes)
-        groupHeroWithSort.append(agiHeroes)
-        groupHeroWithSort.append(intHeroes)
+        groupHeroWithSort[0] = strHeroes
+        groupHeroWithSort[1]  = agiHeroes
+        groupHeroWithSort[2] = intHeroes
         
         return groupHeroWithSort
     }
