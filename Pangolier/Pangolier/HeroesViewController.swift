@@ -15,6 +15,10 @@ class HeroesViewController: UIViewController {
   var heroes = [HeroModel]()
   var groupHeroes: [[HeroModel]] = [[]]
 
+  let sections: [(title: String, color: UIColor)] = [("Strange", .red),
+                                                     ("Agility", .green),
+                                                     ("Intelect", .blue)]
+
   override func viewDidLoad() {
     super.viewDidLoad()
     FirebaseApp.configure()
@@ -54,29 +58,14 @@ extension HeroesViewController: UICollectionViewDataSource, UICollectionViewDele
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
     var reusableView = UICollectionReusableView()
-    var title = ""
-    var textColor = UIColor.black
 
     if kind == UICollectionElementKindSectionHeader {
       let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as! HeaderCollectionReusableView
-      switch indexPath.section {
-        
-      case 0:
-        title = "Strange"
-        textColor = UIColor.red
-      case 1:
-        title = "Agility"
-        textColor = UIColor.green
-      case 2:
-        title = "Intelect"
-        textColor = UIColor.blue
-      default:
-        title = "???????"
-        textColor = UIColor.white
-      }
+
+      let section = sections[indexPath.section]
       
-      headerView.titleLabel.text = title
-      headerView.titleLabel.textColor = textColor
+      headerView.titleLabel.text = section.title
+      headerView.titleLabel.textColor = section.color
       reusableView = headerView
       //headerView.imageView.image = UIImage(named: )
 
