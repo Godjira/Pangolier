@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HeroesViewController.swift
 //  Pangolier
 //
 //  Created by Homac on 5/16/18.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class HeroesViewController: UIViewController {
 
   @IBOutlet weak var collectonView: UICollectionView!
   var heroes = [HeroModel]()
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
   }
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension HeroesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
   func numberOfSections(in collectionView: UICollectionView) -> Int{
     print(groupHeroes.count)
     return groupHeroes.count
@@ -82,7 +82,5 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
     }
     return reusableView
-
-
   }
 }

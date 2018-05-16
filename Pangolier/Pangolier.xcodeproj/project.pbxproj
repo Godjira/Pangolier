@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		360CF3FE67DFD31EB2FBFB2C /* Pods_Pangolier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC179F6BCF63EDD246FC4EB /* Pods_Pangolier.framework */; };
 		D6AEE91020AC11F30034A8A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE90F20AC11F30034A8A9 /* AppDelegate.swift */; };
-		D6AEE91220AC11F30034A8A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE91120AC11F30034A8A9 /* ViewController.swift */; };
+		D6AEE91220AC11F30034A8A9 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */; };
 		D6AEE91520AC11F30034A8A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AEE91320AC11F30034A8A9 /* Main.storyboard */; };
 		D6AEE91820AC11F30034A8A9 /* Pangolier.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE91620AC11F30034A8A9 /* Pangolier.xcdatamodeld */; };
 		D6AEE91A20AC11F50034A8A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6AEE91920AC11F50034A8A9 /* Assets.xcassets */; };
@@ -26,7 +26,7 @@
 		9BC179F6BCF63EDD246FC4EB /* Pods_Pangolier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pangolier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6AEE90C20AC11F30034A8A9 /* Pangolier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pangolier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6AEE90F20AC11F30034A8A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D6AEE91120AC11F30034A8A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
 		D6AEE91420AC11F30034A8A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D6AEE91720AC11F30034A8A9 /* Pangolier.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pangolier.xcdatamodel; sourceTree = "<group>"; };
 		D6AEE91920AC11F50034A8A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				D6AEE90F20AC11F30034A8A9 /* AppDelegate.swift */,
-				D6AEE91120AC11F30034A8A9 /* ViewController.swift */,
+				D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */,
 				D6AEE92720AC268C0034A8A9 /* Model */,
 				D6AEE92620AC26870034A8A9 /* Cell */,
 				D6AEE91320AC11F30034A8A9 /* Main.storyboard */,
@@ -239,7 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6AEE92920AC26BB0034A8A9 /* HeroCollectionViewCell.swift in Sources */,
-				D6AEE91220AC11F30034A8A9 /* ViewController.swift in Sources */,
+				D6AEE91220AC11F30034A8A9 /* HeroesViewController.swift in Sources */,
 				D6AEE91020AC11F30034A8A9 /* AppDelegate.swift in Sources */,
 				D6AEE91820AC11F30034A8A9 /* Pangolier.xcdatamodeld in Sources */,
 				D6AEE92B20AC485B0034A8A9 /* HeaderCollectionReusableView.swift in Sources */,
