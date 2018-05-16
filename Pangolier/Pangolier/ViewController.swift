@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
@@ -16,6 +17,8 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    FirebaseApp.configure()
+    
     // Get instets
     let colletctionViewLayout = self.collectonView.collectionViewLayout as! UICollectionViewFlowLayout
     colletctionViewLayout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10)
