@@ -31,6 +31,36 @@ struct HeroModel: Decodable {
 
 class HeroManager {
     
+    class func getSortHeroesWithAttributes(heroes: [HeroModel]) -> [[HeroModel]]{
+        
+        let attrString = "str"
+        let attrAgility = "agi"
+        // let attrIntelect = "int"
+        
+        var strHeroes = [HeroModel]()
+        var agiHeroes = [HeroModel]()
+        var intHeroes = [HeroModel]()
+        
+        var groupHeroWithSort: [[HeroModel]] = [[]]
+        
+        for hero in heroes {
+            if hero.primaryAttr.elementsEqual(attrString){
+                strHeroes.append(hero)
+            } else
+                if hero.primaryAttr.elementsEqual(attrAgility){
+                    agiHeroes.append(hero)
+                } else {
+                    intHeroes.append(hero)
+            }
+        }
+        groupHeroWithSort.append(strHeroes)
+        groupHeroWithSort.append(agiHeroes)
+        groupHeroWithSort.append(intHeroes)
+        
+        return groupHeroWithSort
+    }
+    
+    
     class func getHeroes(completion: @escaping (_ heroesArray: [HeroModel]) -> Void) {
         let urlString = "https://api.opendota.com/api/heroes"
         guard let url = URL(string: urlString) else { return }
@@ -48,5 +78,7 @@ class HeroManager {
             }
             }.resume()
     }
+    
+    
     
 }

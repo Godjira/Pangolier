@@ -14,7 +14,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     @IBOutlet weak var collectonView: UICollectionView!
     var heroes = [HeroModel]()
-    var groupHeroes = [[HeroModel]()]
+    var groupHeroes: [[HeroModel]] = [[]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,25 +25,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         HeroManager.getHeroes { (heroesArray) in
             self.heroes = heroesArray
             self.collectonView.reloadData()
-            
-            var strHeroes = [HeroModel]()
-            var agiHeroes = [HeroModel]()
-            var intHeroes = [HeroModel]()
-            
-            for hero in self.heroes {
-                if hero.primaryAttr.elementsEqual("str"){
-                    strHeroes.append(hero)
-                } else
-                if hero.primaryAttr.elementsEqual("agi"){
-                    agiHeroes.append(hero)
-                } else {
-                    intHeroes.append(hero)
-                }
-            }
-            self.groupHeroes.append(strHeroes)
-            self.groupHeroes.append(agiHeroes)
-            self.groupHeroes.append(intHeroes)
-            
+            // Get sort heroes
+           self.groupHeroes = HeroManager.getSortHeroesWithAttributes(heroes: self.heroes)
                     }
     }
 
@@ -51,6 +34,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     //MARK: - UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int{
+        print(groupHeroes.count)
         return groupHeroes.count
     }
 
@@ -84,6 +68,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             } else if indexPath.section == 3 {
                 title = "Intelect"
                 textColor = UIColor.blue
+            } else {
+                
             }
             headerView.titleLabel.text = title
             headerView.titleLabel.textColor = textColor
