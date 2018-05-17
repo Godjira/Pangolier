@@ -15,7 +15,7 @@ class HeroesViewController: UIViewController {
   var heroes = [HeroModel]()
   var groupHeroes: [[HeroModel]] = [[]]
 
-  let sections: [(title: String, color: UIColor)] = [("Strange", .red),
+  let sections: [(title: String, color: UIColor)] = [("Strange", .customRed),
                                                      ("Agility", .green),
                                                      ("Intelect", .blue)]
 
