@@ -36,6 +36,7 @@ class HeroesViewController: UIViewController {
   }
 }
 
+//MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 extension HeroesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
   func numberOfSections(in collectionView: UICollectionView) -> Int{
     print(groupHeroes.count)
@@ -72,4 +73,12 @@ extension HeroesViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     return reusableView
   }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+    let bunchHeroesVC = storyboard?.instantiateViewController(withIdentifier: "BunchHeroesViewController") as! BunchHeroesViewController
+    bunchHeroesVC.hero = groupHeroes[indexPath.section][indexPath.row]
+    self.navigationController?.pushViewController(bunchHeroesVC, animated: true)
+  }
+
+  
 }
