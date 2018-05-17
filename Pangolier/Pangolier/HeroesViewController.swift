@@ -10,18 +10,12 @@ import UIKit
 import Firebase
 
 class HeroesViewController: UIViewController {
-
-  enum whoINeed {
-    case nobody
-    case AddBunchViewController
-  }
   
   @IBOutlet weak var collectonView: UICollectionView!
   var heroes = [HeroModel]()
   var groupHeroes: [[HeroModel]] = [[]]
-  var iNeed = whoINeed.nobody
   
-  weak var delegate: GetHeroDelegat!
+  weak var delegate: GetHeroDelegat?
 
   let sections: [(title: String, color: UIColor)] = [("Strange", .red),
                                                      ("Agility", .green),
@@ -81,20 +75,16 @@ extension HeroesViewController: UICollectionViewDataSource, UICollectionViewDele
     return reusableView
   }
   
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-    if iNeed == .nobody {
-    let bunchHeroesVC = storyboard?.instantiateViewController(withIdentifier: "BunchHeroesViewController") as! BunchHeroesViewController
-    bunchHeroesVC.hero = groupHeroes[indexPath.section][indexPath.row]
-    self.navigationController?.pushViewController(bunchHeroesVC, animated: true)
-    }
-    
-    if iNeed == .AddBunchViewController {
-      delegate.didSelect(hero: groupHeroes[indexPath.section][indexPath.row])
-      navigationController?.popViewController(animated: true)
-    }
-  
-  
-  }
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let selectedHero = groupHeroes[indexPath.section][indexPath.row]
 
-  
+    if let delegate = delegate {
+      delegate.didSelect(hero: selectedHero)
+      navigationController?.popViewController(animated: true)
+    } else {
+      let bunchHeroesViewController = storyboard?.instantiateViewController(withIdentifier: "BunchHeroesViewController") as! BunchHeroesViewController
+      bunchHeroesViewController.hero = selectedHero
+      self.navigationController?.pushViewController(bunchHeroesViewController, animated: true)
+    }
+  }
 }
