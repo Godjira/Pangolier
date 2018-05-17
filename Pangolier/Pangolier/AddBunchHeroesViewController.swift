@@ -30,7 +30,6 @@ class AddBunchHeroesViewController: UIViewController {
     if heroes.count<5 {
     let heroesVC = storyboard?.instantiateViewController(withIdentifier: "HeroesViewController") as! HeroesViewController
     heroesVC.delegate = self
-    heroesVC.iNeed = .AddBunchViewController
     navigationController?.pushViewController(heroesVC, animated: true)
     }
   }
