@@ -11,9 +11,17 @@ import Firebase
 
 class HeroesViewController: UIViewController {
 
+  enum whoINeed {
+    case nobody
+    case AddBunchViewController
+  }
+  
   @IBOutlet weak var collectonView: UICollectionView!
   var heroes = [HeroModel]()
   var groupHeroes: [[HeroModel]] = [[]]
+  var iNeed = whoINeed.nobody
+  
+  weak var delegate: GetHeroDelegat!
 
   let sections: [(title: String, color: UIColor)] = [("Strange", .red),
                                                      ("Agility", .green),
@@ -21,7 +29,6 @@ class HeroesViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    FirebaseApp.configure()
     
     // Get instets
     let colletctionViewLayout = self.collectonView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -75,9 +82,18 @@ extension HeroesViewController: UICollectionViewDataSource, UICollectionViewDele
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+    if iNeed == .nobody {
     let bunchHeroesVC = storyboard?.instantiateViewController(withIdentifier: "BunchHeroesViewController") as! BunchHeroesViewController
     bunchHeroesVC.hero = groupHeroes[indexPath.section][indexPath.row]
     self.navigationController?.pushViewController(bunchHeroesVC, animated: true)
+    }
+    
+    if iNeed == .AddBunchViewController {
+      delegate.didSelect(hero: groupHeroes[indexPath.section][indexPath.row])
+      navigationController?.popViewController(animated: true)
+    }
+  
+  
   }
 
   
