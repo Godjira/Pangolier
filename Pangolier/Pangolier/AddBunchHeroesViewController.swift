@@ -8,30 +8,48 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class AddBunchHeroesViewController: UIViewController {
+  
+  var ref : DatabaseReference!
   
   var heroes: [HeroModel] = []
   
   @IBOutlet weak var collectionView: UICollectionView!
-  
-  
+  @IBOutlet weak var bunchNameTextField: UITextField!
+  @IBOutlet weak var bunchDescTextView: UITextView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    ref = Database.database().reference()
     
   }
   
-
+  
   
   @IBAction func addHeroAction(_ sender: Any) {
     print(heroes)
     if heroes.count<5 {
-    let heroesVC = storyboard?.instantiateViewController(withIdentifier: "HeroesViewController") as! HeroesViewController
-    heroesVC.delegate = self
-    navigationController?.pushViewController(heroesVC, animated: true)
+      let heroesVC = storyboard?.instantiateViewController(withIdentifier: "HeroesViewController") as! HeroesViewController
+      heroesVC.delegate = self
+      navigationController?.pushViewController(heroesVC, animated: true)
     }
+  }
+  
+  @IBAction func saveButton(_ sender: Any) {
+    var heroesIds : [Int] = []
+    for hero in heroes {
+      heroesIds.append(hero.id)
+    }
+    
+    let sendDictionary = ["name" : bunchNameTextField.text ?? "noname",
+                          "heroes" : heroesIds,
+                          "desc" : bunchDescTextView.text ?? "nodesc"] as [String : Any]
+    
+    
+    self.ref.child("bunch").childByAutoId().setValue(sendDictionary)
   }
   
   

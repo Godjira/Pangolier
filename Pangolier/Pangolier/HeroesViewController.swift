@@ -24,6 +24,10 @@ class HeroesViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    if let delegate = delegate {} else {
+      FirebaseApp.configure()
+    }
+    
     // Get instets
     let colletctionViewLayout = self.collectonView.collectionViewLayout as! UICollectionViewFlowLayout
     colletctionViewLayout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10)

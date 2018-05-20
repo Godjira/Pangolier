@@ -226,6 +226,9 @@ bunch</string>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Save Bunch"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="hlb-wp-VnC" eventType="touchUpInside" id="0yL-av-yvi"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SxZ-PO-Kk8">
                                 <rect key="frame" x="16" y="66" width="307" height="64"/>
@@ -263,6 +266,10 @@ bunch</string>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="hlb-wp-VnC" id="Zb5-4E-EEt"/>
+                                    <outlet property="delegate" destination="hlb-wp-VnC" id="ejT-PQ-Tnp"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcr-w7-VdY">
                                 <rect key="frame" x="325" y="66" width="30" height="64"/>
@@ -297,6 +304,8 @@ bunch</string>
                         <viewLayoutGuide key="safeArea" id="J7F-mr-xDS"/>
                     </view>
                     <connections>
+                        <outlet property="bunchDescTextView" destination="awd-7S-tFB" id="vyt-NU-f6s"/>
+                        <outlet property="bunchNameTextField" destination="t0u-d2-uwL" id="UER-O2-vsl"/>
                         <outlet property="collectionView" destination="SxZ-PO-Kk8" id="atN-AY-sOw"/>
                     </connections>
                 </viewController>
