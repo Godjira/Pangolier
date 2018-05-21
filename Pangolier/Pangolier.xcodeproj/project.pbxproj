@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		360CF3FE67DFD31EB2FBFB2C /* Pods_Pangolier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC179F6BCF63EDD246FC4EB /* Pods_Pangolier.framework */; };
+<<<<<<< HEAD
+		CE83E90420ACC93700777604 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83E90320ACC93700777604 /* UIColorExtensions.swift */; };
+=======
 		D608EE1720AD5A520053CEEB /* BunchHeroesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D608EE1620AD5A520053CEEB /* BunchHeroesModel.swift */; };
 		D608EE1920AD6A680053CEEB /* BunchHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D608EE1820AD6A680053CEEB /* BunchHeroesViewController.swift */; };
 		D608EE1B20AD759F0053CEEB /* AddBunchHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */; };
 		D61F60B520B1B61B005C2777 /* BunchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61F60B420B1B61B005C2777 /* BunchTableViewCell.swift */; };
 		D668D8FB20B200820042F2B9 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = D668D8FA20B200820042F2B9 /* Other.swift */; };
+>>>>>>> bunch_heroes
 		D6AEE91020AC11F30034A8A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE90F20AC11F30034A8A9 /* AppDelegate.swift */; };
 		D6AEE91220AC11F30034A8A9 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */; };
 		D6AEE91520AC11F30034A8A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AEE91320AC11F30034A8A9 /* Main.storyboard */; };
@@ -30,11 +34,15 @@
 		4B65FC6226B8755B09B5BA91 /* Pods-Pangolier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pangolier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pangolier/Pods-Pangolier.debug.xcconfig"; sourceTree = "<group>"; };
 		4F79ABCBB890B959E7100E8F /* Pods-Pangolier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pangolier.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pangolier/Pods-Pangolier.release.xcconfig"; sourceTree = "<group>"; };
 		9BC179F6BCF63EDD246FC4EB /* Pods_Pangolier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pangolier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+<<<<<<< HEAD
+		CE83E90320ACC93700777604 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+=======
 		D608EE1620AD5A520053CEEB /* BunchHeroesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunchHeroesModel.swift; sourceTree = "<group>"; };
 		D608EE1820AD6A680053CEEB /* BunchHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunchHeroesViewController.swift; sourceTree = "<group>"; };
 		D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBunchHeroesViewController.swift; sourceTree = "<group>"; };
 		D61F60B420B1B61B005C2777 /* BunchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunchTableViewCell.swift; sourceTree = "<group>"; };
 		D668D8FA20B200820042F2B9 /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
+>>>>>>> bunch_heroes
 		D6AEE90C20AC11F30034A8A9 /* Pangolier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pangolier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6AEE90F20AC11F30034A8A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +87,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+		CE83E90220ACC91700777604 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE83E90320ACC93700777604 /* UIColorExtensions.swift */,
+			);
+			path = Extensions;
+=======
 		D668D8F920B2005E0042F2B9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +102,7 @@
 			);
 			name = Extensions;
 			path = "New Group";
+>>>>>>> bunch_heroes
 			sourceTree = "<group>";
 		};
 		D6AEE90320AC11F30034A8A9 = {
@@ -111,7 +128,11 @@
 		D6AEE90E20AC11F30034A8A9 /* Pangolier */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+				CE83E90220ACC91700777604 /* Extensions */,
+=======
 				D668D8F920B2005E0042F2B9 /* Extensions */,
+>>>>>>> bunch_heroes
 				D6AEE90F20AC11F30034A8A9 /* AppDelegate.swift */,
 				D6D56E5020B2F86B00360AAB /* MainViewController.swift */,
 				D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */,
@@ -327,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6AEE92920AC26BB0034A8A9 /* HeroCollectionViewCell.swift in Sources */,
+				CE83E90420ACC93700777604 /* UIColorExtensions.swift in Sources */,
 				D6AEE91220AC11F30034A8A9 /* HeroesViewController.swift in Sources */,
 				D668D8FB20B200820042F2B9 /* Other.swift in Sources */,
 				D6D56E5120B2F86B00360AAB /* MainViewController.swift in Sources */,
