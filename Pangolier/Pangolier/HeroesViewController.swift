@@ -10,10 +10,12 @@ import UIKit
 import Firebase
 
 class HeroesViewController: UIViewController {
-
+  
   @IBOutlet weak var collectonView: UICollectionView!
   var heroes = [HeroModel]()
   var groupHeroes: [[HeroModel]] = [[]]
+  
+  weak var delegate: GetHeroDelegat?
 
   let sections: [(title: String, color: UIColor)] = [("Strange", .customRed),
                                                      ("Agility", .green),
@@ -21,8 +23,6 @@ class HeroesViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    FirebaseApp.configure()
-    
     // Get instets
     let colletctionViewLayout = self.collectonView.collectionViewLayout as! UICollectionViewFlowLayout
     colletctionViewLayout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10)
@@ -36,6 +36,7 @@ class HeroesViewController: UIViewController {
   }
 }
 
+//MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 extension HeroesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
   func numberOfSections(in collectionView: UICollectionView) -> Int{
     print(groupHeroes.count)
@@ -71,5 +72,19 @@ extension HeroesViewController: UICollectionViewDataSource, UICollectionViewDele
 
     }
     return reusableView
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let selectedHero = groupHeroes[indexPath.section][indexPath.row]
+
+    if let delegate = delegate {
+      delegate.didSelect(hero: selectedHero)
+      navigationController?.popViewController(animated: true)
+    } else {
+      let bunchHeroesViewController = storyboard?.instantiateViewController(withIdentifier: "BunchHeroesViewController") as! BunchHeroesViewController
+      bunchHeroesViewController.hero = selectedHero
+      bunchHeroesViewController.allHeroes = self.heroes
+      self.navigationController?.pushViewController(bunchHeroesViewController, animated: true)
+    }
   }
 }
