@@ -25,12 +25,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0HZ-sQ-ga4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1901" y="-662"/>
+            <point key="canvasLocation" x="-2294" y="-663"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="aGf-II-6ZI">
             <objects>
-                <tableViewController id="mMM-q6-1mz" sceneMemberID="viewController">
+                <tableViewController id="mMM-q6-1mz" customClass="MainViewController" customModule="Pangolier" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="UzI-ue-bPh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,7 +121,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXk-Xt-fRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1055.5" y="-664.5"/>
+            <point key="canvasLocation" x="-1457" y="-666"/>
         </scene>
         <!--Heroes View Controller-->
         <scene sceneID="tne-QT-ifu">
