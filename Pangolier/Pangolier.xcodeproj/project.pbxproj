@@ -11,6 +11,8 @@
 		D608EE1720AD5A520053CEEB /* BunchHeroesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D608EE1620AD5A520053CEEB /* BunchHeroesModel.swift */; };
 		D608EE1920AD6A680053CEEB /* BunchHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D608EE1820AD6A680053CEEB /* BunchHeroesViewController.swift */; };
 		D608EE1B20AD759F0053CEEB /* AddBunchHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */; };
+		D61F60B520B1B61B005C2777 /* BunchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61F60B420B1B61B005C2777 /* BunchTableViewCell.swift */; };
+		D668D8FB20B200820042F2B9 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = D668D8FA20B200820042F2B9 /* Other.swift */; };
 		D6AEE91020AC11F30034A8A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE90F20AC11F30034A8A9 /* AppDelegate.swift */; };
 		D6AEE91220AC11F30034A8A9 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */; };
 		D6AEE91520AC11F30034A8A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AEE91320AC11F30034A8A9 /* Main.storyboard */; };
@@ -20,6 +22,7 @@
 		D6AEE92520AC143D0034A8A9 /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE92420AC143D0034A8A9 /* HeroModel.swift */; };
 		D6AEE92920AC26BB0034A8A9 /* HeroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE92820AC26BB0034A8A9 /* HeroCollectionViewCell.swift */; };
 		D6AEE92B20AC485B0034A8A9 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE92A20AC485B0034A8A9 /* HeaderCollectionReusableView.swift */; };
+		D6D56E5120B2F86B00360AAB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D56E5020B2F86B00360AAB /* MainViewController.swift */; };
 		D6F7CEA420ACA65100E912B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6F7CEA320ACA65100E912B2 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +33,8 @@
 		D608EE1620AD5A520053CEEB /* BunchHeroesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunchHeroesModel.swift; sourceTree = "<group>"; };
 		D608EE1820AD6A680053CEEB /* BunchHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunchHeroesViewController.swift; sourceTree = "<group>"; };
 		D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBunchHeroesViewController.swift; sourceTree = "<group>"; };
+		D61F60B420B1B61B005C2777 /* BunchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunchTableViewCell.swift; sourceTree = "<group>"; };
+		D668D8FA20B200820042F2B9 /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 		D6AEE90C20AC11F30034A8A9 /* Pangolier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pangolier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6AEE90F20AC11F30034A8A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +46,7 @@
 		D6AEE92420AC143D0034A8A9 /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
 		D6AEE92820AC26BB0034A8A9 /* HeroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectionViewCell.swift; sourceTree = "<group>"; };
 		D6AEE92A20AC485B0034A8A9 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		D6D56E5020B2F86B00360AAB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D6F7CEA320ACA65100E912B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +79,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D668D8F920B2005E0042F2B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D668D8FA20B200820042F2B9 /* Other.swift */,
+			);
+			name = Extensions;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		D6AEE90320AC11F30034A8A9 = {
 			isa = PBXGroup;
 			children = (
@@ -96,7 +111,9 @@
 		D6AEE90E20AC11F30034A8A9 /* Pangolier */ = {
 			isa = PBXGroup;
 			children = (
+				D668D8F920B2005E0042F2B9 /* Extensions */,
 				D6AEE90F20AC11F30034A8A9 /* AppDelegate.swift */,
+				D6D56E5020B2F86B00360AAB /* MainViewController.swift */,
 				D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */,
 				D608EE1820AD6A680053CEEB /* BunchHeroesViewController.swift */,
 				D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */,
@@ -117,6 +134,7 @@
 			children = (
 				D6AEE92820AC26BB0034A8A9 /* HeroCollectionViewCell.swift */,
 				D6AEE92A20AC485B0034A8A9 /* HeaderCollectionReusableView.swift */,
+				D61F60B420B1B61B005C2777 /* BunchTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -142,6 +160,7 @@
 				D6AEE90920AC11F30034A8A9 /* Frameworks */,
 				D6AEE90A20AC11F30034A8A9 /* Resources */,
 				A2492FB7DBAA96041349DEA7 /* [CP] Embed Pods Frameworks */,
+				5E4F2D3B3EEC3D0D81C7C5D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,6 +219,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5E4F2D3B3EEC3D0D81C7C5D4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Pangolier/Pods-Pangolier-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseTwitterAuthUI.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseTwitterAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pangolier/Pods-Pangolier-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A2492FB7DBAA96041349DEA7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -207,13 +258,41 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pangolier/Pods-Pangolier-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -249,10 +328,13 @@
 			files = (
 				D6AEE92920AC26BB0034A8A9 /* HeroCollectionViewCell.swift in Sources */,
 				D6AEE91220AC11F30034A8A9 /* HeroesViewController.swift in Sources */,
+				D668D8FB20B200820042F2B9 /* Other.swift in Sources */,
+				D6D56E5120B2F86B00360AAB /* MainViewController.swift in Sources */,
 				D608EE1720AD5A520053CEEB /* BunchHeroesModel.swift in Sources */,
 				D608EE1B20AD759F0053CEEB /* AddBunchHeroesViewController.swift in Sources */,
 				D6AEE91020AC11F30034A8A9 /* AppDelegate.swift in Sources */,
 				D6AEE91820AC11F30034A8A9 /* Pangolier.xcdatamodeld in Sources */,
+				D61F60B520B1B61B005C2777 /* BunchTableViewCell.swift in Sources */,
 				D6AEE92B20AC485B0034A8A9 /* HeaderCollectionReusableView.swift in Sources */,
 				D6AEE92520AC143D0034A8A9 /* HeroModel.swift in Sources */,
 				D608EE1920AD6A680053CEEB /* BunchHeroesViewController.swift in Sources */,
@@ -402,10 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Pangolier/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pancorp.Pangolier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -420,10 +499,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Pangolier/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pancorp.Pangolier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
