@@ -17,7 +17,7 @@ class HeroesViewController: UIViewController {
   
   weak var delegate: GetHeroDelegat?
 
-  let sections: [(title: String, color: UIColor)] = [("Strange", .red),
+  let sections: [(title: String, color: UIColor)] = [("Strange", .customRed),
                                                      ("Agility", .green),
                                                      ("Intelect", .blue)]
 
