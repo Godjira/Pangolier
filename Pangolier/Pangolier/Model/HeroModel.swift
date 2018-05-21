@@ -29,6 +29,15 @@ struct HeroModel: Decodable {
 }
 
 class HeroManager {
+  
+  class func getHeroModelById(allHero: [HeroModel], id: Int) -> HeroModel? {
+    for hero in allHero{
+      if hero.id == id {
+        return hero
+      }
+    }
+    return nil
+  }
 
   class func getSortHeroesWithAttributes(heroes: [HeroModel]) -> [[HeroModel]] {
     let sortedHeroes = heroes.sorted(by: { $0.name < $1.name })

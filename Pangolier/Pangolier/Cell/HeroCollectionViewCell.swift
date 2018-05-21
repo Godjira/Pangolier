@@ -13,7 +13,7 @@ class HeroCollectionViewCell: UICollectionViewCell {
 
   @IBOutlet weak var heroImageView: UIImageView!
   
-  func setHeroImage(hero: HeroModel) -> Void {
+  func setHeroImage(hero: HeroModel) {
     let imageHero = UIImage(named: hero.name)
     heroImageView.image = imageHero
   }
