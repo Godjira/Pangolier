@@ -50,19 +50,28 @@ class AddBunchHeroesViewController: UIViewController {
   }
   
   @IBAction func saveButton(_ sender: Any) {
-    var heroesIds : [Int] = []
-    for hero in heroes {
-      heroesIds.append(hero.id)
+    if Auth.auth().currentUser == nil {
+      let loginVC = LoginViewController()
+      
+      loginVC.modalTransitionStyle = .crossDissolve
+      loginVC.modalPresentationStyle = .overCurrentContext
+      
+      navigationController?.present(loginVC, animated: true)
+    } else {
+      var heroesId: [Int] = []
+      for hero in heroes {
+        heroesId.append(hero.id)
+      }
+      for id in heroesId {
+        let sendDictionary = ["name" : bunchNameTextField.text ?? "noname",
+                              "user" : Auth.auth().currentUser?.uid,
+                              "heroes" : heroesId,
+                              "desc" : bunchDescTextView.text ?? "nodesc"] as [String : Any]
+
+        self.ref.child("bunch").child(String(id)).childByAutoId().setValue(sendDictionary)
+      }
     }
-    
-    let sendDictionary = ["name" : bunchNameTextField.text ?? "noname",
-                          "heroes" : heroesIds,
-                          "desc" : bunchDescTextView.text ?? "nodesc"] as [String : Any]
-    
-    
-    self.ref.child("bunch").childByAutoId().setValue(sendDictionary)
   }
-  
 }
 
 extension AddBunchHeroesViewController: UICollectionViewDelegate, UICollectionViewDataSource, GetHeroDelegat{

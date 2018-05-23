@@ -12,12 +12,14 @@ struct BunchModel {
   
   var id: String
   var name: String
+  var user: String
   var heroesId: [Int]
   var description: String
   
   init(with id: String, dictionary: [String : AnyObject]) {
     self.id = id
     name = dictionary["name"] as! String
+    user = dictionary["user"] as! String
     heroesId = dictionary["heroes"] as! [Int]
     description = dictionary["desc"] as! String
   }

@@ -42,6 +42,9 @@ extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
     Auth.auth().signInAndRetrieveData(with: credential) { (user, error) in
       print(user)
     }
+    
+    self.dismiss(animated: true)
+
   }
   
   

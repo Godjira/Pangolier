@@ -27,7 +27,7 @@ class BunchHeroesViewController: UIViewController {
     nameHeroTextLabel.text = hero.localizedName
     
     ref = Database.database().reference()
-    ref.child("bunch").observeSingleEvent(of: .value, with: { (snapshot) in
+    ref.child("bunch").child(String(hero.id)).observeSingleEvent(of: .value, with: { (snapshot) in
       let value = snapshot.value as! [String : AnyObject]
       
       self.bunchs = BunchManager.getBunchModels(fireBaseDic: value, chooseHero: self.hero)
