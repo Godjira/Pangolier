@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
 
     GIDSignIn.sharedInstance().signIn()
 
-    //Auth.auth().currentUser
+    
   }
   
 }
@@ -30,7 +30,10 @@ class LoginViewController: UIViewController {
 extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
 
   func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-    guard error == nil else { return }
+    guard error == nil else {
+      dismiss(animated: true)
+      return
+    }
 
     guard let authentication = user.authentication else { return }
     let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
@@ -40,5 +43,8 @@ extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
       print(user)
     }
   }
+  
+  
+  
 }
 
