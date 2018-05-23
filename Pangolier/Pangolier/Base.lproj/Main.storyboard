@@ -46,7 +46,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bunch Heroes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAH-Ri-Ssu">
-                                                    <rect key="frame" x="16" y="11" width="359" height="22"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -118,10 +118,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="AcG-0m-CVn"/>
+                    <connections>
+                        <outlet property="addBunchLabel" destination="V9H-7P-WUo" id="QCR-FI-ilr"/>
+                        <outlet property="bookmarksLabel" destination="XUW-hi-c5u" id="neZ-Kh-R4B"/>
+                        <outlet property="bunchHeroesLabel" destination="hAH-Ri-Ssu" id="ynC-pF-Kvj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXk-Xt-fRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1457" y="-666"/>
+            <point key="canvasLocation" x="-1458.4000000000001" y="-666.11694152923542"/>
         </scene>
         <!--Heroes View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -214,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-671" y="-665"/>
+            <point key="canvasLocation" x="-753" y="-663"/>
         </scene>
         <!--Bunch Heroes View Controller-->
         <scene sceneID="TuQ-1K-8EQ">
@@ -335,7 +340,7 @@ bunch</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6P-IN-ob3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-291" y="-666"/>
+            <point key="canvasLocation" x="-97" y="-666"/>
         </scene>
         <!--Add Bunch Heroes View Controller-->
         <scene sceneID="Q88-O7-3Rx">
@@ -454,7 +459,7 @@ bunch</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2h-Op-Bvs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="93" y="-663"/>
+            <point key="canvasLocation" x="566" y="-666"/>
         </scene>
     </scenes>
 </document>

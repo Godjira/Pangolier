@@ -23,11 +23,22 @@ class AddBunchHeroesViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    ref = Database.database().reference()
+      do {
+        try Auth.auth().signOut()
+      } catch let error as NSError {
+      }
     
+    if Auth.auth().currentUser == nil {
+      let loginVC = LoginViewController()
+      
+      loginVC.modalTransitionStyle = .crossDissolve
+      loginVC.modalPresentationStyle = .overCurrentContext
+      
+      navigationController?.present(loginVC, animated: true)
+    }
+    
+    ref = Database.database().reference()
   }
-  
-  
   
   @IBAction func addHeroAction(_ sender: Any) {
     print(heroes)
@@ -51,7 +62,6 @@ class AddBunchHeroesViewController: UIViewController {
     
     self.ref.child("bunch").childByAutoId().setValue(sendDictionary)
   }
-  
   
 }
 
