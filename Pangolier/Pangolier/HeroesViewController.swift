@@ -51,7 +51,7 @@ class HeroesViewController: UIViewController {
     self.delegate?.didSelect(heroes: saveHeroes)
     navigationController?.popViewController(animated: true)
   }
-
+  
 }
 
 //MARK: - UICollectionViewDataSource, UICollectionViewDelegate
@@ -96,16 +96,7 @@ extension HeroesViewController: UICollectionViewDataSource, UICollectionViewDele
     if let delegate = delegate {
       if selectHeroesIndex.count < 5 {
         selectHeroesIndex.append(indexPath)
-        let cell = collectonView.cellForItem(at: indexPath) as! HeroCollectionViewCell
-        UIView.animate(withDuration: 0.2) {
-          cell.selectView.alpha = 0.3
-        }
-        
       } else {
-        let cell = collectonView.cellForItem(at: indexPath) as! HeroCollectionViewCell
-        UIView.animate(withDuration: 0.4) {
-          cell.selectView.alpha = 0.0
-        }
         collectonView.deselectItem(at: indexPath, animated: true)
       }
     } else {
@@ -113,7 +104,7 @@ extension HeroesViewController: UICollectionViewDataSource, UICollectionViewDele
       let bunchHeroesViewController = storyboard?.instantiateViewController(withIdentifier: "BunchHeroesViewController") as! BunchHeroesViewController
       bunchHeroesViewController.hero = selectedHero
       bunchHeroesViewController.allHeroes = self.heroes
-      navigationController?.pushViewController(bunchHeroesViewController, animated: true)
+      self.navigationController?.pushViewController(bunchHeroesViewController, animated: true)
     }
   }
   
@@ -123,10 +114,6 @@ extension HeroesViewController: UICollectionViewDataSource, UICollectionViewDele
       for index in selectHeroesIndex {
         if index == indexPath {
           selectHeroesIndex.remove(at: i)
-          let cell = collectonView.cellForItem(at: indexPath) as! HeroCollectionViewCell
-          UIView.animate(withDuration: 0.4) {
-            cell.selectView.alpha = 0.0
-          }
         }
         i = i + 1
       }
