@@ -13,6 +13,7 @@ class HeroesViewController: UIViewController {
   @IBOutlet weak var collectonView: UICollectionView!
   var heroes = [HeroModel]()
   var groupHeroes: [[HeroModel]] = [[]]
+  var selectHeroesIndex: [IndexPath] = []
   
   weak var delegate: GetHeroDelegat?
 
@@ -22,6 +23,13 @@ class HeroesViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    if delegate != nil {
+      let item = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(HeroesViewController.saveHeroBunchAction))
+      navigationItem.rightBarButtonItem = item
+      collectonView.allowsMultipleSelection = true
+    }
+    
     // Get instets
     let colletctionViewLayout = self.collectonView.collectionViewLayout as! UICollectionViewFlowLayout
     colletctionViewLayout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10)
@@ -33,6 +41,17 @@ class HeroesViewController: UIViewController {
       self.groupHeroes = HeroManager.getSortHeroesWithAttributes(heroes: self.heroes)
     }
   }
+  
+  @objc func saveHeroBunchAction() {
+    print("tap save")
+    var saveHeroes: [HeroModel] = []
+    for indexPath in selectHeroesIndex{
+      saveHeroes.append(self.groupHeroes[indexPath.section][indexPath.row])
+    }
+    self.delegate?.didSelect(heroes: saveHeroes)
+    navigationController?.popViewController(animated: true)
+  }
+  
 }
 
 //MARK: - UICollectionViewDataSource, UICollectionViewDelegate
@@ -49,9 +68,8 @@ extension HeroesViewController: UICollectionViewDataSource, UICollectionViewDele
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HeroCollectionViewCell", for: indexPath) as! HeroCollectionViewCell
-
     cell.setHeroImage(hero: self.groupHeroes[indexPath.section][indexPath.row])
-
+    
     return cell
   }
 
@@ -74,16 +92,32 @@ extension HeroesViewController: UICollectionViewDataSource, UICollectionViewDele
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let selectedHero = groupHeroes[indexPath.section][indexPath.row]
 
     if let delegate = delegate {
-      delegate.didSelect(hero: selectedHero)
-      navigationController?.popViewController(animated: true)
+      if selectHeroesIndex.count < 5 {
+        selectHeroesIndex.append(indexPath)
+      } else {
+        collectonView.deselectItem(at: indexPath, animated: true)
+      }
     } else {
+      let selectedHero = groupHeroes[indexPath.section][indexPath.row]
       let bunchHeroesViewController = storyboard?.instantiateViewController(withIdentifier: "BunchHeroesViewController") as! BunchHeroesViewController
       bunchHeroesViewController.hero = selectedHero
       bunchHeroesViewController.allHeroes = self.heroes
       self.navigationController?.pushViewController(bunchHeroesViewController, animated: true)
     }
   }
+  
+  func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    var i = 0
+    if let delegate = delegate {
+      for index in selectHeroesIndex {
+        if index == indexPath {
+          selectHeroesIndex.remove(at: i)
+        }
+        i = i + 1
+      }
+    }
+  }
+  
 }
