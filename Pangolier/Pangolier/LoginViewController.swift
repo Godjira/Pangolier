@@ -19,10 +19,12 @@ class LoginViewController: UIViewController {
 
     GIDSignIn.sharedInstance().delegate = self
     GIDSignIn.sharedInstance().uiDelegate = self
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
 
     GIDSignIn.sharedInstance().signIn()
-
-    
   }
   
 }
