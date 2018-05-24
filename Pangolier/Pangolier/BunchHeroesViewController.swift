@@ -28,9 +28,11 @@ class BunchHeroesViewController: UIViewController {
     
     ref = Database.database().reference()
     ref.child("bunch").child(String(hero.id)).observeSingleEvent(of: .value, with: { (snapshot) in
-      let value = snapshot.value as! [String : AnyObject]
       
-      self.bunchs = BunchManager.getBunchModels(fireBaseDic: value, chooseHero: self.hero)
+      if snapshot.exists() {
+        let value = snapshot.value as! [String : AnyObject]
+        self.bunchs = BunchManager.getBunchModels(fireBaseDic: value, chooseHero: self.hero)
+    }
       
       DispatchQueue.main.async {
         self.tableView.reloadData()
@@ -38,10 +40,6 @@ class BunchHeroesViewController: UIViewController {
     }) { (error) in
       print(error)
     }
-    
-    
-    
-    
     
   }
   

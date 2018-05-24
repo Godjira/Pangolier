@@ -12,6 +12,7 @@ import UIKit
 class HeroCollectionViewCell: UICollectionViewCell {
 
   @IBOutlet weak var heroImageView: UIImageView!
+  @IBOutlet weak var selectView: UIView!
   
   func setHeroImage(hero: HeroModel) {
     let imageHero = UIImage(named: hero.name)

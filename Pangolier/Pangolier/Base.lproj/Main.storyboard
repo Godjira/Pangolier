@@ -146,7 +146,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeroCollectionViewCell" id="hDZ-lj-lHz" customClass="HeroCollectionViewCell" customModule="Pangolier" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" reuseIdentifier="HeroCollectionViewCell" id="hDZ-lj-lHz" customClass="HeroCollectionViewCell" customModule="Pangolier" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="80" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -156,16 +156,26 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yd5-eK-hFr">
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
                                                 </imageView>
+                                                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="df8-Xp-ayN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.44545232962898385" green="0.88473526554404147" blue="0.87499467478616111" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Yd5-eK-hFr" secondAttribute="trailing" id="2tu-bU-ZFX"/>
+                                            <constraint firstItem="df8-Xp-ayN" firstAttribute="top" secondItem="hDZ-lj-lHz" secondAttribute="top" id="DiH-oQ-bPw"/>
                                             <constraint firstItem="Yd5-eK-hFr" firstAttribute="top" secondItem="hDZ-lj-lHz" secondAttribute="top" id="P9u-zF-SZG"/>
+                                            <constraint firstItem="df8-Xp-ayN" firstAttribute="leading" secondItem="hDZ-lj-lHz" secondAttribute="leading" id="Pfo-po-q9t"/>
+                                            <constraint firstAttribute="bottom" secondItem="df8-Xp-ayN" secondAttribute="bottom" id="Pxl-6Y-hMH"/>
                                             <constraint firstItem="Yd5-eK-hFr" firstAttribute="leading" secondItem="hDZ-lj-lHz" secondAttribute="leading" id="dPf-c4-Xvz"/>
+                                            <constraint firstAttribute="trailing" secondItem="df8-Xp-ayN" secondAttribute="trailing" id="uQJ-Jz-h6n"/>
                                             <constraint firstAttribute="bottom" secondItem="Yd5-eK-hFr" secondAttribute="bottom" id="xtL-qW-QZJ"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="heroImageView" destination="Yd5-eK-hFr" id="NYP-7K-hwn"/>
+                                            <outlet property="selectView" destination="df8-Xp-ayN" id="abO-Hf-G2X"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -274,26 +284,30 @@ bunch</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bunch name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8c-sb-AgV">
-                                                    <rect key="frame" x="201" y="0.0" width="127" height="80"/>
+                                                    <rect key="frame" x="225" y="0.0" width="103" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ueB-HP-96Y">
-                                                    <rect key="frame" x="15" y="11" width="44" height="58"/>
+                                                    <rect key="frame" x="15" y="14" width="40" height="53"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dkv-o6-WLh">
-                                                    <rect key="frame" x="105" y="11" width="44" height="58"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uc9-uv-ES6">
+                                                    <rect key="frame" x="54" y="14" width="40" height="53"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zjd-rr-VgS">
-                                                    <rect key="frame" x="60" y="11" width="44" height="58"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="02A-fG-94r">
+                                                    <rect key="frame" x="93" y="14" width="40" height="53"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PhD-nn-bs1">
-                                                    <rect key="frame" x="149" y="11" width="44" height="58"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hne-Uz-lRD">
+                                                    <rect key="frame" x="132" y="14" width="40" height="53"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YUv-c6-sIl">
+                                                    <rect key="frame" x="170" y="14" width="40" height="53"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -301,9 +315,10 @@ bunch</string>
                                         <connections>
                                             <outlet property="bunchNameLabel" destination="X8c-sb-AgV" id="v9c-Qh-igI"/>
                                             <outlet property="hero1Image" destination="ueB-HP-96Y" id="HdO-jd-dKG"/>
-                                            <outlet property="hero2Image" destination="zjd-rr-VgS" id="pJP-uA-GFT"/>
-                                            <outlet property="hero3Image" destination="dkv-o6-WLh" id="SkE-46-FxU"/>
-                                            <outlet property="hero4Image" destination="PhD-nn-bs1" id="6aG-dq-ydo"/>
+                                            <outlet property="hero2Image" destination="Uc9-uv-ES6" id="dmf-HY-YND"/>
+                                            <outlet property="hero3Image" destination="02A-fG-94r" id="ETZ-nN-dKG"/>
+                                            <outlet property="hero4Image" destination="Hne-Uz-lRD" id="24J-y0-3yb"/>
+                                            <outlet property="hero5Image" destination="YUv-c6-sIl" id="xe0-Nb-qI9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -340,7 +355,7 @@ bunch</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6P-IN-ob3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-97" y="-666"/>
+            <point key="canvasLocation" x="-98.400000000000006" y="-666.11694152923542"/>
         </scene>
         <!--Add Bunch Heroes View Controller-->
         <scene sceneID="Q88-O7-3Rx">
