@@ -76,6 +76,7 @@ class AddBunchHeroesViewController: UIViewController {
 
 extension AddBunchHeroesViewController: UICollectionViewDelegate, UICollectionViewDataSource, GetHeroDelegat{
   
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return heroes.count
   }
@@ -88,8 +89,8 @@ extension AddBunchHeroesViewController: UICollectionViewDelegate, UICollectionVi
     return cell
   }
   
-  func didSelect(hero: HeroModel) {
-    heroes.append(hero)
+  func didSelect(heroes: [HeroModel]) {
+    self.heroes = heroes
     collectionView.reloadData()
   }
   
@@ -97,6 +98,6 @@ extension AddBunchHeroesViewController: UICollectionViewDelegate, UICollectionVi
 
 protocol GetHeroDelegat: class {
   
-  func didSelect(hero: HeroModel)
+  func didSelect(heroes: [HeroModel])
   
 }
