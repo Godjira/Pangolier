@@ -53,6 +53,8 @@ class AddBunchHeroesViewController: UIViewController {
       
       navigationController?.present(loginVC, animated: true)
     } else {
+      let timeStamp = Int(NSDate.timeIntervalSinceReferenceDate * 1000)
+      ref.childByAutoId().key
       if heroes.count > 1 {
         var heroesId: [Int] = []
         for hero in heroes {
@@ -62,10 +64,13 @@ class AddBunchHeroesViewController: UIViewController {
           let sendDictionary = ["name" : bunchNameTextField.text ?? "noname",
                                 "user" : Auth.auth().currentUser?.uid ?? "",
                                 "heroes" : heroesId,
-                                "desc" : bunchDescTextView.text ?? "nodesc"] as [String : Any]
+                                "desc" : bunchDescTextView.text ?? "nodesc",
+                                "bunch_data_id" : String(timeStamp)] as [String : Any]
           
           self.ref.child("bunch").child(String(id)).childByAutoId().setValue(sendDictionary)
         }
+        let sendDataDictionary = ["rate" : [" "]]
+        self.ref.child("bunch_data").child(String(timeStamp)).setValue(sendDataDictionary)
         navigationController?.popViewController(animated: true)
       }
     }
