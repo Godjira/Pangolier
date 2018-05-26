@@ -14,6 +14,7 @@
 		D61F60B520B1B61B005C2777 /* BunchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61F60B420B1B61B005C2777 /* BunchTableViewCell.swift */; };
 		D668D8FB20B200820042F2B9 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = D668D8FA20B200820042F2B9 /* Other.swift */; };
 		D6797C5E20B56F4700720491 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6797C5D20B56F4700720491 /* MainViewController.swift */; };
+		D6A9657020B9D39F00919D88 /* ArrayDeleting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A9656F20B9D39F00919D88 /* ArrayDeleting.swift */; };
 		D6AEE91020AC11F30034A8A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE90F20AC11F30034A8A9 /* AppDelegate.swift */; };
 		D6AEE91220AC11F30034A8A9 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */; };
 		D6AEE91520AC11F30034A8A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AEE91320AC11F30034A8A9 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		D61F60B420B1B61B005C2777 /* BunchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunchTableViewCell.swift; sourceTree = "<group>"; };
 		D668D8FA20B200820042F2B9 /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 		D6797C5D20B56F4700720491 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D6A9656F20B9D39F00919D88 /* ArrayDeleting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDeleting.swift; sourceTree = "<group>"; };
 		D6AEE90C20AC11F30034A8A9 /* Pangolier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pangolier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6AEE90F20AC11F30034A8A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				D668D8FA20B200820042F2B9 /* Other.swift */,
+				D6A9656F20B9D39F00919D88 /* ArrayDeleting.swift */,
 			);
 			name = Extensions;
 			path = "New Group";
@@ -294,6 +297,7 @@
 				D6AEE92920AC26BB0034A8A9 /* HeroCollectionViewCell.swift in Sources */,
 				D6797C5E20B56F4700720491 /* MainViewController.swift in Sources */,
 				D6AEE91220AC11F30034A8A9 /* HeroesViewController.swift in Sources */,
+				D6A9657020B9D39F00919D88 /* ArrayDeleting.swift in Sources */,
 				D668D8FB20B200820042F2B9 /* Other.swift in Sources */,
 				D6D56E5120B2F86B00360AAB /* LoginViewController.swift in Sources */,
 				D608EE1720AD5A520053CEEB /* BunchHeroesModel.swift in Sources */,

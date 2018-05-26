@@ -47,7 +47,7 @@ class BunchManager {
   }
   
   
-  class func getRate(bunch: BunchModel) -> [String]{
+  class func getRate(bunch: BunchModel, completion: @escaping (_ rate: [String]) -> Void){
     let ref = Database.database().reference()
     var rateArrayUserId: [String] = []
     
@@ -58,12 +58,21 @@ class BunchManager {
         let value = snapshot.value as! [String : [String]]
         rateArrayUserId = value["rate"]!
       }
-      
+      DispatchQueue.main.async {
+        completion(rateArrayUserId)
+      }
       
     }) { (error) in
       print(error)
     }
-    return rateArrayUserId
+  }
+  
+  class func sendRate(bunch_with_rate bunch: BunchModel){
+    let ref = Database.database().reference()
+    
+    let sendDataDictionary = ["rate" : bunch.rate]
+    ref.child("bunch_data").child(bunch.dataId).setValue(sendDataDictionary)
+    
   }
   
 }
