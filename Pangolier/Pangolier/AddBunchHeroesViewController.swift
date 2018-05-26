@@ -22,9 +22,10 @@ class AddBunchHeroesViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-   
-    
+//    do {
+//      try Auth.auth().signOut()
+//    } catch let error as NSError {
+//    }
     if Auth.auth().currentUser == nil {
       let loginVC = LoginViewController()
       
@@ -59,7 +60,7 @@ class AddBunchHeroesViewController: UIViewController {
         }
         for id in heroesId {
           let sendDictionary = ["name" : bunchNameTextField.text ?? "noname",
-                                "user" : Auth.auth().currentUser?.uid,
+                                "user" : Auth.auth().currentUser?.uid ?? "",
                                 "heroes" : heroesId,
                                 "desc" : bunchDescTextView.text ?? "nodesc"] as [String : Any]
           

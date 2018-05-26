@@ -17,8 +17,10 @@ class LoginViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
     GIDSignIn.sharedInstance().delegate = self
     GIDSignIn.sharedInstance().uiDelegate = self
+    
   }
 
   override func viewWillAppear(_ animated: Bool) {
