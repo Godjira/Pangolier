@@ -107,10 +107,10 @@ extension HeroesViewController: UICollectionViewDataSource, UICollectionViewDele
     else {
       collectionView.deselectItem(at: indexPath, animated: true)
       let selectedHero = groupHeroes[indexPath.section][indexPath.row]
-      let bunchHeroesViewController = storyboard?.instantiateViewController(withIdentifier: "BunchHeroesViewController") as! BunchHeroesViewController
-      bunchHeroesViewController.hero = selectedHero
-      bunchHeroesViewController.allHeroes = self.heroes
-      navigationController?.pushViewController(bunchHeroesViewController, animated: true)
+      let heroVC = storyboard?.instantiateViewController(withIdentifier: "HeroViewController") as! HeroViewController
+      heroVC.hero = selectedHero
+      heroVC.allHeroes = self.heroes
+      navigationController?.pushViewController(heroVC, animated: true)
     }
   }
   

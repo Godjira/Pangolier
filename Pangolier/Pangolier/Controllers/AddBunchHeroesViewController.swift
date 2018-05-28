@@ -80,6 +80,10 @@ class AddBunchHeroesViewController: UIViewController {
 extension AddBunchHeroesViewController: UICollectionViewDelegate, UICollectionViewDataSource, GetHeroDelegat{
   
   
+  func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+   return false
+  }
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return heroes.count
   }

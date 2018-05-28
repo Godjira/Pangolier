@@ -17,14 +17,12 @@ class BunchHeroesViewController: UIViewController {
   var ref: DatabaseReference!
   var bunchs: [BunchModel] = []
   
-  @IBOutlet weak var nameHeroTextLabel: UILabel!
-  @IBOutlet weak var heroImageView: UIImageView!
+
   @IBOutlet weak var tableView: UITableView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    heroImageView.image = UIImage(named: hero.name)
-    nameHeroTextLabel.text = hero.localizedName
+  
     
     ref = Database.database().reference()
     ref.child("bunch").child(String(hero.id)).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -65,7 +63,8 @@ extension BunchHeroesViewController: UITableViewDelegate, UITableViewDataSource 
     return cell
   }
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-    return 80.0
+    return 116.0
   }
+
   
 }

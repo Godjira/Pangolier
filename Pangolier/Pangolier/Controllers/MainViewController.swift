@@ -19,25 +19,18 @@ class MainViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let tap = UITapGestureRecognizer(target: self, action: #selector(MainViewController.tapBunchHeroes))
-    bunchHeroesLabel.isUserInteractionEnabled = true
-    bunchHeroesLabel.addGestureRecognizer(tap)
-    
-    let tapAddBunch = UITapGestureRecognizer(target: self, action: #selector(MainViewController.tapAddBunch))
-    addBunchLabel.isUserInteractionEnabled = true
-    addBunchLabel.addGestureRecognizer(tapAddBunch)
+    bunchHeroesLabel.addGusterTap(target: self, action: #selector(MainViewController.tapBunchHeroes))
+    addBunchLabel.addGusterTap(target: self, action: #selector(MainViewController.tapAddBunch))
     
   }
   
   @objc func tapBunchHeroes(sender:UITapGestureRecognizer) {
     let heroesVC = storyboard?.instantiateViewController(withIdentifier: "HeroesViewController") as! HeroesViewController
-    
     navigationController?.pushViewController(heroesVC, animated: true)
   }
   
   @objc func tapAddBunch(sender:UITapGestureRecognizer) {
     let addBunchVC = storyboard?.instantiateViewController(withIdentifier: "AddBunchHeroesViewController") as! AddBunchHeroesViewController
-    
     navigationController?.pushViewController(addBunchVC, animated: true)
   }
   
