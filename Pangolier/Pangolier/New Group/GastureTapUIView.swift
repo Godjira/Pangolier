@@ -11,7 +11,7 @@ import UIKit
 
 extension UIView {
   
-  func addGusterTap(target: Any?, action: Selector?) {
+  func addGestureTap(target: Any?, action: Selector?) {
     let tap = UITapGestureRecognizer(target: target, action: action)
     self.isUserInteractionEnabled = true
     self.addGestureRecognizer(tap)

@@ -19,8 +19,8 @@ class MainViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    bunchHeroesLabel.addGusterTap(target: self, action: #selector(MainViewController.tapBunchHeroes))
-    addBunchLabel.addGusterTap(target: self, action: #selector(MainViewController.tapAddBunch))
+    bunchHeroesLabel.addGestureTap(target: self, action: #selector(MainViewController.tapBunchHeroes))
+    addBunchLabel.addGestureTap(target: self, action: #selector(MainViewController.tapAddBunch))
     
   }
   
