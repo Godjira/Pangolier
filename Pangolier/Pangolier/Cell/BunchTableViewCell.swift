@@ -8,19 +8,32 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class BunchTableViewCell: UITableViewCell {
   
-
+  var cellBunch: BunchModel!
+  
   @IBOutlet weak var hero1Image: UIImageView!
   @IBOutlet weak var hero2Image: UIImageView!
   @IBOutlet weak var hero3Image: UIImageView!
   @IBOutlet weak var hero4Image: UIImageView!
+  @IBOutlet weak var hero5Image: UIImageView!
   @IBOutlet weak var bunchNameLabel: UILabel!
+  @IBOutlet weak var rateLabel: UILabel!
+  @IBOutlet weak var buttonLike: UIImageView!
+  
   
   func setImagesAndText(allHeroes: [HeroModel], choosedHero: HeroModel, bunch: BunchModel) {
     bunchNameLabel.text = bunch.name
-    let heroImages = [hero1Image, hero2Image, hero3Image, hero4Image]
+    cellBunch = bunch
+    BunchManager.getRate(bunch: cellBunch, completion: { (rateArray) in
+      self.cellBunch.rate = rateArray
+      self.rateLabel.text = String(self.cellBunch.rate.count)
+    })
+    
+    
+    let heroImages = [hero1Image, hero2Image, hero3Image, hero4Image, hero5Image]
     //delete chosed hero
     var bunchHeroes: [HeroModel] = []
     for heroId in bunch.heroesId{
@@ -33,6 +46,29 @@ class BunchTableViewCell: UITableViewCell {
       i = i + 1
     }
     
+    let tap = UITapGestureRecognizer(target: self, action: #selector(BunchTableViewCell.tapLikeButton))
+    buttonLike.isUserInteractionEnabled = true
+    buttonLike.addGestureRecognizer(tap)
+    
     
   }
+  
+  @objc func tapLikeButton() {
+    if Auth.auth().currentUser == nil {
+      return
+    }
+    for user in cellBunch.rate{
+      if user == Auth.auth().currentUser?.uid {
+        cellBunch.rate.remove(at:cellBunch.rate.index(of: user)!)
+        BunchManager.sendRate(bunch_with_rate: cellBunch)
+        self.rateLabel.text = String(self.cellBunch.rate.count)
+        return
+      }
+    }
+        cellBunch.rate.append((Auth.auth().currentUser?.uid)!)
+        BunchManager.sendRate(bunch_with_rate: cellBunch)
+        self.rateLabel.text = String(self.cellBunch.rate.count)
+        return
+  }
+  
 }
