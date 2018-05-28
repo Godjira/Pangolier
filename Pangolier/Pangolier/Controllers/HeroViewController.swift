@@ -30,12 +30,13 @@ class HeroViewController: UIViewController {
     heroImageView.image = UIImage(named: hero.name)
     nameHeroTextLabel.text = hero.localizedName
     tabBar.delegate = self
+    tabBar.selectedItem = gideTabBarItem
     
     let bunchVC = storyboard?.instantiateViewController(withIdentifier: "BunchHeroesViewController") as! BunchHeroesViewController
     bunchVC.hero = self.hero
     bunchVC.allHeroes = self.allHeroes
     
-    let gideVC = storyboard?.instantiateViewController(withIdentifier: "GideViewController")
+    let guideVC = storyboard?.instantiateViewController(withIdentifier: "GideViewController")
     
     let bounds = UIScreen.main.bounds
     width = bounds.size.width
@@ -43,7 +44,8 @@ class HeroViewController: UIViewController {
     
     scrollView.contentSize = CGSize(width: 2 * width, height: height)
     
-    let viewControllers = [bunchVC, gideVC]
+    let viewControllers = [guideVC, bunchVC]
+
     
     var idx: Int = 0
     
@@ -57,6 +59,21 @@ class HeroViewController: UIViewController {
       idx = idx + 1
     }
   }
+  
+  @IBAction func addAction(_ sender: Any) {
+    switch tabBar.selectedItem {
+    case gideTabBarItem:
+      let addGuideVC = storyboard?.instantiateViewController(withIdentifier: "AddGuideHeroController")
+      navigationController?.pushViewController(addGuideVC!, animated: true)
+    case bunchTabBarItem:
+      let addBunchVC = storyboard?.instantiateViewController(withIdentifier: "AddBunchHeroesViewController")
+      navigationController?.pushViewController(addBunchVC!, animated: true)
+    default:
+      let addGuideVC = storyboard?.instantiateViewController(withIdentifier: "AddGuideHeroController")
+      navigationController?.pushViewController(addGuideVC!, animated: true)
+    }
+  }
+  
   
 }
 

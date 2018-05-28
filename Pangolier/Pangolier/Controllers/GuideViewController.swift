@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class GideViewController: UIViewController {
+class GuideViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
   
@@ -18,7 +18,7 @@ class GideViewController: UIViewController {
   
 }
 
-extension GideViewController: UITableViewDelegate, UITableViewDataSource {
+extension GuideViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 3

@@ -13,7 +13,8 @@
 		D608EE1B20AD759F0053CEEB /* AddBunchHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */; };
 		D61F60B520B1B61B005C2777 /* BunchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61F60B420B1B61B005C2777 /* BunchTableViewCell.swift */; };
 		D665B84720BC179D002E3103 /* HeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B84620BC179D002E3103 /* HeroViewController.swift */; };
-		D665B84920BC1AB0002E3103 /* GideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B84820BC1AB0002E3103 /* GideViewController.swift */; };
+		D665B84920BC1AB0002E3103 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B84820BC1AB0002E3103 /* GuideViewController.swift */; };
+		D665B84F20BC62C8002E3103 /* AddGuideHeroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B84E20BC62C8002E3103 /* AddGuideHeroController.swift */; };
 		D668D8FB20B200820042F2B9 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = D668D8FA20B200820042F2B9 /* Other.swift */; };
 		D6797C5E20B56F4700720491 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6797C5D20B56F4700720491 /* MainViewController.swift */; };
 		D6A9657020B9D39F00919D88 /* ArrayDeleting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A9656F20B9D39F00919D88 /* ArrayDeleting.swift */; };
@@ -26,7 +27,7 @@
 		D6AEE92520AC143D0034A8A9 /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE92420AC143D0034A8A9 /* HeroModel.swift */; };
 		D6AEE92920AC26BB0034A8A9 /* HeroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE92820AC26BB0034A8A9 /* HeroCollectionViewCell.swift */; };
 		D6AEE92B20AC485B0034A8A9 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE92A20AC485B0034A8A9 /* HeaderCollectionReusableView.swift */; };
-		D6C1C46C20BB296A006BEE03 /* GastureTapUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C1C46B20BB296A006BEE03 /* GastureTapUIView.swift */; };
+		D6C1C46C20BB296A006BEE03 /* GestureTapUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C1C46B20BB296A006BEE03 /* GestureTapUIView.swift */; };
 		D6D56E5120B2F86B00360AAB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D56E5020B2F86B00360AAB /* LoginViewController.swift */; };
 		D6F7CEA420ACA65100E912B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6F7CEA320ACA65100E912B2 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -40,7 +41,8 @@
 		D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBunchHeroesViewController.swift; sourceTree = "<group>"; };
 		D61F60B420B1B61B005C2777 /* BunchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunchTableViewCell.swift; sourceTree = "<group>"; };
 		D665B84620BC179D002E3103 /* HeroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewController.swift; sourceTree = "<group>"; };
-		D665B84820BC1AB0002E3103 /* GideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GideViewController.swift; sourceTree = "<group>"; };
+		D665B84820BC1AB0002E3103 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		D665B84E20BC62C8002E3103 /* AddGuideHeroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGuideHeroController.swift; sourceTree = "<group>"; };
 		D668D8FA20B200820042F2B9 /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 		D6797C5D20B56F4700720491 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D6A9656F20B9D39F00919D88 /* ArrayDeleting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDeleting.swift; sourceTree = "<group>"; };
@@ -55,7 +57,7 @@
 		D6AEE92420AC143D0034A8A9 /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
 		D6AEE92820AC26BB0034A8A9 /* HeroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectionViewCell.swift; sourceTree = "<group>"; };
 		D6AEE92A20AC485B0034A8A9 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
-		D6C1C46B20BB296A006BEE03 /* GastureTapUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastureTapUIView.swift; sourceTree = "<group>"; };
+		D6C1C46B20BB296A006BEE03 /* GestureTapUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureTapUIView.swift; sourceTree = "<group>"; };
 		D6D56E5020B2F86B00360AAB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D6F7CEA320ACA65100E912B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,7 +100,8 @@
 				D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */,
 				D665B84620BC179D002E3103 /* HeroViewController.swift */,
 				D608EE1820AD6A680053CEEB /* BunchHeroesViewController.swift */,
-				D665B84820BC1AB0002E3103 /* GideViewController.swift */,
+				D665B84820BC1AB0002E3103 /* GuideViewController.swift */,
+				D665B84E20BC62C8002E3103 /* AddGuideHeroController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -108,7 +111,7 @@
 			children = (
 				D668D8FA20B200820042F2B9 /* Other.swift */,
 				D6A9656F20B9D39F00919D88 /* ArrayDeleting.swift */,
-				D6C1C46B20BB296A006BEE03 /* GastureTapUIView.swift */,
+				D6C1C46B20BB296A006BEE03 /* GestureTapUIView.swift */,
 			);
 			name = Extensions;
 			path = "New Group";
@@ -320,9 +323,10 @@
 				D6D56E5120B2F86B00360AAB /* LoginViewController.swift in Sources */,
 				D608EE1720AD5A520053CEEB /* BunchHeroesModel.swift in Sources */,
 				D608EE1B20AD759F0053CEEB /* AddBunchHeroesViewController.swift in Sources */,
-				D665B84920BC1AB0002E3103 /* GideViewController.swift in Sources */,
+				D665B84920BC1AB0002E3103 /* GuideViewController.swift in Sources */,
 				D6AEE91020AC11F30034A8A9 /* AppDelegate.swift in Sources */,
-				D6C1C46C20BB296A006BEE03 /* GastureTapUIView.swift in Sources */,
+				D6C1C46C20BB296A006BEE03 /* GestureTapUIView.swift in Sources */,
+				D665B84F20BC62C8002E3103 /* AddGuideHeroController.swift in Sources */,
 				D6AEE91820AC11F30034A8A9 /* Pangolier.xcdatamodeld in Sources */,
 				D61F60B520B1B61B005C2777 /* BunchTableViewCell.swift in Sources */,
 				D6AEE92B20AC485B0034A8A9 /* HeaderCollectionReusableView.swift in Sources */,
