@@ -145,10 +145,10 @@
             </objects>
             <point key="canvasLocation" x="-1458.4000000000001" y="-666.11694152923542"/>
         </scene>
-        <!--Heroes View Controller-->
+        <!--Base Heroes View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="HeroesViewController" id="BYZ-38-t0r" customClass="HeroesViewController" customModule="Pangolier" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BaseHeroesViewController" id="BYZ-38-t0r" customClass="BaseHeroesViewController" customModule="Pangolier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -225,8 +225,8 @@
                                     </connections>
                                 </collectionReusableView>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="rio-u2-6NX"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Ghi-FR-MEN"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="hiB-fG-xPP"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="qWo-CN-2WX"/>
                                 </connections>
                             </collectionView>
                         </subviews>

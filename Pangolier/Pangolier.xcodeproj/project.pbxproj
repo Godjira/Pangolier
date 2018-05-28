@@ -15,6 +15,7 @@
 		D665B84720BC179D002E3103 /* HeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B84620BC179D002E3103 /* HeroViewController.swift */; };
 		D665B84920BC1AB0002E3103 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B84820BC1AB0002E3103 /* GuideViewController.swift */; };
 		D665B84F20BC62C8002E3103 /* AddGuideHeroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B84E20BC62C8002E3103 /* AddGuideHeroController.swift */; };
+		D665B85120BC8EDB002E3103 /* BaseHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B85020BC8EDB002E3103 /* BaseHeroesViewController.swift */; };
 		D668D8FB20B200820042F2B9 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = D668D8FA20B200820042F2B9 /* Other.swift */; };
 		D6797C5E20B56F4700720491 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6797C5D20B56F4700720491 /* MainViewController.swift */; };
 		D6A9657020B9D39F00919D88 /* ArrayDeleting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A9656F20B9D39F00919D88 /* ArrayDeleting.swift */; };
@@ -43,6 +44,7 @@
 		D665B84620BC179D002E3103 /* HeroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewController.swift; sourceTree = "<group>"; };
 		D665B84820BC1AB0002E3103 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		D665B84E20BC62C8002E3103 /* AddGuideHeroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGuideHeroController.swift; sourceTree = "<group>"; };
+		D665B85020BC8EDB002E3103 /* BaseHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeroesViewController.swift; sourceTree = "<group>"; };
 		D668D8FA20B200820042F2B9 /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 		D6797C5D20B56F4700720491 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D6A9656F20B9D39F00919D88 /* ArrayDeleting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDeleting.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				D6797C5D20B56F4700720491 /* MainViewController.swift */,
+				D665B85220BC9102002E3103 /* HeroesViewControllers */,
 				D6D56E5020B2F86B00360AAB /* LoginViewController.swift */,
 				D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */,
 				D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */,
@@ -104,6 +107,14 @@
 				D665B84E20BC62C8002E3103 /* AddGuideHeroController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D665B85220BC9102002E3103 /* HeroesViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D665B85020BC8EDB002E3103 /* BaseHeroesViewController.swift */,
+			);
+			path = HeroesViewControllers;
 			sourceTree = "<group>";
 		};
 		D668D8F920B2005E0042F2B9 /* Extensions */ = {
@@ -318,6 +329,7 @@
 				D6AEE92920AC26BB0034A8A9 /* HeroCollectionViewCell.swift in Sources */,
 				D6797C5E20B56F4700720491 /* MainViewController.swift in Sources */,
 				D6AEE91220AC11F30034A8A9 /* HeroesViewController.swift in Sources */,
+				D665B85120BC8EDB002E3103 /* BaseHeroesViewController.swift in Sources */,
 				D6A9657020B9D39F00919D88 /* ArrayDeleting.swift in Sources */,
 				D668D8FB20B200820042F2B9 /* Other.swift in Sources */,
 				D6D56E5120B2F86B00360AAB /* LoginViewController.swift in Sources */,

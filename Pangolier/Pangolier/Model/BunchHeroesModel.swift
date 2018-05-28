@@ -34,6 +34,28 @@ import Firebase
 
 class BunchManager {
   
+  class func sendBunch(heroes: [HeroModel]) {
+    let bunchId = Int(NSDate.timeIntervalSinceReferenceDate * 1000)
+    let ref = Database.database().reference()
+    if heroes.count > 1 {
+      var heroesId: [Int] = []
+      for hero in heroes {
+        heroesId.append(hero.id)
+      }
+      for id in heroesId {
+        let sendDictionary = ["name" : bunchNameTextField.text ?? "noname",
+                              "user" : Auth.auth().currentUser?.uid ?? "",
+                              "heroes" : heroesId,
+                              "desc" : bunchDescTextView.text ?? "nodesc",
+                              "bunch_data_id" : String(timeStamp)] as [String : Any]
+        
+        self.ref.child("bunch").child(String(id)).childByAutoId().setValue(sendDictionary)
+      }
+      let sendDataDictionary = ["rate" : [" "]]
+      self.ref.child("bunch_data").child(String(timeStamp)).setValue(sendDataDictionary)
+      navigationController?.popViewController(animated: true)
+  }
+  
   class func getBunchModels(fireBaseDic: [String : AnyObject], chooseHero: HeroModel) -> [BunchModel] {
     var bunchs = [BunchModel]()
     

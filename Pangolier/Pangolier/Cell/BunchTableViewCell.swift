@@ -40,10 +40,8 @@ class BunchTableViewCell: UITableViewCell {
       bunchHeroes.append(HeroManager.getHeroModelById(allHero: allHeroes, id: heroId)!)
     }
     
-    var i = 0
-    for hero in bunchHeroes{
-      heroImages[i]?.image = UIImage(named: hero.name)
-      i = i + 1
+    bunchHeroes.enumerated().forEach { index, hero in
+      heroImages[index]?.image = UIImage(named: hero.name)
     }
     
     let tap = UITapGestureRecognizer(target: self, action: #selector(BunchTableViewCell.tapLikeButton))

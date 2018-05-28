@@ -20,8 +20,6 @@ class AddGuideHeroController: UIViewController {
     
     let oldWidth = textAttachment.image?.size.width
     
-    //I'm subtracting 10px to make the image display nicely, accounting
-    //for the padding inside the textView
     let scaleFactor = oldWidth! / (textView.frame.size.width - 10);
     textAttachment.image = UIImage(cgImage: (textAttachment.image?.cgImage)!)
  
