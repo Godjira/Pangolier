@@ -25,7 +25,7 @@ class MainViewController: UITableViewController {
   }
   
   @objc func tapBunchHeroes(sender:UITapGestureRecognizer) {
-    let heroesVC = storyboard?.instantiateViewController(withIdentifier: "HeroesViewController") as! HeroesViewController
+    let heroesVC = storyboard?.instantiateViewController(withIdentifier: "SingleHeroesViewController") as! SingleHeroesViewController
     navigationController?.pushViewController(heroesVC, animated: true)
   }
   

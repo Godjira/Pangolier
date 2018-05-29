@@ -29,7 +29,7 @@ class BunchHeroesViewController: UIViewController {
       
       if snapshot.exists() {
         let value = snapshot.value as! [String : AnyObject]
-        self.bunchs = BunchManager.getBunchModels(fireBaseDic: value, chooseHero: self.hero)
+       // self.bunchs = BunchManager.getBunchModels(fireBaseDic: value, chooseHero: self.hero)
     }
       
       DispatchQueue.main.async {

@@ -18,9 +18,10 @@
 		D665B85120BC8EDB002E3103 /* BaseHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B85020BC8EDB002E3103 /* BaseHeroesViewController.swift */; };
 		D668D8FB20B200820042F2B9 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = D668D8FA20B200820042F2B9 /* Other.swift */; };
 		D6797C5E20B56F4700720491 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6797C5D20B56F4700720491 /* MainViewController.swift */; };
+		D693CB5A20BD4EF500FF5167 /* SingleHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693CB5920BD4EF500FF5167 /* SingleHeroesViewController.swift */; };
+		D693CB5C20BD51CD00FF5167 /* MultipleHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693CB5B20BD51CD00FF5167 /* MultipleHeroesViewController.swift */; };
 		D6A9657020B9D39F00919D88 /* ArrayDeleting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A9656F20B9D39F00919D88 /* ArrayDeleting.swift */; };
 		D6AEE91020AC11F30034A8A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE90F20AC11F30034A8A9 /* AppDelegate.swift */; };
-		D6AEE91220AC11F30034A8A9 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */; };
 		D6AEE91520AC11F30034A8A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AEE91320AC11F30034A8A9 /* Main.storyboard */; };
 		D6AEE91820AC11F30034A8A9 /* Pangolier.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE91620AC11F30034A8A9 /* Pangolier.xcdatamodeld */; };
 		D6AEE91A20AC11F50034A8A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6AEE91920AC11F50034A8A9 /* Assets.xcassets */; };
@@ -47,10 +48,11 @@
 		D665B85020BC8EDB002E3103 /* BaseHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeroesViewController.swift; sourceTree = "<group>"; };
 		D668D8FA20B200820042F2B9 /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 		D6797C5D20B56F4700720491 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D693CB5920BD4EF500FF5167 /* SingleHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleHeroesViewController.swift; sourceTree = "<group>"; };
+		D693CB5B20BD51CD00FF5167 /* MultipleHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleHeroesViewController.swift; sourceTree = "<group>"; };
 		D6A9656F20B9D39F00919D88 /* ArrayDeleting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDeleting.swift; sourceTree = "<group>"; };
 		D6AEE90C20AC11F30034A8A9 /* Pangolier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pangolier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6AEE90F20AC11F30034A8A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
 		D6AEE91420AC11F30034A8A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D6AEE91720AC11F30034A8A9 /* Pangolier.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pangolier.xcdatamodel; sourceTree = "<group>"; };
 		D6AEE91920AC11F50034A8A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,7 +101,6 @@
 				D6797C5D20B56F4700720491 /* MainViewController.swift */,
 				D665B85220BC9102002E3103 /* HeroesViewControllers */,
 				D6D56E5020B2F86B00360AAB /* LoginViewController.swift */,
-				D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */,
 				D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */,
 				D665B84620BC179D002E3103 /* HeroViewController.swift */,
 				D608EE1820AD6A680053CEEB /* BunchHeroesViewController.swift */,
@@ -113,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				D665B85020BC8EDB002E3103 /* BaseHeroesViewController.swift */,
+				D693CB5920BD4EF500FF5167 /* SingleHeroesViewController.swift */,
+				D693CB5B20BD51CD00FF5167 /* MultipleHeroesViewController.swift */,
 			);
 			path = HeroesViewControllers;
 			sourceTree = "<group>";
@@ -328,7 +331,6 @@
 				D665B84720BC179D002E3103 /* HeroViewController.swift in Sources */,
 				D6AEE92920AC26BB0034A8A9 /* HeroCollectionViewCell.swift in Sources */,
 				D6797C5E20B56F4700720491 /* MainViewController.swift in Sources */,
-				D6AEE91220AC11F30034A8A9 /* HeroesViewController.swift in Sources */,
 				D665B85120BC8EDB002E3103 /* BaseHeroesViewController.swift in Sources */,
 				D6A9657020B9D39F00919D88 /* ArrayDeleting.swift in Sources */,
 				D668D8FB20B200820042F2B9 /* Other.swift in Sources */,
@@ -337,11 +339,13 @@
 				D608EE1B20AD759F0053CEEB /* AddBunchHeroesViewController.swift in Sources */,
 				D665B84920BC1AB0002E3103 /* GuideViewController.swift in Sources */,
 				D6AEE91020AC11F30034A8A9 /* AppDelegate.swift in Sources */,
+				D693CB5A20BD4EF500FF5167 /* SingleHeroesViewController.swift in Sources */,
 				D6C1C46C20BB296A006BEE03 /* GestureTapUIView.swift in Sources */,
 				D665B84F20BC62C8002E3103 /* AddGuideHeroController.swift in Sources */,
 				D6AEE91820AC11F30034A8A9 /* Pangolier.xcdatamodeld in Sources */,
 				D61F60B520B1B61B005C2777 /* BunchTableViewCell.swift in Sources */,
 				D6AEE92B20AC485B0034A8A9 /* HeaderCollectionReusableView.swift in Sources */,
+				D693CB5C20BD51CD00FF5167 /* MultipleHeroesViewController.swift in Sources */,
 				D6AEE92520AC143D0034A8A9 /* HeroModel.swift in Sources */,
 				D608EE1920AD6A680053CEEB /* BunchHeroesViewController.swift in Sources */,
 			);
