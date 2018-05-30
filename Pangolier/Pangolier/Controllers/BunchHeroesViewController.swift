@@ -23,21 +23,11 @@ class BunchHeroesViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
   
-    
-    ref = Database.database().reference()
-    ref.child("bunch").child(String(hero.id)).observeSingleEvent(of: .value, with: { (snapshot) in
-      
-      if snapshot.exists() {
-        let value = snapshot.value as! [String : AnyObject]
-       // self.bunchs = BunchManager.getBunchModels(fireBaseDic: value, chooseHero: self.hero)
+    BunchManager.getBunchModels(hero: hero) { (bunch) in
+      self.bunchs.append(bunch)
+      self.tableView.reloadData()
     }
-      
-      DispatchQueue.main.async {
-        self.tableView.reloadData()
-      }
-    }) { (error) in
-      print(error)
-    }
+
     
   }
   

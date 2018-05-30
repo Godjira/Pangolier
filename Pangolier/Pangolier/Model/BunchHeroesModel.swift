@@ -10,7 +10,7 @@ import Foundation
 
 struct BunchModel: Decodable{
   
-  var id: String
+
   var name: String
   var userId: String
   var heroesId: [Int]
@@ -18,11 +18,10 @@ struct BunchModel: Decodable{
   var rate: [String]
   
   init(name: String, userId: String, heroesId: [Int], description: String) {
-    self.id = ""
-    self.name = name
-    self.userId = userId
+    self.name = name as! String
+    self.userId = userId as! String
     self.heroesId = heroesId
-    self.description = description
+    self.description = description as! String
     self.rate =  [""]
   }
   
@@ -48,12 +47,40 @@ class BunchManager {
     }
   }
 
-//
-//  class func getBunchModels(fireBaseDic: [String : AnyObject], chooseHero: HeroModel) -> [BunchModel] {
-//
-//    
-//    return BunchModel
-//  }
+
+  class func getBunchModels(hero: HeroModel, completion: @escaping ((BunchModel) -> Void)) {
+    
+    let ref = Database.database().reference()
+    ref.child("heroesBunch").child(String(hero.id)).observeSingleEvent(of: .value) { (snapshot) in
+      if snapshot.exists() {
+        var bunchIdArray = [String]()
+        let dic = snapshot.value!as! [String : String]
+        for (_, bunchId) in dic {
+          bunchIdArray.append(bunchId)
+        }
+        for bunchId in bunchIdArray {
+          
+          ref.child("bunch").child(bunchId).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            let bunchDic = snapshot.value as! [String : AnyObject]
+            let bunch = BunchModel(name: bunchDic["name"] as! String, userId: bunchDic["user"] as! String, heroesId: bunchDic["heroes"] as! [Int], description: bunchDic["desc"] as! String)
+            
+            
+            DispatchQueue.main.async {
+              completion(bunch)
+            }
+            
+          })
+          
+        }
+        
+        
+        
+     
+      }
+    }
+    
+  }
   
   
   class func getRate(bunch: BunchModel, completion: @escaping (_ rate: [String]) -> Void){
