@@ -246,7 +246,110 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-753" y="-663"/>
+            <point key="canvasLocation" x="-754" y="-666"/>
+        </scene>
+        <!--Single Heroes View Controller-->
+        <scene sceneID="h7a-SI-ODd">
+            <objects>
+                <viewController storyboardIdentifier="SingleHeroesViewController" id="at5-qx-vY3" customClass="SingleHeroesViewController" customModule="Pangolier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fBm-HZ-Llv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tge-Ku-q0G">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hPn-gS-KFW">
+                                    <size key="itemSize" width="80" height="100"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" reuseIdentifier="HeroCollectionViewCell" id="TFH-7i-C4S" customClass="HeroCollectionViewCell" customModule="Pangolier" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="80" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h4b-PU-IBx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                                                </imageView>
+                                                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z8m-Gn-szT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.44545232959999997" green="0.88473526550000003" blue="0.87499467480000004" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="h4b-PU-IBx" secondAttribute="trailing" id="IMQ-iB-Vu7"/>
+                                            <constraint firstItem="Z8m-Gn-szT" firstAttribute="leading" secondItem="TFH-7i-C4S" secondAttribute="leading" id="J6Y-8D-ocz"/>
+                                            <constraint firstItem="h4b-PU-IBx" firstAttribute="leading" secondItem="TFH-7i-C4S" secondAttribute="leading" id="KGs-Ul-SrD"/>
+                                            <constraint firstAttribute="bottom" secondItem="Z8m-Gn-szT" secondAttribute="bottom" id="NQa-XN-MeF"/>
+                                            <constraint firstAttribute="trailing" secondItem="Z8m-Gn-szT" secondAttribute="trailing" id="NVc-2e-0Zh"/>
+                                            <constraint firstItem="Z8m-Gn-szT" firstAttribute="top" secondItem="TFH-7i-C4S" secondAttribute="top" id="TjE-UC-CDo"/>
+                                            <constraint firstAttribute="bottom" secondItem="h4b-PU-IBx" secondAttribute="bottom" id="jii-W4-4xC"/>
+                                            <constraint firstItem="h4b-PU-IBx" firstAttribute="top" secondItem="TFH-7i-C4S" secondAttribute="top" id="nLe-VU-dxC"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="heroImageView" destination="h4b-PU-IBx" id="Ezq-Y6-Csu"/>
+                                            <outlet property="selectView" destination="Z8m-Gn-szT" id="g0g-lr-e65"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HeaderCollectionReusableView" id="8BQ-IJ-Svg" customClass="HeaderCollectionReusableView" customModule="Pangolier" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JiT-NQ-6Fr">
+                                            <rect key="frame" x="8" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVd-ml-oEp">
+                                            <rect key="frame" x="66" y="15" width="301" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="title">
+                                                    <attributes>
+                                                        <font key="NSFont" size="19" name="LucidaGrande"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <outlet property="imageView" destination="JiT-NQ-6Fr" id="P7k-zQ-iD7"/>
+                                        <outlet property="titleLabel" destination="hVd-ml-oEp" id="fqC-I2-rp8"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="at5-qx-vY3" id="uY4-W9-oDa"/>
+                                    <outlet property="delegate" destination="at5-qx-vY3" id="oUi-gE-2VJ"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="v9b-OZ-c5V" firstAttribute="trailing" secondItem="tge-Ku-q0G" secondAttribute="trailing" id="0g1-lZ-AlI"/>
+                            <constraint firstItem="tge-Ku-q0G" firstAttribute="leading" secondItem="v9b-OZ-c5V" secondAttribute="leading" id="G2W-tz-t9D"/>
+                            <constraint firstItem="v9b-OZ-c5V" firstAttribute="bottom" secondItem="tge-Ku-q0G" secondAttribute="bottom" id="hoT-Zb-WNl"/>
+                            <constraint firstItem="tge-Ku-q0G" firstAttribute="top" secondItem="fBm-HZ-Llv" secondAttribute="top" id="zyb-ks-KhO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="v9b-OZ-c5V"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WqC-mB-9ZO"/>
+                    <connections>
+                        <outlet property="collectonView" destination="tge-Ku-q0G" id="ocD-9k-qkO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b7Z-ju-dK9" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1294" y="-1343"/>
         </scene>
         <!--Bunch Heroes View Controller-->
         <scene sceneID="nti-e0-Zzv">
@@ -613,17 +716,17 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Add item"/>
                                 <connections>
-                                    <action selector="addItemAction:" destination="gN6-DK-6y3" eventType="touchUpInside" id="7jw-wk-YUH"/>
+                                    <action selector="addItemAction:" destination="gN6-DK-6y3" eventType="touchUpInside" id="h8C-I4-5am"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoT-sH-t4n">
-                                <rect key="frame" x="103" y="124" width="79" height="35"/>
+                                <rect key="frame" x="109" y="124" width="79" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.14165722150000001" green="0.1375627774" blue="0.1386128408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Add Hero"/>
                                 <connections>
-                                    <action selector="addItemAction:" destination="gN6-DK-6y3" eventType="touchUpInside" id="bBw-XP-4EH"/>
+                                    <action selector="addHeroAction:" destination="gN6-DK-6y3" eventType="touchUpInside" id="jwI-PM-DET"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -631,6 +734,8 @@
                         <viewLayoutGuide key="safeArea" id="NK6-Ii-p7O"/>
                     </view>
                     <connections>
+                        <outlet property="addHeroButton" destination="eoT-sH-t4n" id="U5V-c7-h8b"/>
+                        <outlet property="addItemButton" destination="Yuc-gb-YMe" id="BBE-ph-ryE"/>
                         <outlet property="textView" destination="dc2-Zb-ZlP" id="HFZ-m6-dZQ"/>
                     </connections>
                 </viewController>
@@ -638,10 +743,10 @@
             </objects>
             <point key="canvasLocation" x="1293.5999999999999" y="-666.11694152923542"/>
         </scene>
-        <!--Single Heroes View Controller-->
+        <!--Main Heroes View Controller-->
         <scene sceneID="DQv-5g-eQM">
             <objects>
-                <viewController storyboardIdentifier="SingleHeroesViewController" id="Bgt-pW-dwu" customClass="SingleHeroesViewController" customModule="Pangolier" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainHeroesViewController" id="Bgt-pW-dwu" customClass="MainHeroesViewController" customModule="Pangolier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SAr-Oh-dIA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

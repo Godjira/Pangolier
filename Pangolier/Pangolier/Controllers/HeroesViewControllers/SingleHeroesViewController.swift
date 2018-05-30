@@ -2,7 +2,7 @@
 //  SingleHeroesViewController.swift
 //  Pangolier
 //
-//  Created by Homac on 5/29/18.
+//  Created by Homac on 5/30/18.
 //  Copyright © 2018 pangolier. All rights reserved.
 //
 
@@ -10,24 +10,29 @@ import UIKit
 
 class SingleHeroesViewController: BaseHeroesViewController {
   
-  
+  weak var delegate: GetHeroDelegat?
   
   override func viewDidLoad() {
     super.viewDidLoad()
+
     
     
   }
   
+  
+  
+  
+  
+  //MARK: - CollectionDelegate and DataSource
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    collectionView.deselectItem(at: indexPath, animated: true)
-    let selectedHero = groupHeroes[indexPath.section][indexPath.row]
-    let heroVC = storyboard?.instantiateViewController(withIdentifier: "HeroViewController") as! HeroViewController
-    heroVC.hero = selectedHero
-    heroVC.allHeroes = self.heroes
-    navigationController?.pushViewController(heroVC, animated: true)
+    delegate?.didSelect(hero: self.groupHeroes[indexPath.section][indexPath.row])
+    self.dismiss(animated: true)
   }
-  
   
 }
 
-
+protocol GetHeroDelegat: class {
+  
+  func didSelect(hero: HeroModel)
+  
+}
