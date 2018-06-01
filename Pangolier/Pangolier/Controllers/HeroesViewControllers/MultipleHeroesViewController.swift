@@ -16,14 +16,14 @@ class MultipleHeroesViewController: BaseHeroesViewController {
     super.viewDidLoad()
     let item = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(MultipleHeroesViewController.saveHeroBunchAction))
     navigationItem.rightBarButtonItem = item
-    collectonView.allowsMultipleSelection = true
+    collectionView.allowsMultipleSelection = true
     
   }
   
   @objc func saveHeroBunchAction() {
     print("tap save")
     var saveHeroes: [HeroModel] = []
-    for indexPath in collectonView.indexPathsForSelectedItems!{
+    for indexPath in collectionView.indexPathsForSelectedItems!{
       saveHeroes.append(self.groupHeroes[indexPath.section][indexPath.row])
     }
     self.delegate?.didSelect(heroes: saveHeroes)

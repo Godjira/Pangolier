@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class HeroCollectionViewCell: UICollectionViewCell {
+class ItemOrHeroCollectionViewCell: UICollectionViewCell {
 
-  @IBOutlet weak var heroImageView: UIImageView!
+  @IBOutlet weak var itemOrHeroImageView: UIImageView!
   @IBOutlet weak var selectView: UIView!
   
   override var isSelected: Bool {
@@ -24,7 +24,12 @@ class HeroCollectionViewCell: UICollectionViewCell {
   
   func setHeroImage(hero: HeroModel) {
     let imageHero = UIImage(named: hero.name)
-    heroImageView.image = imageHero
+    itemOrHeroImageView.image = imageHero
+  }
+  
+  func setItemImage(item: ItemModel) {
+    let imageItem = UIImage(named: item.name)
+    itemOrHeroImageView.image = imageItem
   }
 
 }

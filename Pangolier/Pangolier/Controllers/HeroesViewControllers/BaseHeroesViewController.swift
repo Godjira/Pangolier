@@ -10,7 +10,7 @@ import UIKit
 
 class BaseHeroesViewController: UIViewController {
   
-  @IBOutlet weak var collectonView: UICollectionView!
+  @IBOutlet weak var collectionView: UICollectionView!
   var heroes = [HeroModel]()
   var groupHeroes: [[HeroModel]] = [[]]
   
@@ -21,14 +21,15 @@ class BaseHeroesViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Get instets
-    let colletctionViewLayout = self.collectonView.collectionViewLayout as! UICollectionViewFlowLayout
+    let colletctionViewLayout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
     colletctionViewLayout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10)
     
     HeroManager.getHeroes { (heroesArray) in
       self.heroes = heroesArray
-      self.collectonView.reloadData()
       // Get sort heroes
       self.groupHeroes = HeroManager.getSortHeroesWithAttributes(heroes: self.heroes)
+      self.collectionView.reloadData()
+
     }
   }
 
@@ -48,7 +49,7 @@ extension BaseHeroesViewController: UICollectionViewDataSource, UICollectionView
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HeroCollectionViewCell", for: indexPath) as! HeroCollectionViewCell
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemOrHeroCollectionViewCell", for: indexPath) as! ItemOrHeroCollectionViewCell
     cell.setHeroImage(hero: self.groupHeroes[indexPath.section][indexPath.row])
     
     return cell

@@ -15,6 +15,7 @@ class HeroViewController: UIViewController {
   @IBOutlet weak var gideTabBarItem: UITabBarItem!
   @IBOutlet weak var bunchTabBarItem: UITabBarItem!
   
+  
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var nameHeroTextLabel: UILabel!
   @IBOutlet weak var heroImageView: UIImageView!
@@ -77,8 +78,14 @@ class HeroViewController: UIViewController {
   
 }
 
-extension HeroViewController: UITabBarDelegate {
+extension HeroViewController: UITabBarDelegate, UIScrollViewDelegate {
   
+  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    let index = Int(scrollView.contentOffset.x / scrollView.bounds.size.width)
+    let selectedItem = tabBar.items![index]
+  
+    tabBar.selectedItem = selectedItem
+  }
   
   
   func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
