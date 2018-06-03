@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ItemModel: Decodable {
+struct ItemModel {
   
   var id: Int
   var name: String
@@ -18,21 +18,7 @@ struct ItemModel: Decodable {
   var recipe: Int
   var localizedName: String
   
-  enum CodingKeys: String, CodingKey {
-    case id
-    case name
-    case cost
-    case secretShop = "secret_shop"
-    case sideShop = "side_shop"
-    case recipe
-    case localizedName = "localized_name"
-  }
-}
 
-struct DataItemModel: Decodable {
-  
-  var result: [String : NSNumber]
-  var status: Int
 }
 
 class ItemManager {
@@ -47,7 +33,7 @@ class ItemManager {
       
       
       do {
-        let items = try JSONDecoder().decode(DataItemModel.self, from: data)
+//        let items = try JSONDecoder().decode(DataItemModel.self, from: data)
         
         DispatchQueue.main.async {
           completion([ItemModel]())

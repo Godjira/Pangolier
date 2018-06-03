@@ -27,10 +27,8 @@ class BunchTableViewCell: UITableViewCell {
   func setImagesAndText(allHeroes: [HeroModel], choosedHero: HeroModel, bunch: BunchModel) {
     bunchNameLabel.text = bunch.name
     cellBunch = bunch
-    BunchManager.getRate(bunch: cellBunch, completion: { (rateArray) in
-      self.cellBunch.rate = rateArray
-      self.rateLabel.text = String(self.cellBunch.rate.count)
-    })
+    self.rateLabel.text = String(self.cellBunch.rate.count)
+
     
     
     let heroImages = [hero1Image, hero2Image, hero3Image, hero4Image, hero5Image]

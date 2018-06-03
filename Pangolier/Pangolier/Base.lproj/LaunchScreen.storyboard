@@ -18,12 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dota-2-logo_freelogovectors.net_" translatesAutoresizingMaskIntoConstraints="NO" id="ubK-UU-zEM">
-                                <rect key="frame" x="41" y="187" width="292" height="292"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dota-2-logo_freelogovectors.net_" translatesAutoresizingMaskIntoConstraints="NO" id="ubK-UU-zEM">
+                                <rect key="frame" x="87" y="243.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="30L-jO-OVS"/>
+                                    <constraint firstAttribute="height" constant="200" id="DaM-kl-AI2"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ubK-UU-zEM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="C4E-SB-qNf"/>
+                            <constraint firstItem="ubK-UU-zEM" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Vtz-rw-qGJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

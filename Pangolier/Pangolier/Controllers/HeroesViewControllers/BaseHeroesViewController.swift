@@ -29,11 +29,9 @@ class BaseHeroesViewController: UIViewController {
       // Get sort heroes
       self.groupHeroes = HeroManager.getSortHeroesWithAttributes(heroes: self.heroes)
       self.collectionView.reloadData()
-
+      
     }
   }
-
-  
 }
 
 //MARK: - UICollectionViewDataSource, UICollectionViewDelegate
@@ -73,9 +71,9 @@ extension BaseHeroesViewController: UICollectionViewDataSource, UICollectionView
     return reusableView
   }
   
-
   
-
+  
+  
   
   
   

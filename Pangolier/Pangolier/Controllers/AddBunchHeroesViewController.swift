@@ -48,8 +48,9 @@ class AddBunchHeroesViewController: UIViewController {
       
       navigationController?.present(loginVC, animated: true)
     } else {
-      let bunch = BunchModel.init(name: bunchNameTextField.text!, userId: (Auth.auth().currentUser?.uid)!, heroesId: self.heroes.map { $0.id }, description: bunchDescTextView.text!)
+      let bunch = BunchModel.init(id: "",name: bunchNameTextField.text!, userId: (Auth.auth().currentUser?.uid)!, heroesId: self.heroes.map { $0.id }, description: bunchDescTextView.text!)
       BunchManager.sendBunch(bunch: bunch)
+      self.navigationController?.popViewController(animated: true)
     }
   }
 }
