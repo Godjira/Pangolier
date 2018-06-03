@@ -16,8 +16,10 @@ class ItemOrHeroCollectionViewCell: UICollectionViewCell {
   
   override var isSelected: Bool {
     didSet {
+      if selectView != nil {
       UIView.animate(withDuration: 0.4) {
         self.selectView.alpha = self.isSelected ? 0.3 : 0.0
+      }
       }
     }
   }

@@ -14,9 +14,9 @@ class BaseHeroesViewController: UIViewController {
   var heroes = [HeroModel]()
   var groupHeroes: [[HeroModel]] = [[]]
   
-  let sections: [(title: String, color: UIColor)] = [("Strange", .red),
-                                                     ("Agility", .green),
-                                                     ("Intelect", .blue)]
+  let sections: [(title: String, image: UIImage)] = [("Strange", #imageLiteral(resourceName: "Red")),
+                                                     ("Agility", #imageLiteral(resourceName: "green")),
+                                                     ("Intelect", #imageLiteral(resourceName: "blue"))]
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -63,10 +63,9 @@ extension BaseHeroesViewController: UICollectionViewDataSource, UICollectionView
       let section = sections[indexPath.section]
       
       headerView.titleLabel.text = section.title
-      headerView.titleLabel.textColor = section.color
+      headerView.imageView.image = section.image
+  
       reusableView = headerView
-      //headerView.imageView.image = UIImage(named: )
-      
     }
     return reusableView
   }

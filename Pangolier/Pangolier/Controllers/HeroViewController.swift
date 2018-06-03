@@ -17,8 +17,6 @@ class HeroViewController: UIViewController {
   
   
   @IBOutlet weak var scrollView: UIScrollView!
-  @IBOutlet weak var nameHeroTextLabel: UILabel!
-  @IBOutlet weak var heroImageView: UIImageView!
   
   var width = CGFloat(integerLiteral: 0)
   var height = CGFloat(integerLiteral: 0)
@@ -28,8 +26,6 @@ class HeroViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    heroImageView.image = UIImage(named: hero.name)
-    nameHeroTextLabel.text = hero.localizedName
     tabBar.delegate = self
     tabBar.selectedItem = gideTabBarItem
     

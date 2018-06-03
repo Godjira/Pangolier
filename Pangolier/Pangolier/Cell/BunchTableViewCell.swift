@@ -57,12 +57,14 @@ class BunchTableViewCell: UITableViewCell {
       if user == Auth.auth().currentUser?.uid {
         cellBunch.rate.remove(at:cellBunch.rate.index(of: user)!)
         BunchManager.sendRate(bunch_with_rate: cellBunch)
+        buttonLike.image = #imageLiteral(resourceName: "like")
         self.rateLabel.text = String(self.cellBunch.rate.count)
         return
       }
     }
         cellBunch.rate.append((Auth.auth().currentUser?.uid)!)
         BunchManager.sendRate(bunch_with_rate: cellBunch)
+        buttonLike.image = #imageLiteral(resourceName: "likes")
         self.rateLabel.text = String(self.cellBunch.rate.count)
         return
   }

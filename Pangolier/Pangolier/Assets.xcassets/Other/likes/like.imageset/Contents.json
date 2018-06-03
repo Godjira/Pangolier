@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "like.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "dota2icon.jpeg",
       "scale" : "2x"
     },
     {

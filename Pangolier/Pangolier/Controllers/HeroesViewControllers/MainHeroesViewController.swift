@@ -15,6 +15,7 @@ class MainHeroesViewController: BaseHeroesViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    title = "Choose hero"
     
   }
   
