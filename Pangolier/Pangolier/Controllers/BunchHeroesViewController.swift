@@ -20,13 +20,17 @@ class BunchHeroesViewController: UIViewController {
 
   @IBOutlet weak var tableView: UITableView!
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  
+  override func viewWillAppear(_ animated: Bool) {
     BunchManager.getBunchModels(hero: hero) { (bunch) in
       self.bunchs.append(bunch)
       self.tableView.reloadData()
     }
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  
+  
 
     
   }

@@ -449,7 +449,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" estimatedRowHeight="151" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ske-GX-C43">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ske-GX-C43">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -563,10 +563,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ske-GX-C43" firstAttribute="leading" secondItem="xec-eU-6fc" secondAttribute="leading" id="2XM-59-ag9"/>
-                            <constraint firstItem="ske-GX-C43" firstAttribute="top" secondItem="xec-eU-6fc" secondAttribute="top" id="NdV-a1-fY4"/>
-                            <constraint firstItem="xec-eU-6fc" firstAttribute="trailing" secondItem="ske-GX-C43" secondAttribute="trailing" id="l2i-fP-8t8"/>
-                            <constraint firstItem="xec-eU-6fc" firstAttribute="bottom" secondItem="ske-GX-C43" secondAttribute="bottom" id="vYR-tT-ugP"/>
+                            <constraint firstItem="ske-GX-C43" firstAttribute="top" secondItem="xec-eU-6fc" secondAttribute="top" id="RwI-ss-xG6"/>
+                            <constraint firstItem="ske-GX-C43" firstAttribute="trailing" secondItem="xec-eU-6fc" secondAttribute="trailing" id="gN4-N7-nwa"/>
+                            <constraint firstItem="ske-GX-C43" firstAttribute="bottom" secondItem="xec-eU-6fc" secondAttribute="bottom" id="iBz-iR-lz6"/>
+                            <constraint firstItem="ske-GX-C43" firstAttribute="leading" secondItem="xec-eU-6fc" secondAttribute="leading" id="uol-aV-esD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xec-eU-6fc"/>
                     </view>
@@ -766,6 +766,28 @@
                                     <action selector="addHeroAction:" destination="hlb-wp-VnC" eventType="touchUpInside" id="EII-u9-igg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVh-pt-bLf">
+                                <rect key="frame" x="290" y="617" width="69" height="30"/>
+                                <color key="backgroundColor" red="0.14165722150000001" green="0.1375627774" blue="0.1386128408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Add Hero"/>
+                                <connections>
+                                    <action selector="addHeroAction:" destination="gN6-DK-6y3" eventType="touchUpInside" id="kqM-PR-zbY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80N-CT-NIt">
+                                <rect key="frame" x="203" y="617" width="79" height="30"/>
+                                <color key="backgroundColor" red="0.14165722150000001" green="0.1375627774" blue="0.1386128408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="6jm-OT-8U5"/>
+                                    <constraint firstAttribute="height" constant="30" id="hcQ-eF-RJX"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Add item"/>
+                                <connections>
+                                    <action selector="addItemAction:" destination="gN6-DK-6y3" eventType="touchUpInside" id="wto-QN-eRr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -773,13 +795,18 @@
                             <constraint firstItem="awd-7S-tFB" firstAttribute="top" secondItem="SxZ-PO-Kk8" secondAttribute="bottom" constant="8" id="1kR-J1-AQB"/>
                             <constraint firstItem="t0u-d2-uwL" firstAttribute="top" secondItem="J7F-mr-xDS" secondAttribute="top" constant="8" id="7hp-vv-nHZ"/>
                             <constraint firstItem="J7F-mr-xDS" firstAttribute="trailing" secondItem="awd-7S-tFB" secondAttribute="trailing" constant="16" id="8dI-aM-WYs"/>
+                            <constraint firstItem="EVh-pt-bLf" firstAttribute="trailing" secondItem="awd-7S-tFB" secondAttribute="trailing" id="AKd-W2-VRj"/>
                             <constraint firstItem="SxZ-PO-Kk8" firstAttribute="leading" secondItem="J7F-mr-xDS" secondAttribute="leading" constant="16" id="AgX-pG-10l"/>
                             <constraint firstItem="awd-7S-tFB" firstAttribute="leading" secondItem="J7F-mr-xDS" secondAttribute="leading" constant="16" id="Ljd-af-ek9"/>
                             <constraint firstItem="J7F-mr-xDS" firstAttribute="trailing" secondItem="lcr-w7-VdY" secondAttribute="trailing" constant="20" id="M6E-SY-H7p"/>
                             <constraint firstItem="lcr-w7-VdY" firstAttribute="leading" secondItem="SxZ-PO-Kk8" secondAttribute="trailing" constant="2" id="MVp-ag-7Q2"/>
                             <constraint firstItem="J7F-mr-xDS" firstAttribute="trailing" secondItem="RSd-Dc-Vr5" secondAttribute="trailing" constant="187" id="Tnb-1R-Eji"/>
+                            <constraint firstItem="80N-CT-NIt" firstAttribute="leading" secondItem="RSd-Dc-Vr5" secondAttribute="trailing" constant="15" id="UZJ-d6-2HT"/>
+                            <constraint firstItem="80N-CT-NIt" firstAttribute="baseline" secondItem="RSd-Dc-Vr5" secondAttribute="baseline" id="Zt1-X7-FS1"/>
+                            <constraint firstItem="EVh-pt-bLf" firstAttribute="leading" secondItem="80N-CT-NIt" secondAttribute="trailing" constant="8" symbolic="YES" id="cMK-ea-tOK"/>
                             <constraint firstItem="awd-7S-tFB" firstAttribute="top" secondItem="lcr-w7-VdY" secondAttribute="bottom" constant="8" symbolic="YES" id="efU-ft-zLV"/>
                             <constraint firstItem="RSd-Dc-Vr5" firstAttribute="top" secondItem="awd-7S-tFB" secondAttribute="bottom" constant="12" id="n9u-Vv-wlf"/>
+                            <constraint firstItem="EVh-pt-bLf" firstAttribute="baseline" secondItem="80N-CT-NIt" secondAttribute="baseline" id="r6Z-Qe-QWR"/>
                             <constraint firstItem="t0u-d2-uwL" firstAttribute="leading" secondItem="J7F-mr-xDS" secondAttribute="leading" constant="16" id="rho-lY-Cfw"/>
                             <constraint firstItem="SxZ-PO-Kk8" firstAttribute="top" secondItem="t0u-d2-uwL" secondAttribute="bottom" constant="8" id="sTv-Oc-uCx"/>
                             <constraint firstItem="RSd-Dc-Vr5" firstAttribute="leading" secondItem="J7F-mr-xDS" secondAttribute="leading" constant="16" id="ulw-1F-LPz"/>
@@ -797,7 +824,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2h-Op-Bvs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="566" y="-666"/>
+            <point key="canvasLocation" x="565.60000000000002" y="-666.11694152923542"/>
         </scene>
         <!--Add Guide Hero Controller-->
         <scene sceneID="040-d7-vjA">
