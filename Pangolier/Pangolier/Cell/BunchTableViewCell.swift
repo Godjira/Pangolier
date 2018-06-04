@@ -28,7 +28,11 @@ class BunchTableViewCell: UITableViewCell {
     bunchNameLabel.text = bunch.name
     cellBunch = bunch
     self.rateLabel.text = String(self.cellBunch.rate.count)
-
+    for userId in cellBunch.rate {
+      if (Auth.auth().currentUser?.uid.elementsEqual(userId))!{
+        buttonLike.image = #imageLiteral(resourceName: "likes")
+      }
+    }
     
     
     let heroImages = [hero1Image, hero2Image, hero3Image, hero4Image, hero5Image]
