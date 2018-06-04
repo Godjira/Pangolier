@@ -17,13 +17,13 @@ struct BunchModel: Decodable{
   var description: String
   var rate: [String]
   
-  init(id: String, name: String, userId: String, heroesId: [Int], description: String) {
+  init(id: String, name: String, userId: String, heroesId: [Int], description: String, rate: [String]) {
     self.id = id
     self.name = name
     self.userId = userId
     self.heroesId = heroesId
     self.description = description 
-    self.rate =  [""]
+    self.rate = rate
   }
   
 }
@@ -67,7 +67,7 @@ class BunchManager {
           ref.child("bunch").child(bunchId).observeSingleEvent(of: .value, with: { (snapshot) in
             
             let bunchDic = snapshot.value as! [String : AnyObject]
-            let bunch = BunchModel(id: bunchDic["id"] as! String,name: bunchDic["name"] as! String, userId: bunchDic["user"] as! String, heroesId: bunchDic["heroes"] as! [Int], description: bunchDic["desc"] as! String)
+            let bunch = BunchModel(id: bunchDic["id"] as! String,name: bunchDic["name"] as! String, userId: bunchDic["user"] as! String, heroesId: bunchDic["heroes"] as! [Int], description: bunchDic["desc"] as! String, rate: bunchDic["rate"] as! [String])
             
             
             DispatchQueue.main.async {
@@ -114,6 +114,19 @@ class BunchManager {
 //    let sendDataDictionary = ["rate" : bunch.rate]
 //    ref.child("bunch_data").child(bunch.dataId).setValue(sendDataDictionary)
 //
+    
+    let ref = Database.database().reference()
+    
+    
+    let sendDictionary = ["id" : bunch.id,
+                          "name" : bunch.name,
+                          "user" : Auth.auth().currentUser?.uid ?? "",
+                          "heroes" : bunch.heroesId,
+                          "desc" : bunch.description,
+                          "rate" : [bunch.userId]] as [String : Any]
+    
+    ref.child("bunch").child(bunch.id).setValue(sendDictionary)
+    
   }
   
 }
