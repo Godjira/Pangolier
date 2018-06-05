@@ -33,7 +33,9 @@ class HeroViewController: UIViewController {
     bunchVC.hero = self.hero
     bunchVC.allHeroes = self.allHeroes
     
-    let guideVC = storyboard?.instantiateViewController(withIdentifier: "GideViewController")
+    let topVC = storyboard?.instantiateViewController(withIdentifier: "TopHeroBunchsViewController") as! TopHeroBunchsViewController
+    topVC.hero = self.hero
+    topVC.allHeroes = self.allHeroes
     
     let bounds = UIScreen.main.bounds
     width = bounds.size.width
@@ -41,18 +43,18 @@ class HeroViewController: UIViewController {
     
     scrollView.contentSize = CGSize(width: 2 * width, height: height)
     
-    let viewControllers = [guideVC, bunchVC]
+    let viewControllers = [bunchVC, topVC]
 
     
     var idx: Int = 0
     
     for viewController in viewControllers {
       
-      addChildViewController(viewController!)
+      addChildViewController(viewController)
       let originX = CGFloat(idx) * width
-      viewController?.view.frame = CGRect(origin: CGPoint(x: originX, y: 0), size: CGSize(width: width, height: height))
-      scrollView.addSubview((viewController?.view)!)
-      viewController?.didMove(toParentViewController: self)
+      viewController.view.frame = CGRect(origin: CGPoint(x: originX, y: 0), size: CGSize(width: width, height: height))
+      scrollView.addSubview(viewController.view)
+      viewController.didMove(toParentViewController: self)
       idx = idx + 1
     }
   }

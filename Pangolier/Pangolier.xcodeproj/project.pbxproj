@@ -13,7 +13,7 @@
 		D608EE1B20AD759F0053CEEB /* AddBunchHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */; };
 		D61F60B520B1B61B005C2777 /* BunchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61F60B420B1B61B005C2777 /* BunchTableViewCell.swift */; };
 		D665B84720BC179D002E3103 /* HeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B84620BC179D002E3103 /* HeroViewController.swift */; };
-		D665B84920BC1AB0002E3103 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B84820BC1AB0002E3103 /* GuideViewController.swift */; };
+		D665B84920BC1AB0002E3103 /* TopHeroBunchsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B84820BC1AB0002E3103 /* TopHeroBunchsViewController.swift */; };
 		D665B84F20BC62C8002E3103 /* AddGuideHeroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B84E20BC62C8002E3103 /* AddGuideHeroController.swift */; };
 		D665B85120BC8EDB002E3103 /* BaseHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B85020BC8EDB002E3103 /* BaseHeroesViewController.swift */; };
 		D668D8FB20B200820042F2B9 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = D668D8FA20B200820042F2B9 /* Other.swift */; };
@@ -46,7 +46,7 @@
 		D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBunchHeroesViewController.swift; sourceTree = "<group>"; };
 		D61F60B420B1B61B005C2777 /* BunchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunchTableViewCell.swift; sourceTree = "<group>"; };
 		D665B84620BC179D002E3103 /* HeroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewController.swift; sourceTree = "<group>"; };
-		D665B84820BC1AB0002E3103 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		D665B84820BC1AB0002E3103 /* TopHeroBunchsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeroBunchsViewController.swift; sourceTree = "<group>"; };
 		D665B84E20BC62C8002E3103 /* AddGuideHeroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGuideHeroController.swift; sourceTree = "<group>"; };
 		D665B85020BC8EDB002E3103 /* BaseHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeroesViewController.swift; sourceTree = "<group>"; };
 		D668D8FA20B200820042F2B9 /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 				D665B84620BC179D002E3103 /* HeroViewController.swift */,
 				D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */,
 				D608EE1820AD6A680053CEEB /* BunchHeroesViewController.swift */,
-				D665B84820BC1AB0002E3103 /* GuideViewController.swift */,
+				D665B84820BC1AB0002E3103 /* TopHeroBunchsViewController.swift */,
 				D665B84E20BC62C8002E3103 /* AddGuideHeroController.swift */,
 				D6BA205820C1C66300F4AF5A /* ItemsViewController.swift */,
 			);
@@ -347,7 +347,7 @@
 				D6D56E5120B2F86B00360AAB /* LoginViewController.swift in Sources */,
 				D608EE1720AD5A520053CEEB /* BunchHeroesModel.swift in Sources */,
 				D608EE1B20AD759F0053CEEB /* AddBunchHeroesViewController.swift in Sources */,
-				D665B84920BC1AB0002E3103 /* GuideViewController.swift in Sources */,
+				D665B84920BC1AB0002E3103 /* TopHeroBunchsViewController.swift in Sources */,
 				D6AEE91020AC11F30034A8A9 /* AppDelegate.swift in Sources */,
 				D693CB5A20BD4EF500FF5167 /* MainHeroesViewController.swift in Sources */,
 				D6C1C46C20BB296A006BEE03 /* GestureTapUIView.swift in Sources */,

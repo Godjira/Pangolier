@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 import Firebase
 
-class GuideViewController: UIViewController {
+class TopHeroBunchsViewController: UIViewController {
   
   var hero: HeroModel!
   var allHeroes: [HeroModel] = []
@@ -22,10 +22,12 @@ class GuideViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
   override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     self.bunchs = []
-    BunchManager.getBunchModels(hero: hero) { (bunch) in
-      self.bunchs.append(bunch)
+    BunchManager.getAllBunchModels(hero: self.hero) { (bunchs) in
+      self.bunchs = bunchs
       self.tableView.reloadData()
+      
     }
   }
   
@@ -45,9 +47,12 @@ class GuideViewController: UIViewController {
   }
 }
 
-extension GuideViewController: UITableViewDelegate, UITableViewDataSource {
+extension TopHeroBunchsViewController: UITableViewDelegate, UITableViewDataSource {
   
   public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if bunchs.count > 5 {
+      return 5
+    }
     return bunchs.count
   }
   

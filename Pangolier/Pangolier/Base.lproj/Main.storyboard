@@ -453,6 +453,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ske-GX-C43">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BunchTableViewCell" rowHeight="160" id="qrx-ey-5xk" customClass="BunchTableViewCell" customModule="Pangolier" customModuleProvider="target">
@@ -557,6 +558,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="Bjg-HO-Qqi" secondAttribute="bottom" constant="5" id="vAy-ra-MCz"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="bunchNameLabel" destination="X8c-sb-AgV" id="v9c-Qh-igI"/>
                                             <outlet property="buttonLike" destination="bnS-hD-cid" id="Rbk-hA-xap"/>
@@ -592,10 +594,10 @@
             </objects>
             <point key="canvasLocation" x="-410.39999999999998" y="63.418290854572717"/>
         </scene>
-        <!--Guide View Controller-->
+        <!--Top Hero Bunchs View Controller-->
         <scene sceneID="fn4-Rl-TEM">
             <objects>
-                <viewController storyboardIdentifier="GideViewController" id="qFT-nx-gHQ" customClass="GuideViewController" customModule="Pangolier" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TopHeroBunchsViewController" id="qFT-nx-gHQ" customClass="TopHeroBunchsViewController" customModule="Pangolier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v7W-qb-7PC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -734,7 +736,7 @@
                         <viewLayoutGuide key="safeArea" id="bQ0-Au-vXd"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="XsZ-GI-2Ie" id="ceO-nm-boj"/>
+                        <outlet property="tableView" destination="XsZ-GI-2Ie" id="YbC-5t-yPo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hoO-nR-IGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
