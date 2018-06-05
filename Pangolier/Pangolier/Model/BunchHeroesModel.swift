@@ -67,6 +67,7 @@ class BunchManager {
           ref.child("bunch").child(bunchId).observeSingleEvent(of: .value, with: { (snapshot) in
             
             let bunchDic = snapshot.value as! [String : AnyObject]
+            
             let bunch = BunchModel(id: bunchDic["id"] as! String,name: bunchDic["name"] as! String, userId: bunchDic["user"] as! String, heroesId: bunchDic["heroes"] as! [Int], description: bunchDic["desc"] as! String, rate: bunchDic["rate"] as! [String])
             
             
@@ -120,10 +121,10 @@ class BunchManager {
     
     let sendDictionary = ["id" : bunch.id,
                           "name" : bunch.name,
-                          "user" : Auth.auth().currentUser?.uid ?? "",
+                          "user" : bunch.userId,
                           "heroes" : bunch.heroesId,
                           "desc" : bunch.description,
-                          "rate" : [bunch.userId]] as [String : Any]
+                          "rate" : bunch.rate] as [String : Any]
     
     ref.child("bunch").child(bunch.id).setValue(sendDictionary)
     

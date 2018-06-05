@@ -28,12 +28,10 @@ class BunchTableViewCell: UITableViewCell {
     bunchNameLabel.text = bunch.name
     cellBunch = bunch
     self.rateLabel.text = String(self.cellBunch.rate.count)
-    if Auth.auth().currentUser != nil {
     for userId in cellBunch.rate {
       if (Auth.auth().currentUser?.uid.elementsEqual(userId))!{
         buttonLike.image = #imageLiteral(resourceName: "likes")
       }
-    }
     }
     
     
@@ -59,8 +57,14 @@ class BunchTableViewCell: UITableViewCell {
     if Auth.auth().currentUser == nil {
       return
     }
+  
     for user in cellBunch.rate{
       if user == Auth.auth().currentUser?.uid {
+        
+        if cellBunch.userId == user {
+          return
+        }
+        
         cellBunch.rate.remove(at:cellBunch.rate.index(of: user)!)
         BunchManager.sendRate(bunch_with_rate: cellBunch)
         buttonLike.image = #imageLiteral(resourceName: "like")
@@ -68,6 +72,7 @@ class BunchTableViewCell: UITableViewCell {
         return
       }
     }
+    
         cellBunch.rate.append((Auth.auth().currentUser?.uid)!)
         BunchManager.sendRate(bunch_with_rate: cellBunch)
         buttonLike.image = #imageLiteral(resourceName: "likes")
