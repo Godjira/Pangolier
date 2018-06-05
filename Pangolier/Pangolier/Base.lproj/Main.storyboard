@@ -761,8 +761,8 @@
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <tabBarItem title="Gide" id="YYI-Qt-VDs"/>
-                                    <tabBarItem title="Bunch" selectedImage="bunch" id="aij-Bi-J8q"/>
+                                    <tabBarItem title="Bunchs" id="YYI-Qt-VDs"/>
+                                    <tabBarItem title="Top" selectedImage="bunch" id="aij-Bi-J8q"/>
                                 </items>
                             </tabBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26f-w5-mCF">
