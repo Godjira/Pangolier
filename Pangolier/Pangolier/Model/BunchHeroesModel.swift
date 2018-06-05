@@ -120,10 +120,10 @@ class BunchManager {
     
     let sendDictionary = ["id" : bunch.id,
                           "name" : bunch.name,
-                          "user" : Auth.auth().currentUser?.uid ?? "",
+                          "user" : bunch.userId,
                           "heroes" : bunch.heroesId,
                           "desc" : bunch.description,
-                          "rate" : [bunch.userId]] as [String : Any]
+                          "rate" : bunch.rate] as [String : Any]
     
     ref.child("bunch").child(bunch.id).setValue(sendDictionary)
     

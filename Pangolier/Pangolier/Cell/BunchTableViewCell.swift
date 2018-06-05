@@ -28,12 +28,10 @@ class BunchTableViewCell: UITableViewCell {
     bunchNameLabel.text = bunch.name
     cellBunch = bunch
     self.rateLabel.text = String(self.cellBunch.rate.count)
-    if Auth.auth().currentUser != nil {
     for userId in cellBunch.rate {
       if (Auth.auth().currentUser?.uid.elementsEqual(userId))!{
         buttonLike.image = #imageLiteral(resourceName: "likes")
       }
-    }
     }
     
     
