@@ -47,8 +47,8 @@ class UIPanTextView: UITextView {
   
   
   
-  func getPlainText() -> String {
-    var plainString: String = ""
+  func getPlainText() -> NSString {
+    var plainString: NSString = ""
     var countRangePlus: Int = 0
     self.attributedText.enumerateAttribute(NSAttributedStringKey.attachment, in: NSRange(location: 0, length: self.attributedText.length), options: []) { (value, range, stop) in
       
@@ -65,10 +65,11 @@ class UIPanTextView: UITextView {
           countRangePlus = countRangePlus + text.count
           if plainString == "" {
           mutableAttr.replaceCharacters(in: range, with: text)
-          plainString = mutableAttr.string
+          plainString = mutableAttr.string as! NSString
           } else {
             let newRange = NSMakeRange(range.lowerBound + countRangePlus, range.upperBound + countRangePlus)
             plainString.replacingCharacters(in: newRange, with: text)
+//            plainString.replacingCharacters(in: newRange, with: text)
           }
           countRangePlus = countRangePlus + text.count
         }else{
