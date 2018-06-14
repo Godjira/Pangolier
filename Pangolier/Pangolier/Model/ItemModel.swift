@@ -32,11 +32,24 @@ class ItemManager {
       
       
       
+      
       do {
-//        let items = try JSONDecoder().decode(DataItemModel.self, from: data)
-        
+        let dataItems = try JSONSerialization.jsonObject(with: data, options: []) as! [String : AnyObject]
+        let tempDic = dataItems["result"] as! [String : AnyObject]
+        let arrayItems = tempDic["items"] as! [AnyObject]
+        var items: [ItemModel] = []
+        for item in arrayItems {
+          let nativeItem = ItemModel.init(id: item["id"] as! Int,
+                                          name: item["name"] as! String,
+                                          cost: item["cost"] as! Int,
+                                          secretShop: item["secret_shop"] as! Int,
+                                          sideShop: item["side_shop"] as! Int,
+                                          recipe: item["recipe"] as! Int,
+                                          localizedName: item["localized_name"] as! String)
+          items.append(nativeItem)
+        } 
         DispatchQueue.main.async {
-          completion([ItemModel]())
+          completion(items)
         }
       } catch let error {
         print(error)

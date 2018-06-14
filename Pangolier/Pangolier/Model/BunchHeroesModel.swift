@@ -56,11 +56,8 @@ class BunchManager {
     let ref = Database.database().reference()
     ref.child("heroesBunch").child(String(hero.id)).observeSingleEvent(of: .value) { (snapshot) in
       if snapshot.exists() {
-        var bunchIdArray = [String]()
         let dic = snapshot.value!as! [String : String]
-        for (_, bunchId) in dic {
-          bunchIdArray.append(bunchId)
-        }
+        let bunchIdArray: [String] = dic.map{ $0.value }
         for bunchId in bunchIdArray {
           
           ref.child("bunch").child(bunchId).observeSingleEvent(of: .value, with: { (snapshot) in

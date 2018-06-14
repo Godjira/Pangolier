@@ -604,7 +604,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XsZ-GI-2Ie">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BunchTableViewCell" rowHeight="160" id="0KT-ue-R5K" customClass="BunchTableViewCell" customModule="Pangolier" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="160"/>
@@ -708,6 +708,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="ATC-kC-4oE" secondAttribute="bottom" constant="5" id="ezi-oY-PjF"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="bunchNameLabel" destination="7us-z5-o8e" id="vRx-U6-EvS"/>
                                             <outlet property="buttonLike" destination="jad-sH-4jF" id="Ak0-ZG-u9t"/>
@@ -823,7 +824,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="awd-7S-tFB">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="awd-7S-tFB" customClass="UIPanTextView" customModule="Pangolier" customModuleProvider="target">
                                 <rect key="frame" x="16" y="138" width="343" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText"/>
@@ -903,7 +904,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Add Hero"/>
                                 <connections>
-                                    <action selector="addHeroAction:" destination="gN6-DK-6y3" eventType="touchUpInside" id="kqM-PR-zbY"/>
+                                    <action selector="addHeroInTextViewAction:" destination="hlb-wp-VnC" eventType="touchUpInside" id="5sd-mb-9QE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80N-CT-NIt">
@@ -916,7 +917,14 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Add item"/>
                                 <connections>
-                                    <action selector="addItemAction:" destination="gN6-DK-6y3" eventType="touchUpInside" id="wto-QN-eRr"/>
+                                    <action selector="addItemInTextViewAction:" destination="hlb-wp-VnC" eventType="touchUpInside" id="5iC-2D-mjx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxV-uQ-VZs">
+                                <rect key="frame" x="130" y="637" width="114" height="30"/>
+                                <state key="normal" title="getString"/>
+                                <connections>
+                                    <action selector="getStringAction:" destination="hlb-wp-VnC" eventType="touchUpInside" id="KgD-yN-uLa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -934,11 +942,14 @@
                             <constraint firstItem="J7F-mr-xDS" firstAttribute="trailing" secondItem="RSd-Dc-Vr5" secondAttribute="trailing" constant="187" id="Tnb-1R-Eji"/>
                             <constraint firstItem="80N-CT-NIt" firstAttribute="leading" secondItem="RSd-Dc-Vr5" secondAttribute="trailing" constant="15" id="UZJ-d6-2HT"/>
                             <constraint firstItem="80N-CT-NIt" firstAttribute="baseline" secondItem="RSd-Dc-Vr5" secondAttribute="baseline" id="Zt1-X7-FS1"/>
+                            <constraint firstItem="sxV-uQ-VZs" firstAttribute="leading" secondItem="J7F-mr-xDS" secondAttribute="leading" constant="130" id="arW-Oz-2a8"/>
+                            <constraint firstItem="sxV-uQ-VZs" firstAttribute="bottom" secondItem="J7F-mr-xDS" secondAttribute="bottom" id="c0C-7S-Txv"/>
                             <constraint firstItem="EVh-pt-bLf" firstAttribute="leading" secondItem="80N-CT-NIt" secondAttribute="trailing" constant="8" symbolic="YES" id="cMK-ea-tOK"/>
                             <constraint firstItem="awd-7S-tFB" firstAttribute="top" secondItem="lcr-w7-VdY" secondAttribute="bottom" constant="8" symbolic="YES" id="efU-ft-zLV"/>
                             <constraint firstItem="RSd-Dc-Vr5" firstAttribute="top" secondItem="awd-7S-tFB" secondAttribute="bottom" constant="12" id="n9u-Vv-wlf"/>
                             <constraint firstItem="EVh-pt-bLf" firstAttribute="baseline" secondItem="80N-CT-NIt" secondAttribute="baseline" id="r6Z-Qe-QWR"/>
                             <constraint firstItem="t0u-d2-uwL" firstAttribute="leading" secondItem="J7F-mr-xDS" secondAttribute="leading" constant="16" id="rho-lY-Cfw"/>
+                            <constraint firstItem="J7F-mr-xDS" firstAttribute="trailing" secondItem="sxV-uQ-VZs" secondAttribute="trailing" constant="131" id="rmq-sO-Gd7"/>
                             <constraint firstItem="SxZ-PO-Kk8" firstAttribute="top" secondItem="t0u-d2-uwL" secondAttribute="bottom" constant="8" id="sTv-Oc-uCx"/>
                             <constraint firstItem="RSd-Dc-Vr5" firstAttribute="leading" secondItem="J7F-mr-xDS" secondAttribute="leading" constant="16" id="ulw-1F-LPz"/>
                             <constraint firstItem="J7F-mr-xDS" firstAttribute="trailing" secondItem="t0u-d2-uwL" secondAttribute="trailing" constant="16" id="wAv-Yt-3oT"/>

@@ -18,7 +18,7 @@ class AddBunchHeroesViewController: UIViewController {
   
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var bunchNameTextField: UITextField!
-  @IBOutlet weak var bunchDescTextView: UITextView!
+  @IBOutlet weak var bunchDescTextView: UIPanTextView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -53,10 +53,38 @@ class AddBunchHeroesViewController: UIViewController {
       self.navigationController?.popViewController(animated: true)
     }
   }
+  
+  
+  @IBAction func getStringAction(_ sender: Any) {
+    print(bunchDescTextView.getPlainText())
+  }
+  
+  @IBAction func addHeroInTextViewAction(_ sender: Any) {
+    let multHeroesVC = storyboard?.instantiateViewController(withIdentifier: "MultipleHeroesViewController") as! MultipleHeroesViewController
+    multHeroesVC.delegateHeroesAttr = self
+    self.navigationController?.pushViewController(multHeroesVC, animated: true)
+  }
+  
+  @IBAction func addItemInTextViewAction(_ sender: UIButton) {
+    let itemsVC = storyboard?.instantiateViewController(withIdentifier: "ItemsViewController") as! ItemsViewController
+    itemsVC.delegate = self
+    self.navigationController?.pushViewController(itemsVC, animated: true)
+  }
 }
 
-extension AddBunchHeroesViewController: UICollectionViewDelegate, UICollectionViewDataSource, GetHeroesDelegat{
+extension AddBunchHeroesViewController: UICollectionViewDelegate, UICollectionViewDataSource, GetHeroesDelegat, GetItemDelegate, GetHeroesAttrDelegate{
   
+  func didSelect(items: [ItemModel]) {
+    for item in items {
+      bunchDescTextView.addImageFromAssets(image_name:item.name)
+    }
+  }
+  
+  func getHeroesAttr(heroes: [HeroModel]) {
+    for hero in heroes {
+      bunchDescTextView.addImageFromAssets(image_name:hero.name)
+    }
+  }
   
   func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
    return false
@@ -80,5 +108,7 @@ extension AddBunchHeroesViewController: UICollectionViewDelegate, UICollectionVi
   }
   
 }
+
+
 
 

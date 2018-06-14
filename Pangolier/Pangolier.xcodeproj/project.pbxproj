@@ -35,6 +35,7 @@
 		D6D56E5120B2F86B00360AAB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D56E5020B2F86B00360AAB /* LoginViewController.swift */; };
 		D6E1F86C20BED2D500C17048 /* SingleHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E1F86B20BED2D500C17048 /* SingleHeroesViewController.swift */; };
 		D6F7CEA420ACA65100E912B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6F7CEA320ACA65100E912B2 /* GoogleService-Info.plist */; };
+		D6F9EA4A20D115D700FB8C40 /* UIPanTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9EA4920D115D700FB8C40 /* UIPanTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		D6D56E5020B2F86B00360AAB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D6E1F86B20BED2D500C17048 /* SingleHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleHeroesViewController.swift; sourceTree = "<group>"; };
 		D6F7CEA320ACA65100E912B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D6F9EA4920D115D700FB8C40 /* UIPanTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPanTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				D668D8FA20B200820042F2B9 /* Other.swift */,
 				D6A9656F20B9D39F00919D88 /* ArrayDeleting.swift */,
 				D6C1C46B20BB296A006BEE03 /* GestureTapUIView.swift */,
+				D6F9EA4920D115D700FB8C40 /* UIPanTextView.swift */,
 			);
 			name = Extensions;
 			path = "New Group";
@@ -357,6 +360,7 @@
 				D61F60B520B1B61B005C2777 /* BunchTableViewCell.swift in Sources */,
 				D6AEE92B20AC485B0034A8A9 /* HeaderCollectionReusableView.swift in Sources */,
 				D693CB5C20BD51CD00FF5167 /* MultipleHeroesViewController.swift in Sources */,
+				D6F9EA4A20D115D700FB8C40 /* UIPanTextView.swift in Sources */,
 				D6AEE92520AC143D0034A8A9 /* HeroModel.swift in Sources */,
 				D6BA205920C1C66300F4AF5A /* ItemsViewController.swift in Sources */,
 				D608EE1920AD6A680053CEEB /* BunchHeroesViewController.swift in Sources */,

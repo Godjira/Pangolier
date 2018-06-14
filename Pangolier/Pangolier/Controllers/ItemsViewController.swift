@@ -48,6 +48,9 @@ class ItemsViewController: UIViewController {
 
 extension ItemsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   
+
+  
+  
   public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return items.count
   }
