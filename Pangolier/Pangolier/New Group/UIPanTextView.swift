@@ -48,7 +48,7 @@ class UIPanTextView: UITextView {
   
   
   func getPlainText() -> NSString {
-    var plainString: NSString = ""
+    var plainString: NSMutableString = ""
     var countRangePlus: Int = 0
     self.attributedText.enumerateAttribute(NSAttributedStringKey.attachment, in: NSRange(location: 0, length: self.attributedText.length), options: []) { (value, range, stop) in
       
@@ -62,17 +62,18 @@ class UIPanTextView: UITextView {
           let mutableAttr = self.attributedText.mutableCopy() as! NSMutableAttributedString
           //Remove the attachment
           let text = imageFromAssetsStart + tempAttachment.imageTitle! + imageFromAssetsEnd
-          countRangePlus = countRangePlus + text.count
           if plainString == "" {
           mutableAttr.replaceCharacters(in: range, with: text)
-          plainString = mutableAttr.string as! NSString
+          plainString = mutableAttr.string as! NSMutableString
           } else {
+            
             let newRange = NSMakeRange(range.lowerBound + countRangePlus, range.upperBound + countRangePlus)
             plainString.replacingCharacters(in: newRange, with: text)
 //            plainString.replacingCharacters(in: newRange, with: text)
           }
           countRangePlus = countRangePlus + text.count
         }else{
+          
           print("No image attched")
         }
       }

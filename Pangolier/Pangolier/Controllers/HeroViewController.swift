@@ -60,17 +60,8 @@ class HeroViewController: UIViewController {
   }
   
   @IBAction func addAction(_ sender: Any) {
-    switch tabBar.selectedItem {
-    case gideTabBarItem:
-      let addGuideVC = storyboard?.instantiateViewController(withIdentifier: "AddGuideHeroController")
-      navigationController?.pushViewController(addGuideVC!, animated: true)
-    case bunchTabBarItem:
       let addBunchVC = storyboard?.instantiateViewController(withIdentifier: "AddBunchHeroesViewController")
       navigationController?.pushViewController(addBunchVC!, animated: true)
-    default:
-      let addGuideVC = storyboard?.instantiateViewController(withIdentifier: "AddGuideHeroController")
-      navigationController?.pushViewController(addGuideVC!, animated: true)
-    }
   }
   
   
