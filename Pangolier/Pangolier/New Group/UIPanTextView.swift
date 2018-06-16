@@ -43,42 +43,93 @@ class UIPanTextView: UITextView {
     self.attributedText = attrString
   }
   
-
-  
-  
-  
-  func getPlainText() -> NSString {
-    var plainString: NSMutableString = ""
-    var countRangePlus: Int = 0
-    self.attributedText.enumerateAttribute(NSAttributedStringKey.attachment, in: NSRange(location: 0, length: self.attributedText.length), options: []) { (value, range, stop) in
-      
-      if (value is NSTextAttachment){
-        let attachment: NSTextAttachment? = (value as? NSTextAttachment)
+  //MARK: setPlainText ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  func setPlainStringWithImage(plain_string: String) -> NSAttributedString {
+    var attributedString = NSMutableAttributedString(string: "")
+    
+    let plainStringArray = Array(plain_string)
+    let currentStringArrray = Array(imageFromAssetsStart)
+    
+    var index = 0
+    while index < plainStringArray.count {
+      if plainStringArray[index] == "[" {
         
-        
-        if ((attachment?.image) != nil) {
-          print("1 image attached")
-          let tempAttachment = value as! NSTextAttachmentImageWithName
-          let mutableAttr = self.attributedText.mutableCopy() as! NSMutableAttributedString
-          //Remove the attachment
-          let text = imageFromAssetsStart + tempAttachment.imageTitle! + imageFromAssetsEnd
-          if plainString == "" {
-          mutableAttr.replaceCharacters(in: range, with: text)
-          plainString = mutableAttr.string as! NSMutableString
-          } else {
-            
-            let newRange = NSMakeRange(range.lowerBound + countRangePlus, range.upperBound + countRangePlus)
-            plainString.replacingCharacters(in: newRange, with: text)
-//            plainString.replacingCharacters(in: newRange, with: text)
-          }
-          countRangePlus = countRangePlus + text.count
-        }else{
-          
-          print("No image attched")
+       
+    }
+    
+    let rString: NSAttributedString = attributedString
+    return rString
+  }
+    
+    func checkNextCharacters(indexC: Int, plainSA: [Character], currentSA: [Character]) -> Int {
+      index = indexC
+      let preIndex = index
+      var currentIndex = 0
+      while currentIndex < currentStringArrray.count {
+        if plainStringArray[index] == currentStringArrray[currentIndex] {
+          index = index + 1
+          currentIndex = currentIndex + 1
         }
       }
+      if currentIndex == currentStringArrray.count {
+        while index < plainSA.count {
+          if plainSA[index] == "]"{
+            //add text and image
+          }
+          index = index + 1
+        }
+        
+      } else {
+        index = preIndex + 1
+      }
+      return preIndex + 1
     }
-    return plainString
+    
+    func getArrayWithIndexRange(fromIndex: Int, toIndex: Int, array: [AnyObject]) -> [AnyObject] {
+      var newArray = Array(array)
+      newArray[fromIndex..toIndex] = []
+      
+    }
+  
+//  func addImageToAttrText(attr_string: NSMutableAttributedString) -> NSMutableAttributedString {
+//
+//    return
+//  }
+  
+    // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  func getPlainText() -> String {
+    var count = 0
+    self.attributedText.enumerateAttribute(.attachment, in : NSMakeRange(0, self.attributedText.length), options: [], using: { attribute, range, _ in
+      if let attachment = attribute as? NSTextAttachment, attachment.image != nil {
+        count = count + 1
+      }
+    })
+    
+    var attributedString2 = NSMutableAttributedString(attributedString: self.attributedText)
+    
+    for _ in 0..<count {
+      let attributedString = NSMutableAttributedString(attributedString: attributedString2)
+      var count = 0
+      attributedString.enumerateAttribute(.attachment, in : NSMakeRange(0, attributedString.length), options: [], using: { attribute, range, _ in
+        if let attachment = attribute as? NSTextAttachmentImageWithName,
+          let imageTitle = attachment.imageTitle {
+          let str = "[img src=\(imageTitle)]"
+          
+          if count == 0 {
+            attributedString.beginEditing()
+            attributedString.replaceCharacters(in: range, with: NSAttributedString(string : str))
+            attributedString.endEditing()
+            attributedString2 = attributedString
+          }else{
+            return
+          }
+          count = count + 1
+        }
+      })
+    }
+    
+    return attributedString2.string
   }
   
 }
