@@ -56,7 +56,12 @@ class AddBunchHeroesViewController: UIViewController {
   
   
   @IBAction func getStringAction(_ sender: Any) {
-    print(bunchDescTextView.getPlainText())
+    let plainText = bunchDescTextView.getPlainText()
+    bunchDescTextView.text = ""
+
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+      self.bunchDescTextView.attributedText = self.bunchDescTextView.setPlainStringWithImage(plain_string: plainText)
+    }
   }
   
   @IBAction func addHeroInTextViewAction(_ sender: Any) {

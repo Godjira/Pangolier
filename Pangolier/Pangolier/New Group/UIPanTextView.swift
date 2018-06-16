@@ -45,51 +45,42 @@ class UIPanTextView: UITextView {
   
   //MARK: setPlainText ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
   func setPlainStringWithImage(plain_string: String) -> NSAttributedString {
-    var attributedString = NSMutableAttributedString(string: "")
-    
-    let plainStringArray = Array(plain_string)
-    let currentStringArrray = Array(imageFromAssetsStart)
-    
-    var index = 0
-    while index < plainStringArray.count {
-      if plainStringArray[index] == "[" {
-        
-       
-    }
-    
-    let rString: NSAttributedString = attributedString
-    return rString
-  }
-    
-    func checkNextCharacters(indexC: Int, plainSA: [Character], currentSA: [Character]) -> Int {
-      index = indexC
-      let preIndex = index
-      var currentIndex = 0
-      while currentIndex < currentStringArrray.count {
-        if plainStringArray[index] == currentStringArrray[currentIndex] {
-          index = index + 1
-          currentIndex = currentIndex + 1
-        }
-      }
-      if currentIndex == currentStringArrray.count {
-        while index < plainSA.count {
-          if plainSA[index] == "]"{
-            //add text and image
+    func matches(for regex: String, in text: String) -> [String] {
+      do {
+        var heroes: [String] = []
+        let regex = try NSRegularExpression(pattern: regex)
+        regex.enumerateMatches(in: plain_string, options: [], range: NSMakeRange(0, plain_string.utf16.count)) { result, flags, stop in
+          if let r = result?.range(at: 1), let range = Range(r, in: plain_string) {
+            heroes.append(String(plain_string[range]))
           }
-          index = index + 1
         }
-        
-      } else {
-        index = preIndex + 1
+
+        return heroes
+      } catch let error {
+        print("invalid regex: \(error.localizedDescription)")
+        return []
       }
-      return preIndex + 1
     }
-    
-    func getArrayWithIndexRange(fromIndex: Int, toIndex: Int, array: [AnyObject]) -> [AnyObject] {
-      var newArray = Array(array)
-      newArray[fromIndex..toIndex] = []
-      
+
+    var plainString = plain_string
+    let heroes = matches(for: "\\[img src=(.*?)\\]", in: plain_string)
+    let attributedString = NSMutableAttributedString(string: plain_string)
+
+    for hero in heroes {
+      let range = (plainString as NSString).range(of: "[img src=\(hero)]")
+
+      let textAttachment = NSTextAttachmentImageWithName()
+      let image = UIImage(named: hero)
+      textAttachment.imageTitle = hero
+      textAttachment.image = image
+
+      let attrStringWithImage = NSAttributedString(attachment: textAttachment)
+      attributedString.replaceCharacters(in: range, with: attrStringWithImage)
+      plainString = attributedString.string
     }
+
+    return attributedString
+  }
   
 //  func addImageToAttrText(attr_string: NSMutableAttributedString) -> NSMutableAttributedString {
 //
