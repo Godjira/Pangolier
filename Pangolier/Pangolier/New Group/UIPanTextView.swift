@@ -81,11 +81,7 @@ class UIPanTextView: UITextView {
 
     return attributedString
   }
-  
-//  func addImageToAttrText(attr_string: NSMutableAttributedString) -> NSMutableAttributedString {
-//
-//    return
-//  }
+
   
     // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct ItemModel {
   
@@ -56,4 +57,18 @@ class ItemManager {
       }
       }.resume()
   }
+  
+  
+  class func getExistItems(items: [ItemModel]) -> [ItemModel]{
+    var mutItems = [ItemModel]()
+    for var item in items {
+      let itemName = item.name.replacingOccurrences(of: "item_", with: "")
+      if UIImage(named: itemName) != nil {
+        item.name = itemName
+        mutItems.append(item)
+      }
+    }
+    return mutItems
+  }
+  
 }

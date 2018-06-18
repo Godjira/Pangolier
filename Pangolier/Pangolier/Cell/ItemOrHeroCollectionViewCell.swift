@@ -13,6 +13,7 @@ class ItemOrHeroCollectionViewCell: UICollectionViewCell {
 
   @IBOutlet weak var itemOrHeroImageView: UIImageView!
   @IBOutlet weak var selectView: UIView!
+  var isNeedDelete = false
   
   override var isSelected: Bool {
     didSet {
@@ -32,6 +33,7 @@ class ItemOrHeroCollectionViewCell: UICollectionViewCell {
   func setItemImage(item: ItemModel) {
     let imageItem = UIImage(named: item.name)
     itemOrHeroImageView.image = imageItem
+    itemOrHeroImageView.contentMode = .scaleAspectFit
   }
 
 }

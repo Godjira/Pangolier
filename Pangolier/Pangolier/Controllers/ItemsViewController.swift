@@ -25,9 +25,11 @@ class ItemsViewController: UIViewController {
     
     ItemManager.getItems { (items) in
       self.items = items
-      print(items.first?.name)
+      self.items = ItemManager.getExistItems(items: self.items)
       self.collectionView.reloadData()
     }
+    
+    
     
   }
   
