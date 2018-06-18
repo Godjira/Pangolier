@@ -27,10 +27,12 @@ class BunchTableViewCell: UITableViewCell {
   func setImagesAndText(allHeroes: [HeroModel], choosedHero: HeroModel, bunch: BunchModel) {
     bunchNameLabel.text = bunch.name
     cellBunch = bunch
-    BunchManager.getRate(bunch: cellBunch, completion: { (rateArray) in
-      self.cellBunch.rate = rateArray
-      self.rateLabel.text = String(self.cellBunch.rate.count)
-    })
+    self.rateLabel.text = String(self.cellBunch.rate.count)
+    for userId in cellBunch.rate {
+      if (Auth.auth().currentUser?.uid.elementsEqual(userId))!{
+        buttonLike.image = #imageLiteral(resourceName: "likes")
+      }
+    }
     
     
     let heroImages = [hero1Image, hero2Image, hero3Image, hero4Image, hero5Image]
@@ -40,10 +42,8 @@ class BunchTableViewCell: UITableViewCell {
       bunchHeroes.append(HeroManager.getHeroModelById(allHero: allHeroes, id: heroId)!)
     }
     
-    var i = 0
-    for hero in bunchHeroes{
-      heroImages[i]?.image = UIImage(named: hero.name)
-      i = i + 1
+    bunchHeroes.enumerated().forEach { index, hero in
+      heroImages[index]?.image = UIImage(named: hero.name)
     }
     
     let tap = UITapGestureRecognizer(target: self, action: #selector(BunchTableViewCell.tapLikeButton))
@@ -57,16 +57,25 @@ class BunchTableViewCell: UITableViewCell {
     if Auth.auth().currentUser == nil {
       return
     }
+  
     for user in cellBunch.rate{
       if user == Auth.auth().currentUser?.uid {
+        
+        if cellBunch.userId == user {
+          return
+        }
+        
         cellBunch.rate.remove(at:cellBunch.rate.index(of: user)!)
         BunchManager.sendRate(bunch_with_rate: cellBunch)
+        buttonLike.image = #imageLiteral(resourceName: "like")
         self.rateLabel.text = String(self.cellBunch.rate.count)
         return
       }
     }
+    
         cellBunch.rate.append((Auth.auth().currentUser?.uid)!)
         BunchManager.sendRate(bunch_with_rate: cellBunch)
+        buttonLike.image = #imageLiteral(resourceName: "likes")
         self.rateLabel.text = String(self.cellBunch.rate.count)
         return
   }

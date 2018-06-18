@@ -13,22 +13,29 @@
 		D608EE1B20AD759F0053CEEB /* AddBunchHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */; };
 		D61F60B520B1B61B005C2777 /* BunchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61F60B420B1B61B005C2777 /* BunchTableViewCell.swift */; };
 		D665B84720BC179D002E3103 /* HeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B84620BC179D002E3103 /* HeroViewController.swift */; };
-		D665B84920BC1AB0002E3103 /* GideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B84820BC1AB0002E3103 /* GideViewController.swift */; };
+		D665B84920BC1AB0002E3103 /* TopHeroBunchsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B84820BC1AB0002E3103 /* TopHeroBunchsViewController.swift */; };
+		D665B84F20BC62C8002E3103 /* AddGuideHeroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B84E20BC62C8002E3103 /* AddGuideHeroController.swift */; };
+		D665B85120BC8EDB002E3103 /* BaseHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B85020BC8EDB002E3103 /* BaseHeroesViewController.swift */; };
 		D668D8FB20B200820042F2B9 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = D668D8FA20B200820042F2B9 /* Other.swift */; };
 		D6797C5E20B56F4700720491 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6797C5D20B56F4700720491 /* MainViewController.swift */; };
+		D693CB5A20BD4EF500FF5167 /* MainHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693CB5920BD4EF500FF5167 /* MainHeroesViewController.swift */; };
+		D693CB5C20BD51CD00FF5167 /* MultipleHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693CB5B20BD51CD00FF5167 /* MultipleHeroesViewController.swift */; };
 		D6A9657020B9D39F00919D88 /* ArrayDeleting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A9656F20B9D39F00919D88 /* ArrayDeleting.swift */; };
 		D6AEE91020AC11F30034A8A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE90F20AC11F30034A8A9 /* AppDelegate.swift */; };
-		D6AEE91220AC11F30034A8A9 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */; };
 		D6AEE91520AC11F30034A8A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AEE91320AC11F30034A8A9 /* Main.storyboard */; };
 		D6AEE91820AC11F30034A8A9 /* Pangolier.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE91620AC11F30034A8A9 /* Pangolier.xcdatamodeld */; };
 		D6AEE91A20AC11F50034A8A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6AEE91920AC11F50034A8A9 /* Assets.xcassets */; };
 		D6AEE91D20AC11F50034A8A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AEE91B20AC11F50034A8A9 /* LaunchScreen.storyboard */; };
 		D6AEE92520AC143D0034A8A9 /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE92420AC143D0034A8A9 /* HeroModel.swift */; };
-		D6AEE92920AC26BB0034A8A9 /* HeroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE92820AC26BB0034A8A9 /* HeroCollectionViewCell.swift */; };
+		D6AEE92920AC26BB0034A8A9 /* ItemOrHeroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE92820AC26BB0034A8A9 /* ItemOrHeroCollectionViewCell.swift */; };
 		D6AEE92B20AC485B0034A8A9 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEE92A20AC485B0034A8A9 /* HeaderCollectionReusableView.swift */; };
-		D6C1C46C20BB296A006BEE03 /* GastureTapUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C1C46B20BB296A006BEE03 /* GastureTapUIView.swift */; };
+		D6BA205620C1604500F4AF5A /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA205520C1604500F4AF5A /* ItemModel.swift */; };
+		D6BA205920C1C66300F4AF5A /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA205820C1C66300F4AF5A /* ItemsViewController.swift */; };
+		D6C1C46C20BB296A006BEE03 /* GestureTapUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C1C46B20BB296A006BEE03 /* GestureTapUIView.swift */; };
 		D6D56E5120B2F86B00360AAB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D56E5020B2F86B00360AAB /* LoginViewController.swift */; };
+		D6E1F86C20BED2D500C17048 /* SingleHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E1F86B20BED2D500C17048 /* SingleHeroesViewController.swift */; };
 		D6F7CEA420ACA65100E912B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6F7CEA320ACA65100E912B2 /* GoogleService-Info.plist */; };
+		D6F9EA4A20D115D700FB8C40 /* UIPanTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9EA4920D115D700FB8C40 /* UIPanTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,24 +47,31 @@
 		D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBunchHeroesViewController.swift; sourceTree = "<group>"; };
 		D61F60B420B1B61B005C2777 /* BunchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunchTableViewCell.swift; sourceTree = "<group>"; };
 		D665B84620BC179D002E3103 /* HeroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewController.swift; sourceTree = "<group>"; };
-		D665B84820BC1AB0002E3103 /* GideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GideViewController.swift; sourceTree = "<group>"; };
+		D665B84820BC1AB0002E3103 /* TopHeroBunchsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeroBunchsViewController.swift; sourceTree = "<group>"; };
+		D665B84E20BC62C8002E3103 /* AddGuideHeroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGuideHeroController.swift; sourceTree = "<group>"; };
+		D665B85020BC8EDB002E3103 /* BaseHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeroesViewController.swift; sourceTree = "<group>"; };
 		D668D8FA20B200820042F2B9 /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 		D6797C5D20B56F4700720491 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D693CB5920BD4EF500FF5167 /* MainHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeroesViewController.swift; sourceTree = "<group>"; };
+		D693CB5B20BD51CD00FF5167 /* MultipleHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleHeroesViewController.swift; sourceTree = "<group>"; };
 		D6A9656F20B9D39F00919D88 /* ArrayDeleting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDeleting.swift; sourceTree = "<group>"; };
 		D6AEE90C20AC11F30034A8A9 /* Pangolier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pangolier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6AEE90F20AC11F30034A8A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
 		D6AEE91420AC11F30034A8A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D6AEE91720AC11F30034A8A9 /* Pangolier.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pangolier.xcdatamodel; sourceTree = "<group>"; };
 		D6AEE91920AC11F50034A8A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6AEE91C20AC11F50034A8A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6AEE91E20AC11F50034A8A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6AEE92420AC143D0034A8A9 /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
-		D6AEE92820AC26BB0034A8A9 /* HeroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectionViewCell.swift; sourceTree = "<group>"; };
+		D6AEE92820AC26BB0034A8A9 /* ItemOrHeroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemOrHeroCollectionViewCell.swift; sourceTree = "<group>"; };
 		D6AEE92A20AC485B0034A8A9 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
-		D6C1C46B20BB296A006BEE03 /* GastureTapUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastureTapUIView.swift; sourceTree = "<group>"; };
+		D6BA205520C1604500F4AF5A /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		D6BA205820C1C66300F4AF5A /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		D6C1C46B20BB296A006BEE03 /* GestureTapUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureTapUIView.swift; sourceTree = "<group>"; };
 		D6D56E5020B2F86B00360AAB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D6E1F86B20BED2D500C17048 /* SingleHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleHeroesViewController.swift; sourceTree = "<group>"; };
 		D6F7CEA320ACA65100E912B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D6F9EA4920D115D700FB8C40 /* UIPanTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPanTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,13 +108,26 @@
 			children = (
 				D6797C5D20B56F4700720491 /* MainViewController.swift */,
 				D6D56E5020B2F86B00360AAB /* LoginViewController.swift */,
-				D6AEE91120AC11F30034A8A9 /* HeroesViewController.swift */,
-				D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */,
+				D665B85220BC9102002E3103 /* HeroesViewControllers */,
 				D665B84620BC179D002E3103 /* HeroViewController.swift */,
+				D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */,
 				D608EE1820AD6A680053CEEB /* BunchHeroesViewController.swift */,
-				D665B84820BC1AB0002E3103 /* GideViewController.swift */,
+				D665B84820BC1AB0002E3103 /* TopHeroBunchsViewController.swift */,
+				D665B84E20BC62C8002E3103 /* AddGuideHeroController.swift */,
+				D6BA205820C1C66300F4AF5A /* ItemsViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D665B85220BC9102002E3103 /* HeroesViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D665B85020BC8EDB002E3103 /* BaseHeroesViewController.swift */,
+				D693CB5920BD4EF500FF5167 /* MainHeroesViewController.swift */,
+				D6E1F86B20BED2D500C17048 /* SingleHeroesViewController.swift */,
+				D693CB5B20BD51CD00FF5167 /* MultipleHeroesViewController.swift */,
+			);
+			path = HeroesViewControllers;
 			sourceTree = "<group>";
 		};
 		D668D8F920B2005E0042F2B9 /* Extensions */ = {
@@ -108,7 +135,8 @@
 			children = (
 				D668D8FA20B200820042F2B9 /* Other.swift */,
 				D6A9656F20B9D39F00919D88 /* ArrayDeleting.swift */,
-				D6C1C46B20BB296A006BEE03 /* GastureTapUIView.swift */,
+				D6C1C46B20BB296A006BEE03 /* GestureTapUIView.swift */,
+				D6F9EA4920D115D700FB8C40 /* UIPanTextView.swift */,
 			);
 			name = Extensions;
 			path = "New Group";
@@ -155,7 +183,7 @@
 		D6AEE92620AC26870034A8A9 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D6AEE92820AC26BB0034A8A9 /* HeroCollectionViewCell.swift */,
+				D6AEE92820AC26BB0034A8A9 /* ItemOrHeroCollectionViewCell.swift */,
 				D6AEE92A20AC485B0034A8A9 /* HeaderCollectionReusableView.swift */,
 				D61F60B420B1B61B005C2777 /* BunchTableViewCell.swift */,
 			);
@@ -167,6 +195,7 @@
 			children = (
 				D6AEE92420AC143D0034A8A9 /* HeroModel.swift */,
 				D608EE1620AD5A520053CEEB /* BunchHeroesModel.swift */,
+				D6BA205520C1604500F4AF5A /* ItemModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,21 +341,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				D665B84720BC179D002E3103 /* HeroViewController.swift in Sources */,
-				D6AEE92920AC26BB0034A8A9 /* HeroCollectionViewCell.swift in Sources */,
+				D6AEE92920AC26BB0034A8A9 /* ItemOrHeroCollectionViewCell.swift in Sources */,
 				D6797C5E20B56F4700720491 /* MainViewController.swift in Sources */,
-				D6AEE91220AC11F30034A8A9 /* HeroesViewController.swift in Sources */,
+				D665B85120BC8EDB002E3103 /* BaseHeroesViewController.swift in Sources */,
+				D6BA205620C1604500F4AF5A /* ItemModel.swift in Sources */,
 				D6A9657020B9D39F00919D88 /* ArrayDeleting.swift in Sources */,
 				D668D8FB20B200820042F2B9 /* Other.swift in Sources */,
 				D6D56E5120B2F86B00360AAB /* LoginViewController.swift in Sources */,
 				D608EE1720AD5A520053CEEB /* BunchHeroesModel.swift in Sources */,
 				D608EE1B20AD759F0053CEEB /* AddBunchHeroesViewController.swift in Sources */,
-				D665B84920BC1AB0002E3103 /* GideViewController.swift in Sources */,
+				D665B84920BC1AB0002E3103 /* TopHeroBunchsViewController.swift in Sources */,
 				D6AEE91020AC11F30034A8A9 /* AppDelegate.swift in Sources */,
-				D6C1C46C20BB296A006BEE03 /* GastureTapUIView.swift in Sources */,
+				D693CB5A20BD4EF500FF5167 /* MainHeroesViewController.swift in Sources */,
+				D6C1C46C20BB296A006BEE03 /* GestureTapUIView.swift in Sources */,
+				D665B84F20BC62C8002E3103 /* AddGuideHeroController.swift in Sources */,
 				D6AEE91820AC11F30034A8A9 /* Pangolier.xcdatamodeld in Sources */,
+				D6E1F86C20BED2D500C17048 /* SingleHeroesViewController.swift in Sources */,
 				D61F60B520B1B61B005C2777 /* BunchTableViewCell.swift in Sources */,
 				D6AEE92B20AC485B0034A8A9 /* HeaderCollectionReusableView.swift in Sources */,
+				D693CB5C20BD51CD00FF5167 /* MultipleHeroesViewController.swift in Sources */,
+				D6F9EA4A20D115D700FB8C40 /* UIPanTextView.swift in Sources */,
 				D6AEE92520AC143D0034A8A9 /* HeroModel.swift in Sources */,
+				D6BA205920C1C66300F4AF5A /* ItemsViewController.swift in Sources */,
 				D608EE1920AD6A680053CEEB /* BunchHeroesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

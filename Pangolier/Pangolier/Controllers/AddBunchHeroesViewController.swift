@@ -18,14 +18,10 @@ class AddBunchHeroesViewController: UIViewController {
   
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var bunchNameTextField: UITextField!
-  @IBOutlet weak var bunchDescTextView: UITextView!
+  @IBOutlet weak var bunchDescTextView: UIPanTextView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-//    do {
-//      try Auth.auth().signOut()
-//    } catch let error as NSError {
-//    }
     if Auth.auth().currentUser == nil {
       let loginVC = LoginViewController()
       
@@ -34,14 +30,13 @@ class AddBunchHeroesViewController: UIViewController {
       
       navigationController?.present(loginVC, animated: true)
     }
-    
     ref = Database.database().reference()
   }
   
   @IBAction func addHeroAction(_ sender: Any) {
-      let heroesVC = storyboard?.instantiateViewController(withIdentifier: "HeroesViewController") as! HeroesViewController
-      heroesVC.delegate = self
-      navigationController?.pushViewController(heroesVC, animated: true)
+      let multipleHeroesVC = storyboard?.instantiateViewController(withIdentifier: "MultipleHeroesViewController") as! MultipleHeroesViewController
+      multipleHeroesVC.delegate = self
+      navigationController?.pushViewController(multipleHeroesVC, animated: true)
   }
   
   @IBAction func saveButton(_ sender: Any) {
@@ -53,32 +48,50 @@ class AddBunchHeroesViewController: UIViewController {
       
       navigationController?.present(loginVC, animated: true)
     } else {
-      let timeStamp = Int(NSDate.timeIntervalSinceReferenceDate * 1000)
-      ref.childByAutoId().key
-      if heroes.count > 1 {
-        var heroesId: [Int] = []
-        for hero in heroes {
-          heroesId.append(hero.id)
-        }
-        for id in heroesId {
-          let sendDictionary = ["name" : bunchNameTextField.text ?? "noname",
-                                "user" : Auth.auth().currentUser?.uid ?? "",
-                                "heroes" : heroesId,
-                                "desc" : bunchDescTextView.text ?? "nodesc",
-                                "bunch_data_id" : String(timeStamp)] as [String : Any]
-          
-          self.ref.child("bunch").child(String(id)).childByAutoId().setValue(sendDictionary)
-        }
-        let sendDataDictionary = ["rate" : [" "]]
-        self.ref.child("bunch_data").child(String(timeStamp)).setValue(sendDataDictionary)
-        navigationController?.popViewController(animated: true)
-      }
+      if bunchDescTextView.text != "" && bunchNameTextField.text != "" && self.heroes.count > 1 {
+      let bunch = BunchModel.init(id: "",name: bunchNameTextField.text!, userId: (Auth.auth().currentUser?.uid)!, heroesId: self.heroes.map { $0.id }, description: bunchDescTextView.getPlainText(), rate: [(Auth.auth().currentUser?.uid)!])
+      BunchManager.sendBunch(bunch: bunch)
+      self.navigationController?.popViewController(animated: true)
     }
+    }
+  }
+  
+  
+  @IBAction func getStringAction(_ sender: Any) {
+    let plainText = bunchDescTextView.getPlainText()
+    bunchDescTextView.text = ""
+
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+      self.bunchDescTextView.attributedText = self.bunchDescTextView.setPlainStringWithImage(plain_string: plainText)
+    }
+  }
+  
+  @IBAction func addHeroInTextViewAction(_ sender: Any) {
+    let multHeroesVC = storyboard?.instantiateViewController(withIdentifier: "MultipleHeroesViewController") as! MultipleHeroesViewController
+    multHeroesVC.delegateHeroesAttr = self
+    self.navigationController?.pushViewController(multHeroesVC, animated: true)
+  }
+  
+  @IBAction func addItemInTextViewAction(_ sender: UIButton) {
+    let itemsVC = storyboard?.instantiateViewController(withIdentifier: "ItemsViewController") as! ItemsViewController
+    itemsVC.delegate = self
+    self.navigationController?.pushViewController(itemsVC, animated: true)
   }
 }
 
-extension AddBunchHeroesViewController: UICollectionViewDelegate, UICollectionViewDataSource, GetHeroDelegat{
+extension AddBunchHeroesViewController: UICollectionViewDelegate, UICollectionViewDataSource, GetHeroesDelegat, GetItemDelegate, GetHeroesAttrDelegate{
   
+  func didSelect(items: [ItemModel]) {
+    for item in items {
+      bunchDescTextView.addImageFromAssets(image_name:item.name)
+    }
+  }
+  
+  func getHeroesAttr(heroes: [HeroModel]) {
+    for hero in heroes {
+      bunchDescTextView.addImageFromAssets(image_name:hero.name)
+    }
+  }
   
   func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
    return false
@@ -89,7 +102,7 @@ extension AddBunchHeroesViewController: UICollectionViewDelegate, UICollectionVi
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HeroCollectionViewCell", for: indexPath) as! HeroCollectionViewCell
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemOrHeroCollectionViewCell", for: indexPath) as! ItemOrHeroCollectionViewCell
     
     cell.setHeroImage(hero: heroes[indexPath.row])
     
@@ -103,8 +116,6 @@ extension AddBunchHeroesViewController: UICollectionViewDelegate, UICollectionVi
   
 }
 
-protocol GetHeroDelegat: class {
-  
-  func didSelect(heroes: [HeroModel])
-  
-}
+
+
+

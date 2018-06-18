@@ -20,24 +20,19 @@ class BunchHeroesViewController: UIViewController {
 
   @IBOutlet weak var tableView: UITableView!
   
+  override func viewWillAppear(_ animated: Bool) {
+    self.bunchs = []
+    BunchManager.getBunchModels(hero: hero) { (bunch) in
+      self.bunchs.append(bunch)
+      self.tableView.reloadData()
+    }
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
   
-    
-    ref = Database.database().reference()
-    ref.child("bunch").child(String(hero.id)).observeSingleEvent(of: .value, with: { (snapshot) in
-      
-      if snapshot.exists() {
-        let value = snapshot.value as! [String : AnyObject]
-        self.bunchs = BunchManager.getBunchModels(fireBaseDic: value, chooseHero: self.hero)
-    }
-      
-      DispatchQueue.main.async {
-        self.tableView.reloadData()
-      }
-    }) { (error) in
-      print(error)
-    }
+  
+
     
   }
   
@@ -62,9 +57,7 @@ extension BunchHeroesViewController: UITableViewDelegate, UITableViewDataSource 
     
     return cell
   }
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-    return 116.0
-  }
+
 
   
 }
