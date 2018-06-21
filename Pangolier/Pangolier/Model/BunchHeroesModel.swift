@@ -35,7 +35,13 @@ class BunchManager {
   class func sendBunch(bunch: BunchModel) {
     let ref = Database.database().reference()
     let bunchId = ref.childByAutoId().key
+    var bunchIds: [String] = []
     
+    for heroId in bunch.heroesId {
+      let id = ref.childByAutoId().key
+      ref.child("heroesBunch").child(String(heroId)).child(id).setValue(bunchId)
+      bunchIds.append(id)
+    }
     
     let sendDictionary = ["id" : bunchId,
                           "name" : bunch.name,
@@ -46,9 +52,7 @@ class BunchManager {
     
     ref.child("bunch").child(bunchId).setValue(sendDictionary)
     
-    for heroId in bunch.heroesId {
-      ref.child("heroesBunch").child(String(heroId)).childByAutoId().setValue(bunchId)
-    }
+   
   }
   
   class func getBunchModels(hero: HeroModel, completion: @escaping ((BunchModel) -> Void)) {

@@ -24,7 +24,7 @@ class BunchTableViewCell: UITableViewCell {
   @IBOutlet weak var buttonLike: UIImageView!
   
   
-  func setImagesAndText(allHeroes: [HeroModel], choosedHero: HeroModel, bunch: BunchModel) {
+  func setImagesAndText(allHeroes: [HeroModel], bunch: BunchModel) {
     bunchNameLabel.text = bunch.name
     cellBunch = bunch
     self.rateLabel.text = String(self.cellBunch.rate.count)

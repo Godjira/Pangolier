@@ -59,7 +59,7 @@ extension TopHeroBunchsViewController: UITableViewDelegate, UITableViewDataSourc
   
   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     var cell = tableView.dequeueReusableCell(withIdentifier: "BunchTableViewCell", for: indexPath) as! BunchTableViewCell
-    cell.setImagesAndText(allHeroes: self.allHeroes, choosedHero: self.hero, bunch: self.bunchs[indexPath.row])
+    cell.setImagesAndText(allHeroes: self.allHeroes, bunch: self.bunchs[indexPath.row])
     
     return cell
   }

@@ -53,11 +53,17 @@ extension BunchHeroesViewController: UITableViewDelegate, UITableViewDataSource 
   
   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     var cell = tableView.dequeueReusableCell(withIdentifier: "BunchTableViewCell", for: indexPath) as! BunchTableViewCell
-    cell.setImagesAndText(allHeroes: self.allHeroes, choosedHero: self.hero, bunch: self.bunchs[indexPath.row])
+    cell.setImagesAndText(allHeroes: self.allHeroes, bunch: self.bunchs[indexPath.row])
     
     return cell
   }
 
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let detailBunchVC = storyboard?.instantiateViewController(withIdentifier: "DetailBunchViewController") as! DetailBunchViewController
+    detailBunchVC.allHeroes = self.allHeroes
+    detailBunchVC.bunch = bunchs[indexPath.row]
+    navigationController?.pushViewController(detailBunchVC, animated: true)
+  }
 
   
 }
