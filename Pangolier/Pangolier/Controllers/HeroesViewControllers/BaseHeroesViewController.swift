@@ -14,9 +14,9 @@ class BaseHeroesViewController: UIViewController {
   var heroes = [HeroModel]()
   var groupHeroes: [[HeroModel]] = [[]]
   
-  let sections: [(title: String, image: UIImage)] = [("Strange", #imageLiteral(resourceName: "Red")),
+  let sections: [(title: String, image: UIImage)] = [("Strength", #imageLiteral(resourceName: "red")),
                                                      ("Agility", #imageLiteral(resourceName: "green")),
-                                                     ("Intelect", #imageLiteral(resourceName: "blue"))]
+                                                     ("Intellect", #imageLiteral(resourceName: "blue"))]
   
   override func viewDidLoad() {
     super.viewDidLoad()

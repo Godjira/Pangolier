@@ -32,7 +32,7 @@ class BunchTableViewCell: UITableViewCell {
     for userId in cellBunch.rate {
       if (Auth.auth().currentUser?.uid.elementsEqual(userId))!{
         buttonLike.image = #imageLiteral(resourceName: "likes")
-        return
+        break
       } else {
          buttonLike.image = #imageLiteral(resourceName: "like")
       }
