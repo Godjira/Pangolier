@@ -31,7 +31,7 @@ class BunchHeroesViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
   
-  
+  tableView.reloadData()
 
     
   }
@@ -52,7 +52,7 @@ extension BunchHeroesViewController: UITableViewDelegate, UITableViewDataSource 
   
   
   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    var cell = tableView.dequeueReusableCell(withIdentifier: "BunchTableViewCell", for: indexPath) as! BunchTableViewCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: "BunchTableViewCell", for: indexPath) as! BunchTableViewCell
     cell.setImagesAndText(allHeroes: self.allHeroes, bunch: self.bunchs[indexPath.row])
     
     return cell

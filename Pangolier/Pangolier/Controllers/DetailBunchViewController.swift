@@ -24,12 +24,13 @@ class DetailBunchViewController: UIViewController {
   @IBOutlet weak var rateImage: UIImageView!
   @IBOutlet weak var rateLabel: UILabel!
   
+  @IBOutlet weak var nameLabel: UILabel!
   
   @IBOutlet weak var descriptionTextView: UIPanTextView!
   
   override func viewDidLoad() {
     descriptionTextView.attributedText = descriptionTextView.setPlainStringWithImage(plain_string: bunch!.description)
-    
+    nameLabel.text = bunch!.name
     self.rateLabel.text = String(self.bunch!.rate.count)
     for userId in bunch!.rate {
       if (Auth.auth().currentUser?.uid.elementsEqual(userId))!{

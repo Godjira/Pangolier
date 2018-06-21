@@ -1045,9 +1045,8 @@
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSA-Zj-VZy">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSA-Zj-VZy">
                                         <rect key="frame" x="8" y="115" width="216" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1056,9 +1055,12 @@
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="3ei-oA-Uz6" secondAttribute="trailing" constant="5" id="2aq-9K-GBa"/>
+                                    <constraint firstItem="nSA-Zj-VZy" firstAttribute="leading" secondItem="FO6-j4-uGx" secondAttribute="leading" constant="8" id="FF3-Db-miJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="nSA-Zj-VZy" secondAttribute="bottom" constant="14" id="LcL-Ua-Ezb"/>
                                     <constraint firstItem="51X-is-HZM" firstAttribute="top" secondItem="ciE-rm-6gQ" secondAttribute="top" constant="-8" id="QBV-fy-2WR"/>
                                     <constraint firstItem="ciE-rm-6gQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FO6-j4-uGx" secondAttribute="leading" constant="20" symbolic="YES" id="R0c-Tx-khE"/>
                                     <constraint firstItem="fjE-lQ-6Un" firstAttribute="leading" secondItem="ciE-rm-6gQ" secondAttribute="trailing" constant="8" symbolic="YES" id="Zne-qh-B8m"/>
+                                    <constraint firstItem="ciE-rm-6gQ" firstAttribute="leading" secondItem="nSA-Zj-VZy" secondAttribute="trailing" constant="7.5" id="bdP-Fh-awJ"/>
                                     <constraint firstAttribute="bottom" secondItem="51X-is-HZM" secondAttribute="bottom" constant="5" id="c4S-V1-wcj"/>
                                     <constraint firstItem="3ei-oA-Uz6" firstAttribute="leading" secondItem="FO6-j4-uGx" secondAttribute="leading" constant="5" id="dn3-ZR-5KF"/>
                                     <constraint firstItem="3ei-oA-Uz6" firstAttribute="top" secondItem="FO6-j4-uGx" secondAttribute="top" constant="5" id="lWA-MM-ABy"/>
@@ -1066,6 +1068,7 @@
                                     <constraint firstItem="51X-is-HZM" firstAttribute="top" secondItem="3ei-oA-Uz6" secondAttribute="bottom" constant="12" id="pxe-Qh-bdA"/>
                                     <constraint firstItem="fjE-lQ-6Un" firstAttribute="baseline" secondItem="ciE-rm-6gQ" secondAttribute="baseline" id="qY3-nk-zfh"/>
                                     <constraint firstItem="51X-is-HZM" firstAttribute="trailing" secondItem="FO6-j4-uGx" secondAttribute="trailingMargin" id="z8h-mC-Ig9"/>
+                                    <constraint firstItem="nSA-Zj-VZy" firstAttribute="top" secondItem="3ei-oA-Uz6" secondAttribute="bottom" constant="17" id="ze4-kz-Gvw"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1089,6 +1092,7 @@
                         <outlet property="img3" destination="I7Q-EP-Jln" id="VIb-co-9Rr"/>
                         <outlet property="img4" destination="XrU-Xe-Dbz" id="Fr5-mG-nA8"/>
                         <outlet property="img5" destination="By6-di-Q9c" id="cLj-ke-Y8Q"/>
+                        <outlet property="nameLabel" destination="nSA-Zj-VZy" id="OE3-FC-yhk"/>
                         <outlet property="rateImage" destination="51X-is-HZM" id="eDe-KX-vcN"/>
                         <outlet property="rateLabel" destination="fjE-lQ-6Un" id="ICZ-Hy-eYN"/>
                     </connections>

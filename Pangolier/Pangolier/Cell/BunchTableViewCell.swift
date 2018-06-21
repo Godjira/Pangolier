@@ -24,6 +24,7 @@ class BunchTableViewCell: UITableViewCell {
   @IBOutlet weak var buttonLike: UIImageView!
   
   
+  
   func setImagesAndText(allHeroes: [HeroModel], bunch: BunchModel) {
     bunchNameLabel.text = bunch.name
     cellBunch = bunch
@@ -31,6 +32,9 @@ class BunchTableViewCell: UITableViewCell {
     for userId in cellBunch.rate {
       if (Auth.auth().currentUser?.uid.elementsEqual(userId))!{
         buttonLike.image = #imageLiteral(resourceName: "likes")
+        return
+      } else {
+         buttonLike.image = #imageLiteral(resourceName: "like")
       }
     }
     
