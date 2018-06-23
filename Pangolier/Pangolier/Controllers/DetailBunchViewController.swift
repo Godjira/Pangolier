@@ -31,6 +31,8 @@ class DetailBunchViewController: UIViewController {
   override func viewDidLoad() {
     descriptionTextView.attributedText = descriptionTextView.setPlainStringWithImage(plain_string: bunch!.description)
     nameLabel.text = bunch!.name
+    descriptionTextView.textColor = UIColor.white
+    
     self.rateLabel.text = String(self.bunch!.rate.count)
     for userId in bunch!.rate {
       if (Auth.auth().currentUser?.uid.elementsEqual(userId))!{
