@@ -1,0 +1,4 @@
+excluded:
+  - Pods
+  - vendor
+line_length: 140
