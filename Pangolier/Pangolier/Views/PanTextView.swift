@@ -21,16 +21,16 @@ class PanTextView: UITextView {
   
   // --- --- ---
   
-  func addImageFromAssets(image_name: String){
-    addImageFromAssetsToAttrString(image_name: image_name)
+  func addImageFromAssets(imageName: String) {
+    addImageFromAssetsToAttrString(imageName: imageName)
   }
   
   
-  func addImageFromAssetsToAttrString(image_name: String){
+  func addImageFromAssetsToAttrString(imageName: String){
     let attrString = NSMutableAttributedString()
     let textAttachment = NSTextAttachmentImageWithName()
-    textAttachment.image = UIImage(named: image_name)
-    textAttachment.imageTitle = image_name
+    textAttachment.image = UIImage(named: imageName)
+    textAttachment.imageTitle = imageName
     
     let oldWidth = textAttachment.image?.size.width
     
@@ -87,7 +87,7 @@ class PanTextView: UITextView {
     var count = 0
     self.attributedText.enumerateAttribute(.attachment, in : NSMakeRange(0, self.attributedText.length), options: [], using: { attribute, range, _ in
       if let attachment = attribute as? NSTextAttachment, attachment.image != nil {
-        count = count + 1
+        count += 1
       }
     })
     var attributedString2 = NSMutableAttributedString(attributedString: self.attributedText)
@@ -108,7 +108,7 @@ class PanTextView: UITextView {
           }else{
             return
           }
-          count = count + 1
+          count += 1
         }
       })
     }

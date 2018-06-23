@@ -36,8 +36,8 @@ class ItemManager {
       
       do {
         let dataItems = try JSONSerialization.jsonObject(with: data, options: []) as! [String : AnyObject]
-        let tempDic = dataItems["result"] as! [String : AnyObject]
-        let arrayItems = tempDic["items"] as! [AnyObject]
+        let tempDic = dataItems["result"] as? [String: AnyObject] ?? [:]
+        let arrayItems = tempDic["items"] as? [AnyObject] ?? []
         var items: [ItemModel] = []
         for item in arrayItems {
           let nativeItem = ItemModel.init(id: item["id"] as! Int,

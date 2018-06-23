@@ -31,9 +31,10 @@ class AddBunchHeroesViewController: UIViewController {
   }
   
   @IBAction func addHeroAction(_ sender: Any) {
-    let multipleHeroesVC = storyboard?.instantiateViewController(withIdentifier: "MultipleHeroesViewController") as! MultipleHeroesViewController
-    multipleHeroesVC.delegate = self
-    navigationController?.pushViewController(multipleHeroesVC, animated: true)
+    guard let multipleHeroesViewController = storyboard?
+      .instantiateViewController(withIdentifier: "MultipleHeroesViewController") as? MultipleHeroesViewController else { return }
+    multipleHeroesViewController.delegate = self
+    navigationController?.pushViewController(multipleHeroesViewController, animated: true)
   }
   
   @IBAction func saveButton(_ sender: Any) {
@@ -80,16 +81,16 @@ extension AddBunchHeroesViewController: UICollectionViewDelegate, UICollectionVi
   
   func didSelect(items: [ItemModel]) {
     for item in items {
-      bunchDescTextView.addImageFromAssets(image_name:item.name)
+      bunchDescTextView.addImageFromAssets(imageName:item.name)
     }
   }
-  
+
   func getHeroesAttr(heroes: [HeroModel]) {
     for hero in heroes {
-      bunchDescTextView.addImageFromAssets(image_name:hero.name)
+      bunchDescTextView.addImageFromAssets(imageName:hero.name)
     }
   }
-  
+
   func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
     return false
   }
