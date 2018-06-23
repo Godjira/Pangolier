@@ -24,6 +24,10 @@ class HeroViewController: UIViewController {
     tabBar.delegate = self
     tabBar.selectedItem = gideTabBarItem
     
+    setupViewControllers()
+  }
+  
+  func setupViewControllers() {
     let bunchVC = storyboard?.instantiateViewController(withIdentifier: "BunchHeroesViewController") as! BunchHeroesViewController
     bunchVC.hero = self.hero
     bunchVC.allHeroes = self.allHeroes

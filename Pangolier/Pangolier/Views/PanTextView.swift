@@ -54,7 +54,6 @@ class PanTextView: UITextView {
             heroes.append(String(plain_string[range]))
           }
         }
-        
         return heroes
       } catch let error {
         print("invalid regex: \(error.localizedDescription)")
@@ -78,7 +77,6 @@ class PanTextView: UITextView {
       attributedString.replaceCharacters(in: range, with: attrStringWithImage)
       plainString = attributedString.string
     }
-    
     return attributedString
   }
   
@@ -92,7 +90,6 @@ class PanTextView: UITextView {
         count = count + 1
       }
     })
-    
     var attributedString2 = NSMutableAttributedString(attributedString: self.attributedText)
     
     for _ in 0..<count {
@@ -115,7 +112,6 @@ class PanTextView: UITextView {
         }
       })
     }
-    
     return attributedString2.string
   }
   

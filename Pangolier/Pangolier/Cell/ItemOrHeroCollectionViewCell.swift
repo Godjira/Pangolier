@@ -13,6 +13,7 @@ class ItemOrHeroCollectionViewCell: UICollectionViewCell {
   
   @IBOutlet weak var itemOrHeroImageView: UIImageView!
   @IBOutlet weak var selectView: UIView!
+  
   var isNeedDelete = false
   
   override var isSelected: Bool {
