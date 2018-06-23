@@ -11,9 +11,9 @@ import UIKit
 import Firebase
 
 class BunchTableViewCell: UITableViewCell {
-  
+
   var cellBunch: BunchModel!
-  
+
   @IBOutlet weak var hero1Image: UIImageView!
   @IBOutlet weak var hero2Image: UIImageView!
   @IBOutlet weak var hero3Image: UIImageView!
@@ -22,63 +22,60 @@ class BunchTableViewCell: UITableViewCell {
   @IBOutlet weak var bunchNameLabel: UILabel!
   @IBOutlet weak var rateLabel: UILabel!
   @IBOutlet weak var buttonLike: UIImageView!
-  
-  
+
   func setImagesAndText(allHeroes: [HeroModel], bunch: BunchModel) {
     bunchNameLabel.text = bunch.name
     cellBunch = bunch
     self.rateLabel.text = String(self.cellBunch.rate.count)
     for userId in cellBunch.rate {
-      if (Auth.auth().currentUser?.uid.elementsEqual(userId))!{
+      if (Auth.auth().currentUser?.uid.elementsEqual(userId))! {
         buttonLike.image = #imageLiteral(resourceName: "likes")
         break
       } else {
         buttonLike.image = #imageLiteral(resourceName: "like")
       }
     }
-    
+
     let heroImages = [hero1Image, hero2Image, hero3Image, hero4Image, hero5Image]
     //delete chosed hero
     var bunchHeroes: [HeroModel] = []
-    for heroId in bunch.heroesId{
+    for heroId in bunch.heroesId {
       bunchHeroes.append(HeroManager.getHeroModelById(allHero: allHeroes, id: heroId)!)
     }
-    
+
     bunchHeroes.enumerated().forEach { index, hero in
       heroImages[index]?.image = UIImage(named: hero.name)
     }
-    
+
     let tap = UITapGestureRecognizer(target: self, action: #selector(BunchTableViewCell.tapLikeButton))
     buttonLike.isUserInteractionEnabled = true
     buttonLike.addGestureRecognizer(tap)
-    
+
   }
-  
+
   @objc func tapLikeButton() {
     if Auth.auth().currentUser == nil {
       return
     }
-    
-    for user in cellBunch.rate{
+    for user in cellBunch.rate {
       if user == Auth.auth().currentUser?.uid {
-        
+
         if cellBunch.userId == user {
           return
         }
-        
-        cellBunch.rate.remove(at:cellBunch.rate.index(of: user)!)
+
+        cellBunch.rate.remove(at: cellBunch.rate.index(of: user)!)
         BunchManager.sendRate(bunch_with_rate: cellBunch)
         buttonLike.image = #imageLiteral(resourceName: "like")
         self.rateLabel.text = String(self.cellBunch.rate.count)
         return
       }
     }
-    
+
     cellBunch.rate.append((Auth.auth().currentUser?.uid)!)
     BunchManager.sendRate(bunch_with_rate: cellBunch)
     buttonLike.image = #imageLiteral(resourceName: "likes")
     self.rateLabel.text = String(self.cellBunch.rate.count)
     return
   }
-  
 }

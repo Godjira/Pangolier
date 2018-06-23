@@ -14,67 +14,62 @@ class BaseHeroesViewController: UIViewController {
   
   var heroes = [HeroModel]()
   var groupHeroes: [[HeroModel]] = [[]]
-  
+
   let sections: [(title: String, image: UIImage)] = [("Strength", #imageLiteral(resourceName: "red")),
                                                      ("Agility", #imageLiteral(resourceName: "green")),
                                                      ("Intellect", #imageLiteral(resourceName: "blue"))]
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     // Get instets
-    let colletctionViewLayout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+    guard let colletctionViewLayout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
     colletctionViewLayout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10)
-    
     HeroManager.getHeroes { (heroesArray) in
       self.heroes = heroesArray
       // Get sort heroes
       self.groupHeroes = HeroManager.getSortHeroesWithAttributes(heroes: self.heroes)
       self.collectionView.reloadData()
-      
     }
   }
 }
 
-//MARK: - UICollectionViewDataSource, UICollectionViewDelegate
+// MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 extension BaseHeroesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-  func numberOfSections(in collectionView: UICollectionView) -> Int{
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
     print(groupHeroes.count)
     return groupHeroes.count
   }
-  
-  
+
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return groupHeroes[section].count
   }
-  
+
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemOrHeroCollectionViewCell", for: indexPath) as! ItemOrHeroCollectionViewCell
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemOrHeroCollectionViewCell", for: indexPath)
+      as? ItemOrHeroCollectionViewCell else { return UICollectionViewCell() }
     cell.setHeroImage(hero: self.groupHeroes[indexPath.section][indexPath.row])
-    
+
     return cell
   }
-  
-  func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-    
+
+  private func collectionView(_ collectionView: UICollectionView,
+                      viewForSupplementaryElementOfKind kind: String,
+                      at indexPath: IndexPath) -> UICollectionViewCell {
+
     var reusableView = UICollectionReusableView()
-    
     if kind == UICollectionElementKindSectionHeader {
-      let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as! HeaderCollectionReusableView
-      
+      guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader,
+              withReuseIdentifier: "HeaderCollectionReusableView",
+              for: indexPath) as? HeaderCollectionReusableView else { return UICollectionViewCell() }
+
       let section = sections[indexPath.section]
-      
+
       headerView.titleLabel.text = section.title
       headerView.imageView.image = section.image
-      
       reusableView = headerView
     }
-    return reusableView
+
+    guard let cell = reusableView as? UICollectionViewCell else { return UICollectionViewCell() }
+    return cell
   }
-  
-  
-  
-  
-  
-  
-  
 }
