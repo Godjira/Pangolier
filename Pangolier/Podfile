@@ -12,8 +12,6 @@ target 'Pangolier' do
     pod 'Firebase/Auth'
     pod 'GoogleSignIn'
     pod 'Toaster'
-
-
-
+    pod 'SwiftLint'
 
 end

@@ -218,6 +218,7 @@
 				D6AEE90A20AC11F30034A8A9 /* Resources */,
 				A2492FB7DBAA96041349DEA7 /* [CP] Embed Pods Frameworks */,
 				3E366DAF0CFE35306FB3C170 /* [CP] Copy Pods Resources */,
+				CE0B15F920DE6722001FE58C /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -319,6 +320,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pangolier/Pods-Pangolier-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CE0B15F920DE6722001FE58C /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint";
 		};
 		F4D2CEBE10DA12B37BCFDBA0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
