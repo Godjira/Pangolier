@@ -12,13 +12,11 @@ import Firebase
 
 class AddBunchHeroesViewController: UIViewController {
   
-  var ref : DatabaseReference!
-  
   var heroes: [HeroModel] = []
   
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var bunchNameTextField: UITextField!
-  @IBOutlet weak var bunchDescTextView: UIPanTextView!
+  @IBOutlet weak var bunchDescTextView: PanTextView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,13 +28,12 @@ class AddBunchHeroesViewController: UIViewController {
       
       navigationController?.present(loginVC, animated: true)
     }
-    ref = Database.database().reference()
   }
   
   @IBAction func addHeroAction(_ sender: Any) {
-      let multipleHeroesVC = storyboard?.instantiateViewController(withIdentifier: "MultipleHeroesViewController") as! MultipleHeroesViewController
-      multipleHeroesVC.delegate = self
-      navigationController?.pushViewController(multipleHeroesVC, animated: true)
+    let multipleHeroesVC = storyboard?.instantiateViewController(withIdentifier: "MultipleHeroesViewController") as! MultipleHeroesViewController
+    multipleHeroesVC.delegate = self
+    navigationController?.pushViewController(multipleHeroesVC, animated: true)
   }
   
   @IBAction func saveButton(_ sender: Any) {
@@ -49,10 +46,10 @@ class AddBunchHeroesViewController: UIViewController {
       navigationController?.present(loginVC, animated: true)
     } else {
       if bunchDescTextView.text != "" && bunchNameTextField.text != "" && self.heroes.count > 1 {
-      let bunch = BunchModel.init(id: "",name: bunchNameTextField.text!, userId: (Auth.auth().currentUser?.uid)!, heroesId: self.heroes.map { $0.id }, description: bunchDescTextView.getPlainText(), rate: [(Auth.auth().currentUser?.uid)!])
-      BunchManager.sendBunch(bunch: bunch)
-      self.navigationController?.popViewController(animated: true)
-    }
+        let bunch = BunchModel.init(id: "",name: bunchNameTextField.text!, userId: (Auth.auth().currentUser?.uid)!, heroesId: self.heroes.map { $0.id }, description: bunchDescTextView.getPlainText(), rate: [(Auth.auth().currentUser?.uid)!])
+        BunchManager.sendBunch(bunch: bunch)
+        self.navigationController?.popViewController(animated: true)
+      }
     }
   }
   
@@ -60,7 +57,7 @@ class AddBunchHeroesViewController: UIViewController {
   @IBAction func getStringAction(_ sender: Any) {
     let plainText = bunchDescTextView.getPlainText()
     bunchDescTextView.text = ""
-
+    
     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
       self.bunchDescTextView.attributedText = self.bunchDescTextView.setPlainStringWithImage(plain_string: plainText)
     }
@@ -94,7 +91,7 @@ extension AddBunchHeroesViewController: UICollectionViewDelegate, UICollectionVi
   }
   
   func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-   return false
+    return false
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

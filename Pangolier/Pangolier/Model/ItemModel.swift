@@ -19,7 +19,7 @@ struct ItemModel {
   var recipe: Int
   var localizedName: String
   
-
+  
 }
 
 class ItemManager {
@@ -57,7 +57,6 @@ class ItemManager {
       }
       }.resume()
   }
-  
   
   class func getExistItems(items: [ItemModel]) -> [ItemModel]{
     var mutItems = [ItemModel]()

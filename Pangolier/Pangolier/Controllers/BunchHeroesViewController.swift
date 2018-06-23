@@ -17,7 +17,6 @@ class BunchHeroesViewController: UIViewController {
   var ref: DatabaseReference!
   var bunchs: [BunchModel] = []
   
-
   @IBOutlet weak var tableView: UITableView!
   
   override func viewWillAppear(_ animated: Bool) {
@@ -30,9 +29,6 @@ class BunchHeroesViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-  
-    
-    
   }
   
   @IBAction func addBunchAction(_ sender: UIButton) {
@@ -56,13 +52,13 @@ extension BunchHeroesViewController: UITableViewDelegate, UITableViewDataSource 
     
     return cell
   }
-
+  
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let detailBunchVC = storyboard?.instantiateViewController(withIdentifier: "DetailBunchViewController") as! DetailBunchViewController
     detailBunchVC.allHeroes = self.allHeroes
     detailBunchVC.bunch = bunchs[indexPath.row]
     navigationController?.pushViewController(detailBunchVC, animated: true)
   }
-
+  
   
 }

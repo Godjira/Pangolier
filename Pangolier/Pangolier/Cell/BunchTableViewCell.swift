@@ -24,7 +24,6 @@ class BunchTableViewCell: UITableViewCell {
   @IBOutlet weak var buttonLike: UIImageView!
   
   
-  
   func setImagesAndText(allHeroes: [HeroModel], bunch: BunchModel) {
     bunchNameLabel.text = bunch.name
     cellBunch = bunch
@@ -34,10 +33,9 @@ class BunchTableViewCell: UITableViewCell {
         buttonLike.image = #imageLiteral(resourceName: "likes")
         break
       } else {
-         buttonLike.image = #imageLiteral(resourceName: "like")
+        buttonLike.image = #imageLiteral(resourceName: "like")
       }
     }
-    
     
     let heroImages = [hero1Image, hero2Image, hero3Image, hero4Image, hero5Image]
     //delete chosed hero
@@ -54,14 +52,13 @@ class BunchTableViewCell: UITableViewCell {
     buttonLike.isUserInteractionEnabled = true
     buttonLike.addGestureRecognizer(tap)
     
-    
   }
   
   @objc func tapLikeButton() {
     if Auth.auth().currentUser == nil {
       return
     }
-  
+    
     for user in cellBunch.rate{
       if user == Auth.auth().currentUser?.uid {
         
@@ -77,11 +74,11 @@ class BunchTableViewCell: UITableViewCell {
       }
     }
     
-        cellBunch.rate.append((Auth.auth().currentUser?.uid)!)
-        BunchManager.sendRate(bunch_with_rate: cellBunch)
-        buttonLike.image = #imageLiteral(resourceName: "likes")
-        self.rateLabel.text = String(self.cellBunch.rate.count)
-        return
+    cellBunch.rate.append((Auth.auth().currentUser?.uid)!)
+    BunchManager.sendRate(bunch_with_rate: cellBunch)
+    buttonLike.image = #imageLiteral(resourceName: "likes")
+    self.rateLabel.text = String(self.cellBunch.rate.count)
+    return
   }
   
 }

@@ -14,12 +14,7 @@ class HeroViewController: UIViewController {
   @IBOutlet weak var tabBar: UITabBar!
   @IBOutlet weak var gideTabBarItem: UITabBarItem!
   @IBOutlet weak var bunchTabBarItem: UITabBarItem!
-  
-  
   @IBOutlet weak var scrollView: UIScrollView!
-  
-  var width = CGFloat(integerLiteral: 0)
-  var height = CGFloat(integerLiteral: 0)
   
   var hero: HeroModel!
   var allHeroes: [HeroModel] = []
@@ -28,8 +23,6 @@ class HeroViewController: UIViewController {
     super.viewDidLoad()
     tabBar.delegate = self
     tabBar.selectedItem = gideTabBarItem
-    
-    
     
     let bunchVC = storyboard?.instantiateViewController(withIdentifier: "BunchHeroesViewController") as! BunchHeroesViewController
     bunchVC.hero = self.hero
@@ -40,18 +33,16 @@ class HeroViewController: UIViewController {
     topVC.allHeroes = self.allHeroes
     
     let bounds = UIScreen.main.bounds
-    width = bounds.size.width
-    height = bounds.size.height
+    let width = bounds.size.width
+    let height = bounds.size.height
     
     scrollView.contentSize = CGSize(width: 2 * width, height: height)
     
     let viewControllers = [bunchVC, topVC]
-
     
     var idx: Int = 0
     
     for viewController in viewControllers {
-      
       addChildViewController(viewController)
       let originX = CGFloat(idx) * width
       viewController.view.frame = CGRect(origin: CGPoint(x: originX, y: 0), size: CGSize(width: width, height: height))
@@ -62,11 +53,9 @@ class HeroViewController: UIViewController {
   }
   
   @IBAction func addAction(_ sender: Any) {
-      let addBunchVC = storyboard?.instantiateViewController(withIdentifier: "AddBunchHeroesViewController")
-      navigationController?.pushViewController(addBunchVC!, animated: true)
+    let addBunchVC = storyboard?.instantiateViewController(withIdentifier: "AddBunchHeroesViewController")
+    navigationController?.pushViewController(addBunchVC!, animated: true)
   }
-  
-  
 }
 
 extension HeroViewController: UITabBarDelegate, UIScrollViewDelegate {
@@ -74,7 +63,6 @@ extension HeroViewController: UITabBarDelegate, UIScrollViewDelegate {
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     let index = Int(scrollView.contentOffset.x / scrollView.bounds.size.width)
     let selectedItem = tabBar.items![index]
-  
     tabBar.selectedItem = selectedItem
   }
   
@@ -84,7 +72,7 @@ extension HeroViewController: UITabBarDelegate, UIScrollViewDelegate {
       self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     if item == bunchTabBarItem {
-      self.scrollView.setContentOffset(CGPoint(x: width, y: 0), animated: true)
+      self.scrollView.setContentOffset(CGPoint(x: UIScreen.main.bounds.size.width, y: 0), animated: true)
     }
   }
   

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class UIPanTextView: UITextView {
+class PanTextView: UITextView {
   
   // Image of type "From Assets"
   let imageFromAssetsStart = "[img loc="
@@ -18,8 +18,8 @@ class UIPanTextView: UITextView {
   //Image of type "From URL"
   let imageFromURLStart = "[img url="
   let imageFromURLEnd = "]"
-
-// --- --- ---
+  
+  // --- --- ---
   
   func addImageFromAssets(image_name: String){
     addImageFromAssetsToAttrString(image_name: image_name)
@@ -27,14 +27,14 @@ class UIPanTextView: UITextView {
   
   
   func addImageFromAssetsToAttrString(image_name: String){
-    var attrString = NSMutableAttributedString()
+    let attrString = NSMutableAttributedString()
     let textAttachment = NSTextAttachmentImageWithName()
     textAttachment.image = UIImage(named: image_name)
     textAttachment.imageTitle = image_name
     
     let oldWidth = textAttachment.image?.size.width
     
-    let scaleFactor = oldWidth! / (self.frame.size.width - 10);
+    let scaleFactor = oldWidth! / (self.frame.size.width - 20);
     textAttachment.image = UIImage(cgImage: (textAttachment.image?.cgImage)!)
     
     let attrStringWithImage = NSAttributedString(attachment: textAttachment)
@@ -54,37 +54,37 @@ class UIPanTextView: UITextView {
             heroes.append(String(plain_string[range]))
           }
         }
-
+        
         return heroes
       } catch let error {
         print("invalid regex: \(error.localizedDescription)")
         return []
       }
     }
-
+    
     var plainString = plain_string
     let heroes = matches(for: "\\[img src=(.*?)\\]", in: plain_string)
     let attributedString = NSMutableAttributedString(string: plain_string)
-
+    
     for hero in heroes {
       let range = (plainString as NSString).range(of: "[img src=\(hero)]")
-
+      
       let textAttachment = NSTextAttachmentImageWithName()
       let image = UIImage(named: hero)
       textAttachment.imageTitle = hero
       textAttachment.image = image
-
+      
       let attrStringWithImage = NSAttributedString(attachment: textAttachment)
       attributedString.replaceCharacters(in: range, with: attrStringWithImage)
       plainString = attributedString.string
     }
-
+    
     return attributedString
   }
-
   
-    // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+  
+  // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  
   func getPlainText() -> String {
     var count = 0
     self.attributedText.enumerateAttribute(.attachment, in : NSMakeRange(0, self.attributedText.length), options: [], using: { attribute, range, _ in

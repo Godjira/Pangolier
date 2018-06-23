@@ -18,7 +18,6 @@ class MultipleHeroesViewController: BaseHeroesViewController {
     let item = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(MultipleHeroesViewController.saveHeroBunchAction))
     navigationItem.rightBarButtonItem = item
     collectionView.allowsMultipleSelection = true
-    
   }
   
   @objc func saveHeroBunchAction() {
@@ -40,8 +39,6 @@ class MultipleHeroesViewController: BaseHeroesViewController {
     }
   }
   
-  
-  
   //MARK: - CollectionDelegate and DataSource
   func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
     if (collectionView.indexPathsForSelectedItems?.count)! < 5 {
@@ -49,12 +46,12 @@ class MultipleHeroesViewController: BaseHeroesViewController {
     }
     return false
   }
-  
 }
 
 protocol GetHeroesDelegat: class {
   func didSelect(heroes: [HeroModel])
 }
+
 protocol GetHeroesAttrDelegate: class {
   func getHeroesAttr(heroes: [HeroModel])
 }

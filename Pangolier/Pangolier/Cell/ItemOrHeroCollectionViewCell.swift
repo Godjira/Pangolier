@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class ItemOrHeroCollectionViewCell: UICollectionViewCell {
-
+  
   @IBOutlet weak var itemOrHeroImageView: UIImageView!
   @IBOutlet weak var selectView: UIView!
   var isNeedDelete = false
@@ -18,9 +18,9 @@ class ItemOrHeroCollectionViewCell: UICollectionViewCell {
   override var isSelected: Bool {
     didSet {
       if selectView != nil {
-      UIView.animate(withDuration: 0.4) {
-        self.selectView.alpha = self.isSelected ? 0.3 : 0.0
-      }
+        UIView.animate(withDuration: 0.4) {
+          self.selectView.alpha = self.isSelected ? 0.3 : 0.0
+        }
       }
     }
   }
@@ -35,5 +35,5 @@ class ItemOrHeroCollectionViewCell: UICollectionViewCell {
     itemOrHeroImageView.image = imageItem
     itemOrHeroImageView.contentMode = .scaleAspectFit
   }
-
+  
 }

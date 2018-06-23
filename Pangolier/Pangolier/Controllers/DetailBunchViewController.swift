@@ -26,9 +26,10 @@ class DetailBunchViewController: UIViewController {
   
   @IBOutlet weak var nameLabel: UILabel!
   
-  @IBOutlet weak var descriptionTextView: UIPanTextView!
+  @IBOutlet weak var descriptionTextView: PanTextView!
   
   override func viewDidLoad() {
+    super.viewDidLoad()
     descriptionTextView.attributedText = descriptionTextView.setPlainStringWithImage(plain_string: bunch!.description)
     nameLabel.text = bunch!.name
     descriptionTextView.textColor = UIColor.white
@@ -57,12 +58,12 @@ class DetailBunchViewController: UIViewController {
     
   }
   
-    @objc func tapLikeButton() {
+  @objc func tapLikeButton() {
     if Auth.auth().currentUser == nil {
       return
     }
     
-    for user in bunch!.rate{
+    for user in bunch!.rate {
       if user == Auth.auth().currentUser?.uid {
         
         if bunch!.userId == user {
@@ -76,11 +77,11 @@ class DetailBunchViewController: UIViewController {
         return
       }
     }
-      bunch!.rate.append((Auth.auth().currentUser?.uid)!)
-      BunchManager.sendRate(bunch_with_rate: bunch!)
-      rateImage.image = #imageLiteral(resourceName: "likes")
-      self.rateLabel.text = String(self.bunch!.rate.count)
-      return
+    bunch!.rate.append((Auth.auth().currentUser?.uid)!)
+    BunchManager.sendRate(bunch_with_rate: bunch!)
+    rateImage.image = #imageLiteral(resourceName: "likes")
+    self.rateLabel.text = String(self.bunch!.rate.count)
+    return
   }
   
   

@@ -52,7 +52,6 @@ class BunchManager {
     
     ref.child("bunch").child(bunchId).setValue(sendDictionary)
     
-   
   }
   
   class func getBunchModels(hero: HeroModel, completion: @escaping ((BunchModel) -> Void)) {
@@ -86,14 +85,14 @@ class BunchManager {
     ref.child("bunch").observeSingleEvent(of: .value) { (snapshot) in
       var tempBunchs: [BunchModel] = []
       if snapshot.exists() {
-      let bunchDic = snapshot.value as! [String : [String : AnyObject]]
-      for (_, dic) in bunchDic {
-        let bunch = BunchModel(id: dic["id"] as! String,name: dic["name"] as! String, userId: dic["user"] as! String, heroesId: dic["heroes"] as! [Int], description: dic["desc"] as! String, rate: dic["rate"] as! [String])
-        tempBunchs.append(bunch)
-      }
+        let bunchDic = snapshot.value as! [String : [String : AnyObject]]
+        for (_, dic) in bunchDic {
+          let bunch = BunchModel(id: dic["id"] as! String,name: dic["name"] as! String, userId: dic["user"] as! String, heroesId: dic["heroes"] as! [Int], description: dic["desc"] as! String, rate: dic["rate"] as! [String])
+          tempBunchs.append(bunch)
+        }
       }
       var bunchs: [BunchModel] = []
-
+      
       for bunch in tempBunchs {
         for id in bunch.heroesId {
           if id == hero.id {
@@ -102,16 +101,13 @@ class BunchManager {
         }
       }
       bunchs.sort(by: { $0.rate.count > $1.rate.count  })
-
+      
       DispatchQueue.main.async {
         completion(bunchs)
       }
       
     }
   }
-  
-  
-
   
   class func sendRate(bunch_with_rate bunch: BunchModel){
     let ref = Database.database().reference()
@@ -127,7 +123,5 @@ class BunchManager {
     ref.child("bunch").child(bunch.id).setValue(sendDictionary)
     
   }
-  
-  
   
 }

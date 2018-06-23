@@ -11,6 +11,7 @@ import UIKit
 class BaseHeroesViewController: UIViewController {
   
   @IBOutlet weak var collectionView: UICollectionView!
+  
   var heroes = [HeroModel]()
   var groupHeroes: [[HeroModel]] = [[]]
   
@@ -64,7 +65,7 @@ extension BaseHeroesViewController: UICollectionViewDataSource, UICollectionView
       
       headerView.titleLabel.text = section.title
       headerView.imageView.image = section.image
-  
+      
       reusableView = headerView
     }
     return reusableView

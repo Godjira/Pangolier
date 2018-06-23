@@ -18,7 +18,6 @@ class TopHeroBunchsViewController: UIViewController {
   var ref: DatabaseReference!
   var bunchs: [BunchModel] = []
   
-  
   @IBOutlet weak var tableView: UITableView!
   
   override func viewWillAppear(_ animated: Bool) {
@@ -27,15 +26,11 @@ class TopHeroBunchsViewController: UIViewController {
     BunchManager.getAllBunchModels(hero: self.hero) { (bunchs) in
       self.bunchs = bunchs
       self.tableView.reloadData()
-      
     }
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    
-    
     
   }
   
@@ -56,7 +51,6 @@ extension TopHeroBunchsViewController: UITableViewDelegate, UITableViewDataSourc
     return bunchs.count
   }
   
-  
   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "BunchTableViewCell", for: indexPath) as! BunchTableViewCell
     cell.setImagesAndText(allHeroes: self.allHeroes, bunch: self.bunchs[indexPath.row])
@@ -70,7 +64,5 @@ extension TopHeroBunchsViewController: UITableViewDelegate, UITableViewDataSourc
     detailBunchVC.bunch = bunchs[indexPath.row]
     navigationController?.pushViewController(detailBunchVC, animated: true)
   }
-  
-  
   
 }
