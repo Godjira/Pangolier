@@ -76,6 +76,7 @@ class PanTextView: UITextView {
 
   func getPlainText() -> String {
     var count = 0
+    
     self.attributedText.enumerateAttribute(.attachment,
                                            in: NSMakeRange(0, self.attributedText.length), options: [], using: { attribute, range, _ in
 
@@ -88,7 +89,7 @@ class PanTextView: UITextView {
     for _ in 0..<count {
       let attributedString = NSMutableAttributedString(attributedString: attributedString2)
       var count = 0
-      let range = NSMakeRange(0, attributedString.length)
+      let range = NSRange.init(location: 0, length: attributedString.length)
       attributedString.enumerateAttribute(.attachment,
                                           in: range, options: [], using: { attribute, range, _ in
 

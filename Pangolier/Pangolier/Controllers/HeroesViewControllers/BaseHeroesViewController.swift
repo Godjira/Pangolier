@@ -23,7 +23,7 @@ class BaseHeroesViewController: UIViewController {
     super.viewDidLoad()
     // Get instets
     guard let colletctionViewLayout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
-    colletctionViewLayout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10)
+    colletctionViewLayout.sectionInset =     UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
     HeroManager.getHeroes { (heroesArray) in
       self.heroes = heroesArray
       // Get sort heroes
@@ -52,15 +52,15 @@ extension BaseHeroesViewController: UICollectionViewDataSource, UICollectionView
     return cell
   }
 
-  private func collectionView(_ collectionView: UICollectionView,
-                      viewForSupplementaryElementOfKind kind: String,
-                      at indexPath: IndexPath) -> UICollectionViewCell {
+   func collectionView(_ collectionView: UICollectionView,
+                       viewForSupplementaryElementOfKind kind: String,
+                       at indexPath: IndexPath) -> UICollectionReusableView {
 
     var reusableView = UICollectionReusableView()
     if kind == UICollectionElementKindSectionHeader {
       guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader,
               withReuseIdentifier: "HeaderCollectionReusableView",
-              for: indexPath) as? HeaderCollectionReusableView else { return UICollectionViewCell() }
+              for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
 
       let section = sections[indexPath.section]
 
@@ -69,7 +69,6 @@ extension BaseHeroesViewController: UICollectionViewDataSource, UICollectionView
       reusableView = headerView
     }
 
-    guard let cell = reusableView as? UICollectionViewCell else { return UICollectionViewCell() }
-    return cell
+    return reusableView
   }
 }
