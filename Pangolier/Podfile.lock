@@ -39,14 +39,12 @@ PODS:
     - GTMSessionFetcher/Core (= 1.1.15)
   - leveldb-library (1.20)
   - SwiftLint (0.25.1)
-  - Toaster (2.1.1)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - GoogleSignIn
   - SwiftLint
-  - Toaster
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -60,7 +58,6 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - SwiftLint
-    - Toaster
 
 SPEC CHECKSUMS:
   Firebase: d6861c2059d8c32d1e6dd8932e22ada346d90a3a
@@ -73,8 +70,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
-  Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
 
-PODFILE CHECKSUM: 3d0b011f241d14c873cb91a5e5e7d1ec11136818
+PODFILE CHECKSUM: d53133720671dcf9208b5c3dc36c782354ed2407
 
 COCOAPODS: 1.5.2

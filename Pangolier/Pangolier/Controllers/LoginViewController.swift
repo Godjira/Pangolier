@@ -8,8 +8,8 @@
 
 import Foundation
 import UIKit
-import GoogleSignIn
 import Firebase
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
   
@@ -19,7 +19,6 @@ class LoginViewController: UIViewController {
     view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
     GIDSignIn.sharedInstance().delegate = self
     GIDSignIn.sharedInstance().uiDelegate = self
-    
   }
 
   override func viewWillAppear(_ animated: Bool) {

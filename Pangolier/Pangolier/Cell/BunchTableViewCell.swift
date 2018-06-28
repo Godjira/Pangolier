@@ -23,16 +23,22 @@ class BunchTableViewCell: UITableViewCell {
   @IBOutlet weak var rateLabel: UILabel!
   @IBOutlet weak var buttonLike: UIImageView!
 
-  func setImagesAndText(allHeroes: [HeroModel], bunch: BunchModel) {
+  func setImagesAndText(allHeroes: [HeroModel], bunch: BunchModel, controller: UIViewController) {
     bunchNameLabel.text = bunch.name
     cellBunch = bunch
+    if Auth.auth().currentUser == nil {
+      let loginVC = LoginViewController()
+      loginVC.modalTransitionStyle = .crossDissolve
+      loginVC.modalPresentationStyle = .overCurrentContext
+      controller.present(loginVC, animated: true)
+    }
     self.rateLabel.text = String(self.cellBunch.rate.count)
     for userId in cellBunch.rate {
       if (Auth.auth().currentUser?.uid.elementsEqual(userId))! {
-        buttonLike.image = #imageLiteral(resourceName: "likes")
+        buttonLike.image = #imageLiteral(resourceName: "like")
         break
       } else {
-        buttonLike.image = #imageLiteral(resourceName: "like")
+        buttonLike.image = #imageLiteral(resourceName: "likes")
       }
     }
 
@@ -66,7 +72,7 @@ class BunchTableViewCell: UITableViewCell {
 
         cellBunch.rate.remove(at: cellBunch.rate.index(of: user)!)
         BunchManager.sendRate(bunch_with_rate: cellBunch)
-        buttonLike.image = #imageLiteral(resourceName: "like")
+        buttonLike.image = #imageLiteral(resourceName: "likes")
         self.rateLabel.text = String(self.cellBunch.rate.count)
         return
       }
@@ -74,7 +80,7 @@ class BunchTableViewCell: UITableViewCell {
 
     cellBunch.rate.append((Auth.auth().currentUser?.uid)!)
     BunchManager.sendRate(bunch_with_rate: cellBunch)
-    buttonLike.image = #imageLiteral(resourceName: "likes")
+    buttonLike.image = #imageLiteral(resourceName: "like")
     self.rateLabel.text = String(self.cellBunch.rate.count)
     return
   }
