@@ -15,8 +15,7 @@ class SingleHeroesViewController: BaseHeroesViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let item = UIBarButtonItem(barButtonSystemItem: .save, target: self,
-                               action: #selector(MultipleHeroesViewController.saveHeroBunchAction))
+    let item = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(MultipleHeroesViewController.saveHeroBunchAction))
     navigationItem.rightBarButtonItem = item
     self.collectionView.allowsMultipleSelection = true
   }

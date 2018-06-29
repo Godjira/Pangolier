@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import Firebase
-import FirebaseAuth
 
 class DetailBunchViewController: UIViewController {
   
@@ -36,9 +35,6 @@ class DetailBunchViewController: UIViewController {
     self.rateLabel.text = String(self.bunch!.rate.count)
     for userId in bunch!.rate {
       if (Auth.auth().currentUser?.uid.elementsEqual(userId))! {
-        rateImage.image = #imageLiteral(resourceName: "like")
-        break
-      } else {
         rateImage.image = #imageLiteral(resourceName: "likes")
       }
     }
@@ -71,14 +67,14 @@ class DetailBunchViewController: UIViewController {
 
         bunch!.rate.remove(at: bunch!.rate.index(of: user)!)
         BunchManager.sendRate(bunch_with_rate: bunch!)
-        rateImage.image = #imageLiteral(resourceName: "likes")
+        rateImage.image = #imageLiteral(resourceName: "like")
         self.rateLabel.text = String(self.bunch!.rate.count)
         return
       }
     }
     bunch!.rate.append((Auth.auth().currentUser?.uid)!)
     BunchManager.sendRate(bunch_with_rate: bunch!)
-    rateImage.image = #imageLiteral(resourceName: "like")
+    rateImage.image = #imageLiteral(resourceName: "likes")
     self.rateLabel.text = String(self.bunch!.rate.count)
     return
   }

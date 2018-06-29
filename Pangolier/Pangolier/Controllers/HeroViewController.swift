@@ -18,25 +18,26 @@ class HeroViewController: UIViewController {
   
   var hero: HeroModel!
   var allHeroes: [HeroModel] = []
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     tabBar.delegate = self
     tabBar.selectedItem = gideTabBarItem
+    
     setupViewControllers()
   }
-
+  
   func setupViewControllers() {
     guard let bunchVC = storyboard?
       .instantiateViewController(withIdentifier: "BunchHeroesViewController") as? BunchHeroesViewController else { return }
     bunchVC.hero = self.hero
     bunchVC.allHeroes = self.allHeroes
-
+    
     guard let topVC = storyboard?
       .instantiateViewController(withIdentifier: "TopHeroBunchsViewController") as? TopHeroBunchsViewController else { return }
     topVC.hero = self.hero
     topVC.allHeroes = self.allHeroes
-
+    
     let bounds = UIScreen.main.bounds
     let width = bounds.size.width
     let height = bounds.size.height
@@ -62,7 +63,7 @@ class HeroViewController: UIViewController {
 }
 
 extension HeroViewController: UITabBarDelegate, UIScrollViewDelegate {
-
+  
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     let index = Int(scrollView.contentOffset.x / scrollView.bounds.size.width)
     let selectedItem = tabBar.items![index]

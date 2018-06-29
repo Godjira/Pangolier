@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import Firebase
-import FirebaseAuth
 
 class AddBunchHeroesViewController: UIViewController {
 
@@ -25,7 +24,7 @@ class AddBunchHeroesViewController: UIViewController {
       let loginVC = LoginViewController()
       loginVC.modalTransitionStyle = .crossDissolve
       loginVC.modalPresentationStyle = .overCurrentContext
-      self.present(loginVC, animated: true)
+      navigationController?.present(loginVC, animated: true)
     }
   }
 

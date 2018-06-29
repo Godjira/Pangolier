@@ -12,7 +12,7 @@ class MultipleHeroesViewController: BaseHeroesViewController {
   
   weak var delegate: GetHeroesDelegat?
   weak var delegateHeroesAttr: GetHeroesAttrDelegate?
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     let item = UIBarButtonItem(barButtonSystemItem: .save, target: self,

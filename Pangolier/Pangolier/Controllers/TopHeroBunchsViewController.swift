@@ -53,7 +53,7 @@ extension TopHeroBunchsViewController: UITableViewDelegate, UITableViewDataSourc
   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView
       .dequeueReusableCell(withIdentifier: "BunchTableViewCell", for: indexPath) as? BunchTableViewCell else { return UITableViewCell()}
-    cell.setImagesAndText(allHeroes: self.allHeroes, bunch: self.bunchs[indexPath.row], controller: self)
+    cell.setImagesAndText(allHeroes: self.allHeroes, bunch: self.bunchs[indexPath.row])
 
     return cell
   }
