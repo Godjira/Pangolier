@@ -2,3 +2,5 @@ excluded:
   - Pods
   - vendor
 line_length: 140
+disabled_rules:
+  - trailing_whitespace
