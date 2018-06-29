@@ -8,12 +8,14 @@
 
 import UIKit
 import FirebaseAuth
+import GoogleSignIn
 
-class MainHeroesViewController: BaseHeroesViewController {
+class MainHeroesViewController: BaseHeroesViewController, GIDSignInUIDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Choose hero"
+    GIDSignIn.sharedInstance().signIn()
 
     let item = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(MainHeroesViewController.addBunch))
     navigationItem.rightBarButtonItem = item
