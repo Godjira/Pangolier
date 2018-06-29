@@ -466,7 +466,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7D1-Rr-rz5"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Liked" image="like" id="CUZ-Hf-cNr"/>
+                    <tabBarItem key="tabBarItem" title="Liked" image="like24" id="CUZ-Hf-cNr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="naL-RM-TJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1118,7 +1118,6 @@
                             <constraint firstItem="h8w-Bz-iXJ" firstAttribute="bottom" secondItem="NK6-Ii-p7O" secondAttribute="bottom" id="9xy-i7-xjQ"/>
                             <constraint firstItem="FO6-j4-uGx" firstAttribute="top" secondItem="NK6-Ii-p7O" secondAttribute="top" id="B66-du-F8p"/>
                             <constraint firstAttribute="trailing" secondItem="FO6-j4-uGx" secondAttribute="trailing" constant="8" id="HAm-lW-H0o"/>
-                            <constraint firstAttribute="bottom" secondItem="IY4-pi-NQG" secondAttribute="bottom" constant="8" id="HkJ-MC-vy1"/>
                             <constraint firstAttribute="trailing" secondItem="IY4-pi-NQG" secondAttribute="trailing" constant="8" id="MGu-ft-3yY"/>
                             <constraint firstItem="h8w-Bz-iXJ" firstAttribute="top" secondItem="q8J-kp-V8c" secondAttribute="top" id="NwW-QQ-NDv"/>
                             <constraint firstItem="h8w-Bz-iXJ" firstAttribute="leading" secondItem="NK6-Ii-p7O" secondAttribute="leading" id="PAN-VR-bwr"/>
@@ -1146,7 +1145,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </objects>
-            <point key="canvasLocation" x="752" y="-1344"/>
+            <point key="canvasLocation" x="751.875" y="-1344.7183098591549"/>
         </scene>
         <!--Bunchs-->
         <scene sceneID="hC8-f2-Q7l">
@@ -1174,9 +1173,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="1KD-cy-06j">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="1KD-cy-06j">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="D7c-wj-UQg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
@@ -1267,13 +1265,22 @@
                                     <outlet property="delegate" destination="Bgt-pW-dwu" id="B8Z-4h-CKw"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kf9-SS-3Xz" customClass="GID">
+                                <rect key="frame" x="233" y="465" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1KD-cy-06j" firstAttribute="leading" secondItem="qqO-Id-1i4" secondAttribute="leading" id="5MP-5d-Bb2"/>
+                            <constraint firstItem="1KD-cy-06j" firstAttribute="top" secondItem="SAr-Oh-dIA" secondAttribute="top" id="Ma1-bZ-TNJ"/>
                             <constraint firstItem="D7c-wj-UQg" firstAttribute="leading" secondItem="qqO-Id-1i4" secondAttribute="leading" id="N6R-mM-fVz"/>
                             <constraint firstItem="D7c-wj-UQg" firstAttribute="top" secondItem="SAr-Oh-dIA" secondAttribute="top" id="SMP-cx-cSg"/>
                             <constraint firstItem="qqO-Id-1i4" firstAttribute="bottom" secondItem="D7c-wj-UQg" secondAttribute="bottom" id="VsW-av-3MD"/>
+                            <constraint firstAttribute="bottom" secondItem="1KD-cy-06j" secondAttribute="bottom" id="Yh5-u6-DvP"/>
                             <constraint firstItem="qqO-Id-1i4" firstAttribute="trailing" secondItem="D7c-wj-UQg" secondAttribute="trailing" id="Z28-57-Mbk"/>
+                            <constraint firstItem="1KD-cy-06j" firstAttribute="trailing" secondItem="qqO-Id-1i4" secondAttribute="trailing" id="e3S-QX-iUe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qqO-Id-1i4"/>
                     </view>
@@ -1285,7 +1292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05a-Fc-I5w" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-754.39999999999998" y="-1343.4782608695652"/>
+            <point key="canvasLocation" x="-755.625" y="-1343.661971830986"/>
         </scene>
         <!--Multiple Heroes View Controller-->
         <scene sceneID="4ia-b7-Wjb">
@@ -1809,7 +1816,8 @@ iQCLAJAAkgCUAJ0AogCtAK8AsQCzALgAuwC9AL8AwQDDAMgA3wDhAONJnUmiSa1JtknJSc1J2EnhSeZJ
 F1wcXClcLFw5XD5cRlxJXE5cVlxZXGtcblxzAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAXHU
 </mutableData>
         </image>
-        <image name="like" width="64" height="64"/>
+        <image name="like" width="32" height="32"/>
+        <image name="like24" width="24" height="24"/>
         <image name="top-icon" width="32" height="32"/>
         <image name="top-icon-select" width="32" height="32"/>
     </resources>
