@@ -23,7 +23,7 @@ class HeroViewController: UIViewController {
     super.viewDidLoad()
     tabBar.delegate = self
     tabBar.selectedItem = gideTabBarItem
-    
+
     setupViewControllers()
   }
   
@@ -37,21 +37,16 @@ class HeroViewController: UIViewController {
       .instantiateViewController(withIdentifier: "TopHeroBunchsViewController") as? TopHeroBunchsViewController else { return }
     topVC.hero = self.hero
     topVC.allHeroes = self.allHeroes
-    
-    let bounds = UIScreen.main.bounds
-    let width = bounds.size.width
-    let height = bounds.size.height
 
-    scrollView.contentSize = CGSize(width: 2 * width, height: height)
     let viewControllers = [bunchVC, topVC]
+    scrollView.contentSize = CGSize(width: CGFloat(viewControllers.count) * view.frame.width, height: 1)
 
     var idx: Int = 0
     for viewController in viewControllers {
       addChildViewController(viewController)
-      let originX = CGFloat(idx) * width
-      viewController.view.frame = CGRect(origin: CGPoint(x: originX, y: 0), size: CGSize(width: width, height: height))
+      let originX = CGFloat(idx) * UIScreen.main.bounds.size.width
+      viewController.view.frame = CGRect(origin: CGPoint(x: originX, y: 0), size: scrollView.frame.size)
       scrollView.addSubview(viewController.view)
-      viewController.didMove(toParentViewController: self)
       idx += 1
     }
   }

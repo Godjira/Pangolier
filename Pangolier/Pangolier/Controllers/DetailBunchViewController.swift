@@ -34,7 +34,7 @@ class DetailBunchViewController: UIViewController {
 
     self.rateLabel.text = String(self.bunch!.rate.count)
     for userId in bunch!.rate {
-      if (Auth.auth().currentUser?.uid.elementsEqual(userId))! {
+      if let uid = Auth.auth().currentUser?.uid, uid == userId {
         rateImage.image = #imageLiteral(resourceName: "likes")
       }
     }
