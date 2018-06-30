@@ -38,7 +38,7 @@ class HeroViewController: UIViewController {
     topVC.hero = self.hero
     topVC.allHeroes = self.allHeroes
     
-    let bounds = UIScreen.main.bounds
+    let bounds = scrollView.bounds
     let width = bounds.size.width
     let height = bounds.size.height
 

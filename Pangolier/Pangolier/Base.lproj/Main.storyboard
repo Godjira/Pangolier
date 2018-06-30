@@ -769,7 +769,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="0Ww-zt-V95">
-                                <rect key="frame" x="0.0" y="20" width="320" height="567"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                             </imageView>
                             <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yv7-P1-lFZ">
                                 <rect key="frame" x="0.0" y="50" width="320" height="518"/>
@@ -805,7 +805,7 @@
                             <constraint firstItem="0Ww-zt-V95" firstAttribute="top" secondItem="HKT-Oa-wYV" secondAttribute="top" id="NAh-Xh-GkP"/>
                             <constraint firstItem="hCc-Lu-uh2" firstAttribute="leading" secondItem="HKT-Oa-wYV" secondAttribute="leading" id="NVn-AK-Br0"/>
                             <constraint firstItem="yv7-P1-lFZ" firstAttribute="leading" secondItem="hCc-Lu-uh2" secondAttribute="leading" id="d1U-yM-ymh"/>
-                            <constraint firstItem="yv7-P1-lFZ" firstAttribute="bottom" secondItem="0Ww-zt-V95" secondAttribute="bottom" constant="-19" id="dnp-Qt-TFL"/>
+                            <constraint firstItem="yv7-P1-lFZ" firstAttribute="bottom" secondItem="0Ww-zt-V95" secondAttribute="bottom" id="dnp-Qt-TFL"/>
                             <constraint firstAttribute="trailing" secondItem="0Ww-zt-V95" secondAttribute="trailing" id="f9e-fb-83I"/>
                             <constraint firstItem="hCc-Lu-uh2" firstAttribute="trailing" secondItem="HKT-Oa-wYV" secondAttribute="trailing" id="gTm-DZ-d7s"/>
                             <constraint firstItem="yv7-P1-lFZ" firstAttribute="top" secondItem="hCc-Lu-uh2" secondAttribute="bottom" id="h55-Xb-mza"/>
@@ -1815,7 +1815,7 @@ F1wcXClcLFw5XD5cRlxJXE5cVlxZXGtcblxzAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAXHU
 </mutableData>
         </image>
         <image name="like" width="32" height="32"/>
-        <image name="like24" width="16" height="16"/>
+        <image name="like24" width="24" height="24"/>
         <image name="top-icon" width="32" height="32"/>
         <image name="top-icon-select" width="32" height="32"/>
     </resources>

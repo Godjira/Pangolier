@@ -116,9 +116,9 @@
 				D6D56E5020B2F86B00360AAB /* LoginViewController.swift */,
 				D665B85220BC9102002E3103 /* HeroesViewControllers */,
 				D665B84620BC179D002E3103 /* HeroViewController.swift */,
-				D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */,
 				D608EE1820AD6A680053CEEB /* BunchHeroesViewController.swift */,
 				D665B84820BC1AB0002E3103 /* TopHeroBunchsViewController.swift */,
+				D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */,
 				D665B84E20BC62C8002E3103 /* DetailBunchViewController.swift */,
 				D6BA205820C1C66300F4AF5A /* ItemsViewController.swift */,
 			);
@@ -531,7 +531,10 @@
 				DEVELOPMENT_TEAM = 8XKG9LNKYV;
 				INFOPLIST_FILE = Pangolier/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pancorp.Pangolier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -548,7 +551,10 @@
 				DEVELOPMENT_TEAM = 8XKG9LNKYV;
 				INFOPLIST_FILE = Pangolier/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pancorp.Pangolier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
