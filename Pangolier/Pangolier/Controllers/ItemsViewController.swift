@@ -28,7 +28,7 @@ class ItemsViewController: UIViewController {
       self.collectionView.reloadData()
     }
   }
-
+  
   @objc func okItems() {
     if (collectionView.indexPathsForSelectedItems?.count)! > 0 {
     let selectedItemsIndexPath = collectionView.indexPathsForSelectedItems

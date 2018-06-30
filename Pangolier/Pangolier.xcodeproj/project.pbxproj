@@ -17,7 +17,6 @@
 		D665B84F20BC62C8002E3103 /* DetailBunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B84E20BC62C8002E3103 /* DetailBunchViewController.swift */; };
 		D665B85120BC8EDB002E3103 /* BaseHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665B85020BC8EDB002E3103 /* BaseHeroesViewController.swift */; };
 		D6797C5E20B56F4700720491 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6797C5D20B56F4700720491 /* MainViewController.swift */; };
-		D685CD6B20E6491F00BEC6CA /* LikedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D685CD6A20E6491F00BEC6CA /* LikedViewController.swift */; };
 		D693CB5A20BD4EF500FF5167 /* MainHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693CB5920BD4EF500FF5167 /* MainHeroesViewController.swift */; };
 		D693CB5C20BD51CD00FF5167 /* MultipleHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693CB5B20BD51CD00FF5167 /* MultipleHeroesViewController.swift */; };
 		D6A9657020B9D39F00919D88 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A9656F20B9D39F00919D88 /* ArrayExtension.swift */; };
@@ -51,7 +50,6 @@
 		D665B84E20BC62C8002E3103 /* DetailBunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBunchViewController.swift; sourceTree = "<group>"; };
 		D665B85020BC8EDB002E3103 /* BaseHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeroesViewController.swift; sourceTree = "<group>"; };
 		D6797C5D20B56F4700720491 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		D685CD6A20E6491F00BEC6CA /* LikedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedViewController.swift; sourceTree = "<group>"; };
 		D693CB5920BD4EF500FF5167 /* MainHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeroesViewController.swift; sourceTree = "<group>"; };
 		D693CB5B20BD51CD00FF5167 /* MultipleHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleHeroesViewController.swift; sourceTree = "<group>"; };
 		D6A9656F20B9D39F00919D88 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 				D665B84820BC1AB0002E3103 /* TopHeroBunchsViewController.swift */,
 				D665B84E20BC62C8002E3103 /* DetailBunchViewController.swift */,
 				D6BA205820C1C66300F4AF5A /* ItemsViewController.swift */,
-				D685CD6A20E6491F00BEC6CA /* LikedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -305,18 +302,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pangolier/Pods-Pangolier-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,7 +364,6 @@
 				D6AEE92920AC26BB0034A8A9 /* ItemOrHeroCollectionViewCell.swift in Sources */,
 				D6797C5E20B56F4700720491 /* MainViewController.swift in Sources */,
 				D665B85120BC8EDB002E3103 /* BaseHeroesViewController.swift in Sources */,
-				D685CD6B20E6491F00BEC6CA /* LikedViewController.swift in Sources */,
 				D6BA205620C1604500F4AF5A /* ItemModel.swift in Sources */,
 				D6A9657020B9D39F00919D88 /* ArrayExtension.swift in Sources */,
 				D6D56E5120B2F86B00360AAB /* LoginViewController.swift in Sources */,
@@ -535,7 +531,10 @@
 				DEVELOPMENT_TEAM = 8XKG9LNKYV;
 				INFOPLIST_FILE = Pangolier/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pancorp.Pangolier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -552,7 +551,10 @@
 				DEVELOPMENT_TEAM = 8XKG9LNKYV;
 				INFOPLIST_FILE = Pangolier/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pancorp.Pangolier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -466,7 +466,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7D1-Rr-rz5"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Liked" image="like24" id="CUZ-Hf-cNr"/>
+                    <tabBarItem key="tabBarItem" title="Liked" image="like" id="CUZ-Hf-cNr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="naL-RM-TJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1166,7 +1166,7 @@
             </objects>
             <point key="canvasLocation" x="-1631" y="-1345"/>
         </scene>
-        <!--Title-->
+        <!--Bunchs-->
         <scene sceneID="DQv-5g-eQM">
             <objects>
                 <viewController storyboardIdentifier="MainHeroesViewController" id="Bgt-pW-dwu" customClass="MainHeroesViewController" customModule="Pangolier" customModuleProvider="target" sceneMemberID="viewController">
@@ -1235,7 +1235,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Bq-RD-F1b">
-                                            <rect key="frame" x="0.0" y="13" width="320" height="23"/>
+                                            <rect key="frame" x="0.0" y="13" width="372" height="23"/>
                                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="19"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1283,14 +1283,14 @@
                         <viewLayoutGuide key="safeArea" id="qqO-Id-1i4"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Bunchs" image="bunch-icon" selectedImage="bunch-icon-select" id="4ZB-Nk-3bp"/>
-                    <navigationItem key="navigationItem" title="Title" id="6Ln-sC-zSv"/>
+                    <navigationItem key="navigationItem" id="cfF-to-Nq3"/>
                     <connections>
                         <outlet property="collectionView" destination="D7c-wj-UQg" id="FpF-wT-3tE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05a-Fc-I5w" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-755.625" y="-1343.661971830986"/>
+            <point key="canvasLocation" x="-754.39999999999998" y="-1343.4782608695652"/>
         </scene>
         <!--Multiple Heroes View Controller-->
         <scene sceneID="4ia-b7-Wjb">
@@ -1814,8 +1814,7 @@ iQCLAJAAkgCUAJ0AogCtAK8AsQCzALgAuwC9AL8AwQDDAMgA3wDhAONJnUmiSa1JtknJSc1J2EnhSeZJ
 F1wcXClcLFw5XD5cRlxJXE5cVlxZXGtcblxzAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAXHU
 </mutableData>
         </image>
-        <image name="like" width="32" height="32"/>
-        <image name="like24" width="24" height="24"/>
+        <image name="like" width="64" height="64"/>
         <image name="top-icon" width="32" height="32"/>
         <image name="top-icon-select" width="32" height="32"/>
     </resources>

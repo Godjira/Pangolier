@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 
 struct HeroModel: Decodable {
   
@@ -31,7 +30,7 @@ struct HeroModel: Decodable {
 class HeroManager {
   class func getHeroModelById(allHero: [HeroModel], id: Int) -> HeroModel? {
     for hero in allHero where hero.id == id {
-      return hero
+        return hero
     }
     return nil
   }
@@ -42,17 +41,18 @@ class HeroManager {
   }
 
   class func getHeroes(completion: @escaping (_ heroesArray: [HeroModel]) -> Void) {
-
-    Alamofire.request("https://api.opendota.com/api/heroes").responseJSON { response in
+    let urlString = "https://api.opendota.com/api/heroes"
+    guard let url = URL(string: urlString) else { return }
+    URLSession.shared.dataTask(with: url) { (data, _, error) in
+      guard let data = data, error  == nil else { return }
       do {
-        guard let data = response.data else { return }
         let heroes = try JSONDecoder().decode([HeroModel].self, from: data)
-
         DispatchQueue.main.async {
           completion(heroes)
         }
-      } catch {}
-
-    }
+      } catch let error {
+        print(error)
+      }
+      }.resume()
   }
 }
