@@ -9,10 +9,13 @@
 import UIKit
 
 class MainHeroesViewController: BaseHeroesViewController {
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Choose hero"
+
+    let item = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(MainHeroesViewController.addButtonAction))
+    navigationItem.rightBarButtonItem = item
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -22,6 +25,12 @@ class MainHeroesViewController: BaseHeroesViewController {
     heroVC.hero = selectedHero
     heroVC.allHeroes = self.heroes
     navigationController?.pushViewController(heroVC, animated: true)
+  }
+
+  @objc func addButtonAction() {
+    guard let addBunchVC = storyboard?
+      .instantiateViewController(withIdentifier: "AddBunchHeroesViewController") as? AddBunchHeroesViewController else { return }
+    navigationController?.pushViewController(addBunchVC, animated: true)
   }
 
 }
