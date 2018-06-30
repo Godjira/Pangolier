@@ -466,7 +466,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7D1-Rr-rz5"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Liked" image="like" id="CUZ-Hf-cNr"/>
+                    <tabBarItem key="tabBarItem" title="Liked" image="like24" id="CUZ-Hf-cNr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="naL-RM-TJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1814,7 +1814,8 @@ iQCLAJAAkgCUAJ0AogCtAK8AsQCzALgAuwC9AL8AwQDDAMgA3wDhAONJnUmiSa1JtknJSc1J2EnhSeZJ
 F1wcXClcLFw5XD5cRlxJXE5cVlxZXGtcblxzAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAXHU
 </mutableData>
         </image>
-        <image name="like" width="64" height="64"/>
+        <image name="like" width="32" height="32"/>
+        <image name="like24" width="16" height="16"/>
         <image name="top-icon" width="32" height="32"/>
         <image name="top-icon-select" width="32" height="32"/>
     </resources>
