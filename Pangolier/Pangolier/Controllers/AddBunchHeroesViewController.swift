@@ -27,6 +27,9 @@ class AddBunchHeroesViewController: UIViewController {
       navigationController?.present(loginVC, animated: true)
     }
   }
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+  }
 
   @IBAction func addHeroAction(_ sender: Any) {
     guard let multipleHeroesViewController = storyboard?
