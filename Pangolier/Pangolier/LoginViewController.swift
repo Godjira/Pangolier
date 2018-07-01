@@ -11,9 +11,8 @@ import UIKit
 import GoogleSignIn
 import FirebaseAuth
 
-
 class LoginViewController: UIViewController {
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -24,7 +23,6 @@ class LoginViewController: UIViewController {
 
     //Auth.auth().currentUser
   }
-  
 }
 
 extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
@@ -36,9 +34,8 @@ extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
     let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                    accessToken: authentication.accessToken)
 
-    Auth.auth().signInAndRetrieveData(with: credential) { (user, error) in
+    Auth.auth().signInAndRetrieveData(with: credential) { (user, _) in
       print(user)
     }
   }
 }
-

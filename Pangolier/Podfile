@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
- platform :ios, '11.3'
+ platform :ios, '10.0'
 
 inhibit_all_warnings!
 
@@ -11,9 +11,7 @@ target 'Pangolier' do
 	pod 'Firebase/Database'
     pod 'Firebase/Auth'
     pod 'GoogleSignIn'
-    pod 'Toaster'
-
-
-
+    pod 'SwiftLint'
+    pod 'Alamofire'
 
 end

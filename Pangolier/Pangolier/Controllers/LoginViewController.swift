@@ -9,14 +9,13 @@
 import Foundation
 import UIKit
 import GoogleSignIn
-import FirebaseAuth
-
+import Firebase
 
 class LoginViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
     GIDSignIn.sharedInstance().delegate = self
     GIDSignIn.sharedInstance().uiDelegate = self
@@ -25,10 +24,8 @@ class LoginViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-
     GIDSignIn.sharedInstance().signIn()
   }
-  
 }
 
 extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
@@ -43,15 +40,10 @@ extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
     let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                    accessToken: authentication.accessToken)
 
-    Auth.auth().signInAndRetrieveData(with: credential) { (user, error) in
+    Auth.auth().signInAndRetrieveData(with: credential) { (user, _) in
       print(user)
     }
-    
+
     self.dismiss(animated: true)
-
   }
-  
-  
-  
 }
-

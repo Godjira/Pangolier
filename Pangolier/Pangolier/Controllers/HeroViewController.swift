@@ -10,16 +10,11 @@ import Foundation
 import UIKit
 
 class HeroViewController: UIViewController {
-  
+
   @IBOutlet weak var tabBar: UITabBar!
   @IBOutlet weak var gideTabBarItem: UITabBarItem!
   @IBOutlet weak var bunchTabBarItem: UITabBarItem!
-  
-  
   @IBOutlet weak var scrollView: UIScrollView!
-  
-  var width = CGFloat(integerLiteral: 0)
-  var height = CGFloat(integerLiteral: 0)
   
   var hero: HeroModel!
   var allHeroes: [HeroModel] = []
@@ -28,43 +23,38 @@ class HeroViewController: UIViewController {
     super.viewDidLoad()
     tabBar.delegate = self
     tabBar.selectedItem = gideTabBarItem
-    
-    let bunchVC = storyboard?.instantiateViewController(withIdentifier: "BunchHeroesViewController") as! BunchHeroesViewController
+
+    setupViewControllers()
+  }
+  
+  func setupViewControllers() {
+    guard let bunchVC = storyboard?
+      .instantiateViewController(withIdentifier: "BunchHeroesViewController") as? BunchHeroesViewController else { return }
     bunchVC.hero = self.hero
     bunchVC.allHeroes = self.allHeroes
     
-    let topVC = storyboard?.instantiateViewController(withIdentifier: "TopHeroBunchsViewController") as! TopHeroBunchsViewController
+    guard let topVC = storyboard?
+      .instantiateViewController(withIdentifier: "TopHeroBunchsViewController") as? TopHeroBunchsViewController else { return }
     topVC.hero = self.hero
     topVC.allHeroes = self.allHeroes
-    
-    let bounds = UIScreen.main.bounds
-    width = bounds.size.width
-    height = bounds.size.height
-    
-    scrollView.contentSize = CGSize(width: 2 * width, height: height)
-    
-    let viewControllers = [bunchVC, topVC]
 
-    
+    let viewControllers = [bunchVC, topVC]
+    scrollView.contentSize = CGSize(width: CGFloat(viewControllers.count) * view.frame.width, height: 1)
+
     var idx: Int = 0
-    
     for viewController in viewControllers {
-      
       addChildViewController(viewController)
-      let originX = CGFloat(idx) * width
-      viewController.view.frame = CGRect(origin: CGPoint(x: originX, y: 0), size: CGSize(width: width, height: height))
+      let originX = CGFloat(idx) * UIScreen.main.bounds.size.width
+      viewController.view.frame = CGRect(origin: CGPoint(x: originX, y: 0), size: scrollView.frame.size)
       scrollView.addSubview(viewController.view)
-      viewController.didMove(toParentViewController: self)
-      idx = idx + 1
+      idx += 1
     }
   }
-  
+
   @IBAction func addAction(_ sender: Any) {
-      let addBunchVC = storyboard?.instantiateViewController(withIdentifier: "AddBunchHeroesViewController")
-      navigationController?.pushViewController(addBunchVC!, animated: true)
+    let addBunchVC = storyboard?.instantiateViewController(withIdentifier: "AddBunchHeroesViewController")
+    navigationController?.pushViewController(addBunchVC!, animated: true)
   }
-  
-  
 }
 
 extension HeroViewController: UITabBarDelegate, UIScrollViewDelegate {
@@ -72,18 +62,15 @@ extension HeroViewController: UITabBarDelegate, UIScrollViewDelegate {
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     let index = Int(scrollView.contentOffset.x / scrollView.bounds.size.width)
     let selectedItem = tabBar.items![index]
-  
     tabBar.selectedItem = selectedItem
   }
-  
-  
+
   func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
     if item == gideTabBarItem {
       self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     if item == bunchTabBarItem {
-      self.scrollView.setContentOffset(CGPoint(x: width, y: 0), animated: true)
+      self.scrollView.setContentOffset(CGPoint(x: UIScreen.main.bounds.size.width, y: 0), animated: true)
     }
   }
-  
 }

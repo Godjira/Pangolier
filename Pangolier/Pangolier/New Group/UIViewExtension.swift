@@ -10,11 +10,9 @@ import Foundation
 import UIKit
 
 extension UIView {
-  
   func addGestureTap(target: Any?, action: Selector?) {
     let tap = UITapGestureRecognizer(target: target, action: action)
     self.isUserInteractionEnabled = true
     self.addGestureRecognizer(tap)
   }
-  
 }
