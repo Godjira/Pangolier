@@ -67,6 +67,7 @@ class BunchTableViewCell: UITableViewCell {
         cellBunch.rate.remove(at: cellBunch.rate.index(of: user)!)
         BunchManager.sendRate(bunch_with_rate: cellBunch)
         buttonLike.image = #imageLiteral(resourceName: "like")
+        BunchMarksManager.disLikedBunch(bunch: cellBunch)
         self.rateLabel.text = String(self.cellBunch.rate.count)
         return
       }
@@ -74,6 +75,7 @@ class BunchTableViewCell: UITableViewCell {
 
     cellBunch.rate.append((Auth.auth().currentUser?.uid)!)
     BunchManager.sendRate(bunch_with_rate: cellBunch)
+    BunchMarksManager.likedBunch(bunch: cellBunch)
     buttonLike.image = #imageLiteral(resourceName: "likes")
     self.rateLabel.text = String(self.cellBunch.rate.count)
     return

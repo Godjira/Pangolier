@@ -53,6 +53,7 @@ class AddBunchHeroesViewController: UIViewController {
                                     description: bunchDescTextView.getPlainText(),
                                     rate: [(Auth.auth().currentUser?.uid)!])
         BunchManager.sendBunch(bunch: bunch)
+        BunchMarksManager.likedBunch(bunch: bunch)
         self.navigationController?.popViewController(animated: true)
       }
     }
