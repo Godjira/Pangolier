@@ -33,6 +33,8 @@
 		D6C1C46C20BB296A006BEE03 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C1C46B20BB296A006BEE03 /* UIViewExtension.swift */; };
 		D6D56E5120B2F86B00360AAB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D56E5020B2F86B00360AAB /* LoginViewController.swift */; };
 		D6E1F86C20BED2D500C17048 /* SingleHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E1F86B20BED2D500C17048 /* SingleHeroesViewController.swift */; };
+		D6EC5E4B20E913E100AE964B /* BunchMarksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EC5E4A20E913E100AE964B /* BunchMarksManager.swift */; };
+		D6EC5E4D20E91F6D00AE964B /* LikedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EC5E4C20E91F6D00AE964B /* LikedViewController.swift */; };
 		D6F7CEA420ACA65100E912B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6F7CEA320ACA65100E912B2 /* GoogleService-Info.plist */; };
 		D6F9EA4A20D115D700FB8C40 /* PanTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9EA4920D115D700FB8C40 /* PanTextView.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +70,8 @@
 		D6C1C46B20BB296A006BEE03 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		D6D56E5020B2F86B00360AAB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D6E1F86B20BED2D500C17048 /* SingleHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleHeroesViewController.swift; sourceTree = "<group>"; };
+		D6EC5E4A20E913E100AE964B /* BunchMarksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunchMarksManager.swift; sourceTree = "<group>"; };
+		D6EC5E4C20E91F6D00AE964B /* LikedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedViewController.swift; sourceTree = "<group>"; };
 		D6F7CEA320ACA65100E912B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D6F9EA4920D115D700FB8C40 /* PanTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +125,7 @@
 				D608EE1A20AD759F0053CEEB /* AddBunchHeroesViewController.swift */,
 				D665B84E20BC62C8002E3103 /* DetailBunchViewController.swift */,
 				D6BA205820C1C66300F4AF5A /* ItemsViewController.swift */,
+				D6EC5E4C20E91F6D00AE964B /* LikedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 				D668D8F920B2005E0042F2B9 /* Extensions */,
 				D665B84520BC1738002E3103 /* Controllers */,
 				D6AEE92720AC268C0034A8A9 /* Model */,
+				D6EC5E4920E913A600AE964B /* Managers */,
 				D6AEE92620AC26870034A8A9 /* Cell */,
 				D6AEE91320AC11F30034A8A9 /* Main.storyboard */,
 				D6AEE91920AC11F50034A8A9 /* Assets.xcassets */,
@@ -203,6 +209,15 @@
 				D6BA205520C1604500F4AF5A /* ItemModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D6EC5E4920E913A600AE964B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D6EC5E4A20E913E100AE964B /* BunchMarksManager.swift */,
+			);
+			name = Managers;
+			path = Cell/Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,11 +389,13 @@
 				D693CB5A20BD4EF500FF5167 /* MainHeroesViewController.swift in Sources */,
 				D6C1C46C20BB296A006BEE03 /* UIViewExtension.swift in Sources */,
 				D665B84F20BC62C8002E3103 /* DetailBunchViewController.swift in Sources */,
+				D6EC5E4D20E91F6D00AE964B /* LikedViewController.swift in Sources */,
 				D6AEE91820AC11F30034A8A9 /* Pangolier.xcdatamodeld in Sources */,
 				D6E1F86C20BED2D500C17048 /* SingleHeroesViewController.swift in Sources */,
 				D61F60B520B1B61B005C2777 /* BunchTableViewCell.swift in Sources */,
 				D6AEE92B20AC485B0034A8A9 /* HeaderCollectionReusableView.swift in Sources */,
 				D693CB5C20BD51CD00FF5167 /* MultipleHeroesViewController.swift in Sources */,
+				D6EC5E4B20E913E100AE964B /* BunchMarksManager.swift in Sources */,
 				D6F9EA4A20D115D700FB8C40 /* PanTextView.swift in Sources */,
 				D6AEE92520AC143D0034A8A9 /* HeroModel.swift in Sources */,
 				D6BA205920C1C66300F4AF5A /* ItemsViewController.swift in Sources */,
