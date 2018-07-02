@@ -15,7 +15,7 @@ class BaseHeroesViewController: UIViewController {
   var heroes = [HeroModel]()
   var groupHeroes: [[HeroModel]] = [[]]
 
-  let sections: [(title: String, image: UIImage)] = [("Strength", #imageLiteral(resourceName: "red")),
+  let sections: [(title: String, image: UIImage)] = [("Strength", #imageLiteral(resourceName: "Red")),
                                                      ("Agility", #imageLiteral(resourceName: "green")),
                                                      ("Intellect", #imageLiteral(resourceName: "blue"))]
 
