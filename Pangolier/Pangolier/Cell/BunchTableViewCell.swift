@@ -53,8 +53,12 @@ class BunchTableViewCell: UITableViewCell {
 
   }
 
-  @objc func tapLikeButton() {
-    if Auth.auth().currentUser == nil {
+  @objc func tapLikeButton(navigation: UINavigationController) {
+    guard Auth.auth().currentUser != nil else {
+      let loginVC = LoginViewController()
+      loginVC.modalTransitionStyle = .crossDissolve
+      loginVC.modalPresentationStyle = .overCurrentContext
+      UIApplication.shared.keyWindow?.rootViewController?.present(loginVC, animated: true)
       return
     }
     for user in cellBunch.rate {

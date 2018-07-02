@@ -50,7 +50,6 @@ extension BunchHeroesViewController: UITableViewDelegate, UITableViewDataSource 
     guard let cell = tableView
       .dequeueReusableCell(withIdentifier: "BunchTableViewCell", for: indexPath) as? BunchTableViewCell else { return UITableViewCell()}
     cell.setImagesAndText(allHeroes: self.allHeroes, bunch: self.bunchs[indexPath.row])
-
     return cell
   }
 
