@@ -14,6 +14,12 @@ class MainHeroesViewController: BaseHeroesViewController {
     super.viewDidLoad()
     title = "Choose hero"
 
+    let statusBarHeight = UIApplication.shared.statusBarFrame.height
+    let navigationBarHeight = navigationController?.navigationBar.frame.height ?? 0
+    let tabBarHight = tabBarController?.tabBar.frame.height ?? 0
+    let topInset = statusBarHeight + navigationBarHeight
+    collectionView.contentInset = .init(top: topInset, left: 0, bottom: tabBarHight, right: 0)
+
     let item = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(MainHeroesViewController.addButtonAction))
     navigationItem.rightBarButtonItem = item
   }

@@ -12,6 +12,7 @@ import Firebase
 class BunchMarksManager {
 
   class func likedBunch(bunch: BunchModel) {
+
     let ref = Database.database().reference()
     guard let uid = Auth.auth().currentUser?.uid else { return }
 
@@ -32,6 +33,7 @@ class BunchMarksManager {
   }
 
   class func disLikedBunch(bunch: BunchModel) {
+
     let ref = Database.database().reference()
     guard let uid = Auth.auth().currentUser?.uid else { return }
 
@@ -48,6 +50,7 @@ class BunchMarksManager {
   }
 
   class func getLikedBunchs(completion:  @escaping ((BunchModel) -> Void)) {
+
     let ref = Database.database().reference()
     guard let uid = Auth.auth().currentUser?.uid else { return }
 
@@ -70,14 +73,12 @@ class BunchMarksManager {
               DispatchQueue.main.async {
                 completion(bunch)
               }
+
             }
           })
         }
-
       }
     }
-
   }
-
 
 }

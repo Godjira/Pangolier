@@ -1,27 +1,27 @@
 //
-//  LikedViewController.swift
+//  AllTopViewController.swift
 //  Pangolier
 //
-//  Created by Homac on 7/1/18.
+//  Created by Homac on 7/3/18.
 //  Copyright © 2018 pangolier. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class LikedViewController: UIViewController {
+class AllTopViewController: UIViewController {
 
   @IBOutlet weak var tableView: UITableView!
 
-  var likedBunchs: [BunchModel] = []
   var allHeroes: [HeroModel]?
+  var topBunchs: [BunchModel] = []
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    likedBunchs = [BunchModel]()
+    topBunchs = [BunchModel]()
 
-    BunchMarksManager.getLikedBunchs { (bunch) in
-      self.likedBunchs.append(bunch)
+    AllTopManager.getAllBunchModels { (bunch) in
+      self.topBunchs = bunch
       self.tableView.reloadData()
     }
   }
@@ -36,17 +36,17 @@ class LikedViewController: UIViewController {
 
 }
 
-extension LikedViewController: UITableViewDelegate, UITableViewDataSource {
+extension AllTopViewController: UITableViewDelegate, UITableViewDataSource {
 
   public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return likedBunchs.count
+    return topBunchs.count
   }
 
   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView
       .dequeueReusableCell(withIdentifier: "BunchTableViewCell", for: indexPath) as? BunchTableViewCell else { return UITableViewCell()}
     guard let allHeroes = allHeroes else { return UITableViewCell() }
-    cell.setImagesAndText(allHeroes: allHeroes, bunch: self.likedBunchs[indexPath.row])
+    cell.setImagesAndText(allHeroes: allHeroes, bunch: topBunchs[indexPath.row])
 
     return cell
   }
@@ -55,8 +55,7 @@ extension LikedViewController: UITableViewDelegate, UITableViewDataSource {
     guard let detailBunchVC = storyboard?
       .instantiateViewController(withIdentifier: "DetailBunchViewController") as? DetailBunchViewController else { return }
     detailBunchVC.allHeroes = self.allHeroes
-    detailBunchVC.bunch = likedBunchs[indexPath.row]
+    detailBunchVC.bunch = topBunchs[indexPath.row]
     navigationController?.pushViewController(detailBunchVC, animated: true)
-  }
-
+}
 }

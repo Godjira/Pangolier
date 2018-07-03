@@ -38,7 +38,10 @@ class HeroManager {
 
   class func getSortHeroesWithAttributes(heroes: [HeroModel]) -> [[HeroModel]] {
     let sortedHeroes = heroes.sorted(by: { $0.name < $1.name })
-    return Dictionary(grouping: sortedHeroes, by: { $0.primaryAttr }).map { $0.value }
+    let str = sortedHeroes.filter { $0.primaryAttr == "str" }
+    let agi = sortedHeroes.filter { $0.primaryAttr == "agi" }
+    let int = sortedHeroes.filter { $0.primaryAttr == "int" }
+    return [str, agi, int]
   }
 
   class func getHeroes(completion: @escaping (_ heroesArray: [HeroModel]) -> Void) {

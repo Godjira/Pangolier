@@ -443,7 +443,7 @@
         <!--All Top-->
         <scene sceneID="pyX-HI-Etq">
             <objects>
-                <viewController id="qbb-fn-Qzm" sceneMemberID="viewController">
+                <viewController id="qbb-fn-Qzm" customClass="AllTopViewController" customModule="Pangolier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TVS-jp-8fX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -562,8 +562,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="C3M-6v-ZMj" id="K7N-F3-E04"/>
-                                    <outlet property="delegate" destination="C3M-6v-ZMj" id="hu2-bz-GN7"/>
+                                    <outlet property="dataSource" destination="qbb-fn-Qzm" id="IOl-2r-OKv"/>
+                                    <outlet property="delegate" destination="qbb-fn-Qzm" id="XH5-Q2-WhR"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -581,6 +581,9 @@
                         <viewLayoutGuide key="safeArea" id="aUh-z8-fyD"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="All Top" image="top-icon" id="AhE-Sa-K13"/>
+                    <connections>
+                        <outlet property="tableView" destination="jgF-Rs-0SG" id="lF4-E9-D3H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="csY-Pn-LWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1420,7 +1423,7 @@
         <!--Bunchs-->
         <scene sceneID="DQv-5g-eQM">
             <objects>
-                <viewController storyboardIdentifier="MainHeroesViewController" id="Bgt-pW-dwu" customClass="MainHeroesViewController" customModule="Pangolier" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainHeroesViewController" automaticallyAdjustsScrollViewInsets="NO" id="Bgt-pW-dwu" customClass="MainHeroesViewController" customModule="Pangolier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SAr-Oh-dIA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1428,7 +1431,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="1KD-cy-06j">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="D7c-wj-UQg">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="D7c-wj-UQg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1k8-5r-hQR">
@@ -1520,10 +1523,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="D7c-wj-UQg" firstAttribute="top" secondItem="SAr-Oh-dIA" secondAttribute="top" id="IeL-CJ-frm"/>
                             <constraint firstItem="D7c-wj-UQg" firstAttribute="leading" secondItem="qqO-Id-1i4" secondAttribute="leading" id="N6R-mM-fVz"/>
                             <constraint firstAttribute="bottom" secondItem="1KD-cy-06j" secondAttribute="bottom" id="U2H-8f-CVE"/>
                             <constraint firstAttribute="bottom" secondItem="D7c-wj-UQg" secondAttribute="bottom" constant="49" id="VsW-av-3MD"/>
+                            <constraint firstItem="D7c-wj-UQg" firstAttribute="top" secondItem="SAr-Oh-dIA" secondAttribute="top" id="YKD-kU-2b8"/>
                             <constraint firstItem="qqO-Id-1i4" firstAttribute="trailing" secondItem="D7c-wj-UQg" secondAttribute="trailing" id="Z28-57-Mbk"/>
                             <constraint firstItem="1KD-cy-06j" firstAttribute="trailing" secondItem="qqO-Id-1i4" secondAttribute="trailing" id="bQ8-Ot-UZe"/>
                             <constraint firstItem="1KD-cy-06j" firstAttribute="top" secondItem="SAr-Oh-dIA" secondAttribute="top" id="d1d-yx-aYl"/>
