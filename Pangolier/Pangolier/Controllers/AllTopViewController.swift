@@ -57,5 +57,5 @@ extension AllTopViewController: UITableViewDelegate, UITableViewDataSource {
     detailBunchVC.allHeroes = self.allHeroes
     detailBunchVC.bunch = topBunchs[indexPath.row]
     navigationController?.pushViewController(detailBunchVC, animated: true)
-}
+  }
 }

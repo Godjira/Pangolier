@@ -40,7 +40,6 @@ class ItemsViewController: UIViewController {
       self.navigationController?.popViewController(animated: true)
   }
   }
-
 }
 
 extension ItemsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -56,7 +55,6 @@ extension ItemsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     cell.setItemImage(item: self.items[indexPath.row])
     return cell
   }
-
 }
 
  protocol GetItemDelegate {

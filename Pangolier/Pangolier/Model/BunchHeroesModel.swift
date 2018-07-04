@@ -48,6 +48,7 @@ class BunchManager {
                           "desc": bunch.description,
                           "rate": [bunch.userId]] as [String: Any]
     ref.child("bunch").child(bunchId).setValue(sendDictionary)
+    BunchMarksManager.likedBunch(bunch: bunch, bunchId: bunchId)
   }
 
   class func getBunchModels(hero: HeroModel, completion: @escaping ((BunchModel) -> Void)) {

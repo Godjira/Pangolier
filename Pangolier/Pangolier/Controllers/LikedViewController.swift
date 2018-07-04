@@ -33,7 +33,6 @@ class LikedViewController: UIViewController {
       self.tableView.reloadData()
     }
   }
-
 }
 
 extension LikedViewController: UITableViewDelegate, UITableViewDataSource {
@@ -58,5 +57,4 @@ extension LikedViewController: UITableViewDelegate, UITableViewDataSource {
     detailBunchVC.bunch = likedBunchs[indexPath.row]
     navigationController?.pushViewController(detailBunchVC, animated: true)
   }
-
 }

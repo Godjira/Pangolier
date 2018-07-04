@@ -11,7 +11,7 @@ import Firebase
 
 class BunchMarksManager {
 
-  class func likedBunch(bunch: BunchModel) {
+  class func likedBunch(bunch: BunchModel, bunchId: String) {
 
     let ref = Database.database().reference()
     guard let uid = Auth.auth().currentUser?.uid else { return }
@@ -20,13 +20,13 @@ class BunchMarksManager {
       if snapshot.exists() {
 
         guard var likedBunchs = snapshot.value as? [String] else { return }
-        for bunchId in likedBunchs where bunchId == bunch.id {
+        for bId in likedBunchs where bId == bunchId {
           return
         }
-        likedBunchs.append(bunch.id)
+        likedBunchs.append(bunchId)
         ref.child("bunchMarks").child(uid).setValue(likedBunchs)
       } else {
-        let likedsBuch = [bunch.id]
+        let likedsBuch = [bunchId]
         ref.child("bunchMarks").child(uid).setValue(likedsBuch)
       }
     }
