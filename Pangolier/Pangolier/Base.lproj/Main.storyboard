@@ -1228,15 +1228,7 @@
                                 <rect key="frame" x="12" y="138" width="292" height="365"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.3650968309859155" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.78284893129999999" green="0.40739577919999997" blue="0.23406320990000001" alpha="0.7746478873" colorSpace="custom" customColorSpace="sRGB"/>
-                                <attributedString key="attributedText">
-                                    <fragment content=" ">
-                                        <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>

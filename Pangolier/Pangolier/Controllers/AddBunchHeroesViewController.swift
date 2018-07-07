@@ -28,17 +28,19 @@ class AddBunchHeroesViewController: UIViewController {
       loginVC.modalPresentationStyle = .overCurrentContext
       navigationController?.present(loginVC, animated: true)
     }
-    bunchDescTextView.textColor = UIColor.white
+
+    bunchDescTextView.delegate = self
   }
 
   func initToolBarForKeyboard() {
     //init toolbar
-    let toolbar:UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
+    let toolbar:UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 30))
 
     //create left side empty space so that done button set on right side
-    let flexSpace = UIBarButtonItem(barButtonSystemItem:    .flexibleSpace, target: nil, action: nil)
+    let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
 
-    let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(AddBunchHeroesViewController.doneButtonAction))
+    let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self,
+                                                   action: #selector(AddBunchHeroesViewController.doneButtonAction))
 
     toolbar.setItems([flexSpace, doneBtn], animated: false)
     toolbar.sizeToFit()
@@ -144,4 +146,12 @@ as? ItemOrHeroCollectionViewCell else { return UICollectionViewCell() }
     self.heroes = heroes
     collectionView.reloadData()
   }
+}
+
+extension AddBunchHeroesViewController: UITextViewDelegate {
+
+  func textViewDidChange(_ textView: UITextView) {
+    textView.textColor = UIColor.white
+  }
+
 }
