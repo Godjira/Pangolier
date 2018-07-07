@@ -20,6 +20,8 @@ class AddBunchHeroesViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    initToolBarForKeyboard()
+    
     if Auth.auth().currentUser == nil {
       let loginVC = LoginViewController()
       loginVC.modalTransitionStyle = .crossDissolve
@@ -28,6 +30,29 @@ class AddBunchHeroesViewController: UIViewController {
     }
     bunchDescTextView.textColor = UIColor.white
   }
+
+  func initToolBarForKeyboard() {
+    //init toolbar
+    let toolbar:UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
+
+    //create left side empty space so that done button set on right side
+    let flexSpace = UIBarButtonItem(barButtonSystemItem:    .flexibleSpace, target: nil, action: nil)
+
+    let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(AddBunchHeroesViewController.doneButtonAction))
+
+    toolbar.setItems([flexSpace, doneBtn], animated: false)
+    toolbar.sizeToFit()
+
+    //setting toolbar as inputAccessoryView
+    self.bunchNameTextField.inputAccessoryView = toolbar
+    self.bunchDescTextView.inputAccessoryView = toolbar
+  }
+
+  @objc func doneButtonAction() {
+    self.view.endEditing(true)
+
+  }
+
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
   }
