@@ -59,16 +59,17 @@ class BunchMarksManager {
 
         guard let likedBunchs = snapshot.value as? [String] else { return }
         for bunchId in likedBunchs {
+          if bunchId != "" {
           ref.child("bunch").child(bunchId).observeSingleEvent(of: .value, with: { (bunchSnapshot) in
             if bunchSnapshot.exists() {
 
               guard let dic = bunchSnapshot.value as? [String: AnyObject] else { return }
-              let bunch = BunchModel(id: dic["id"] as? String ?? "",
-                                     name: dic["name"] as? String ?? "",
-                                     userId: dic["user"] as? String ?? "",
-                                     heroesId: dic["heroes"] as? [Int] ?? [],
-                                     description: dic["desc"] as? String ?? "",
-                                     rate: dic["rate"] as? [String] ?? [""])
+              let bunch = BunchModel(id: dic["id"] as? String ?? " ",
+                                     name: dic["name"] as? String ?? " ",
+                                     userId: dic["user"] as? String ?? " ",
+                                     heroesId: dic["heroes"] as? [Int] ?? [0],
+                                     description: dic["desc"] as? String ?? " ",
+                                     rate: dic["rate"] as? [String] ?? [" "])
 
               DispatchQueue.main.async {
                 completion(bunch)
@@ -76,6 +77,7 @@ class BunchMarksManager {
 
             }
           })
+        }
         }
       }
     }

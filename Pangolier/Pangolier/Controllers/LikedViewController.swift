@@ -18,12 +18,7 @@ class LikedViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    likedBunchs = [BunchModel]()
-
-    BunchMarksManager.getLikedBunchs { (bunch) in
-      self.likedBunchs.append(bunch)
-      self.tableView.reloadData()
-    }
+   
   }
 
   override func viewDidLoad() {
@@ -31,7 +26,12 @@ class LikedViewController: UIViewController {
     HeroManager.getHeroes { (heroes) in
       self.allHeroes = heroes
       self.tableView.reloadData()
+      BunchMarksManager.getLikedBunchs { (bunch) in
+        self.likedBunchs.append(bunch)
+        self.tableView.reloadData()
+      }
     }
+
   }
 }
 
